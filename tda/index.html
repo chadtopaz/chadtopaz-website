@@ -4,31 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Getting Started with TDA - Chad Topaz</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div class="banner">
   <div class="banner-text">Pre-order <em>Unlocking Justice</em> — forthcoming May 19, 2026</div>
   <div class="banner-links">
-    <a href="https://www.amazon.com/dp/0691270430" target="_blank">Amazon</a>
-    <a href="https://www.barnesandnoble.com/w/unlocking-justice-chad-m-topaz/1146644170" target="_blank">Barnes &amp; Noble</a>
-    <a href="https://bookshop.org/p/books/unlocking-justice/21936965" target="_blank">Bookshop.org</a>
-    <a href="https://press.princeton.edu/books/hardcover/9780691270432/unlocking-justice" target="_blank">PUP</a>
+    <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank">Amazon</a>
+    <a href="https://www.barnesandnoble.com/w/unlocking-justice-chad-m-topaz/1148313126" target="_blank">Barnes &amp; Noble</a>
+    <a href="https://bookshop.org/p/books/unlocking-justice-the-power-of-data-to-confront-inequity-and-create-change-chad-m-topaz/1899bc1e644edf72" target="_blank">Bookshop.org</a>
+    <a href="https://press.princeton.edu/books/hardcover/9780691276151/unlocking-justice?srsltid=AfmBOop3NxLKOuXEHu3hDU60si01Qlq1O8oUM21NKDXo_HCZTY2gcpLJ" target="_blank">PUP</a>
   </div>
 </div>
 <nav>
-  <a class="nav-name" href="/">Chad Topaz</a>
-  <ul class="nav-links"><li class="nav-item"><a href="/book/">Book</a></li><li class="nav-item has-dropdown">
+  <a class="nav-name" href="../index.html">Chad Topaz</a>
+  <ul class="nav-links"><li class="nav-item"><a href="../book/index.html">Book</a></li><li class="nav-item has-dropdown">
       <a href="#">About</a>
-      <div class="dropdown"><a href="/about/">Biography</a><a href="https://docs.google.com/document/d/1Bf2vmmtSaV-XOin092E-2IbTA_JIVmyOYWAx2m5WKbw/edit?usp=sharing" target="_blank">CV</a><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a><a href="/music/">Music</a></div>
+      <div class="dropdown"><a href="../about/index.html">Biography</a><a href="https://docs.google.com/document/d/1Bf2vmmtSaV-XOin092E-2IbTA_JIVmyOYWAx2m5WKbw/edit?usp=sharing" target="_blank">CV</a><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a><a href="../music/index.html">Music</a></div>
     </li><li class="nav-item has-dropdown">
       <a href="#" class="active">Research</a>
-      <div class="dropdown"><a href="/research/">Publications</a><a href="/research/talks.html">Talks</a><a href="/tda/">Getting Started with TDA</a></div>
-    </li><li class="nav-item"><a href="/speaking/">Speaking</a></li><li class="nav-item has-dropdown">
+      <div class="dropdown"><a href="../research/index.html">Publications</a><a href="../research/presentations.html">Presentations</a><a href="index.html">Getting Started with TDA</a></div>
+    </li><li class="nav-item"><a href="../speaking/index.html">Speaking</a></li><li class="nav-item has-dropdown">
       <a href="#">Press</a>
-      <div class="dropdown"><a href="/press/">Op-Eds</a><a href="/press/coverage.html">Media Coverage</a></div>
+      <div class="dropdown"><a href="../press/index.html">Op-Eds</a><a href="../press/coverage.html">Media Coverage</a></div>
     </li><li class="nav-item has-dropdown">
       <a href="#">Connect</a>
       <div class="dropdown"><a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a><a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a><a href="https://chadtopaz.medium.com/" target="_blank">Blog (Medium)</a></div>
@@ -37,45 +35,61 @@
 <div class="page-header">
   <div class="page-label">Research</div>
   <h1 class="page-title">Getting Started with TDA</h1>
-  <p class="page-subtitle">A curated list of resources for people who want to learn topological data analysis but have never taken topology. Aimed at those with similar background (or lack thereof) as Chad himself.</p>
+  <p class="page-subtitle">A curated reading list for learning topological data analysis without a background in topology.</p>
 </div>
 <div class="page-content">
   <div class="section">
-    <p>There are too many resources on TDA out there. Here is the list of resources Chad gives to people who ask. This is aimed at people who have not taken algebra, topology, or algebraic topology &mdash; because Chad hasn't either. It focuses on computation of persistent homology for point cloud data.</p>
+    <p>There are too many resources out there on TDA, and people often say they're overwhelmed and don't know how to get started. This list is aimed at people who have not taken algebra, topology, or algebraic topology &mdash; because I haven't either. It focuses on the computation of persistent homology for point cloud data, but there's lots of other cool and relevant TDA topics like sub/super-level set filtrations, cubical homology, and so forth. Feel free to spread this around.</p>
   </div>
   <div class="section">
     <div class="section-label">Recommended resources</div>
     <ul class="pub-list"><li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Connecting the Dots: Discovering the Shape of Data</strong> &mdash; A totally nontechnical introduction to TDA.</span>
+  <span class="pub-citation"><a href="https://kids.frontiersin.org/articles/10.3389/frym.2021.551557" target="_blank"><strong>Connecting the Dots: Discovering the Shape of Data</strong></a> &mdash; TDA for kids, but a great place to start for anyone. A totally nontechnical introduction.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Topological data analysis: One applied mathematician's heartwarming story of struggle, triumph, and ultimately, more struggle</strong> &mdash; An expository article, slightly more technical.</span>
+  <span class="pub-citation"><a href="https://dsweb.siam.org/TheMagazine/Article/TabId/823/ArtMID/1971/ArticleID/777/Topological-Data-Analysis.aspx" target="_blank"><strong>Topological data analysis: One applied mathematician's heartwarming story of struggle, triumph, and ultimately, more struggle</strong></a> &mdash; A totally nontechnical expository article about TDA.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Topological data analysis of collective motion</strong> &mdash; An expository article.</span>
+  <span class="pub-citation"><a href="https://sinews.siam.org/Details-Page/topological-data-analysis-of-collective-motion" target="_blank"><strong>Topological data analysis of collective motion</strong></a> &mdash; An expository article, slightly more technical.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Topological data analysis of biological aggregation models</strong> &mdash; Uses persistent homology for exploratory data analysis.</span>
+  <span class="pub-citation"><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0126383" target="_blank"><strong>Topological data analysis of biological aggregation models</strong></a> &mdash; Uses persistent homology as a tool for exploratory data analysis.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Self-help homology tutorial for the simple(x)-minded</strong> &mdash; Tutorial notes showing how computation of homology is really just linear algebra.</span>
+  <span class="pub-citation"><a href="https://drive.google.com/open?id=0B3Www1z6Tm8xblBVRFBpeWpfREk" target="_blank"><strong>Self-help homology tutorial for the simple(x)-minded</strong></a> &mdash; Tutorial notes showing how the computation of homology of simplicial complexes is really just a linear algebra problem. This is the version without solutions to exercises; a version with solutions is on the <a href="../research/index.html">publications page</a>.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>A topological approach to selecting models of biological experiments</strong> &mdash; Uses topological signatures to decide which of two models fits data better.</span>
+  <span class="pub-citation"><a href="https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-017-0109-5" target="_blank"><strong>A roadmap for the computation of persistent homology</strong></a> &mdash; A review paper that gives a great bird's-eye look at computational tools.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Analyzing collective motion with machine learning and topology</strong> &mdash; Applying machine learning to topological signatures to estimate parameters.</span>
+  <span class="pub-citation"><a href="https://www.annualreviews.org/doi/abs/10.1146/annurev-statistics-031017-100045" target="_blank"><strong>Topological Data Analysis</strong></a> &mdash; Another useful review paper.</span>
 </li>
 <li class="pub-item">
   <span class="pub-num"></span>
-  <span class="pub-citation"><strong>Introduction to the R Package TDA</strong> &mdash; A tutorial to work through.</span>
+  <span class="pub-citation"><a href="https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/dvdy.175" target="_blank"><strong>The shape of things to come: Topological data analysis and biology, from molecules to organisms</strong></a> &mdash; A review paper on the uses of TDA in biology.</span>
+</li>
+<li class="pub-item">
+  <span class="pub-num"></span>
+  <span class="pub-citation"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0213679" target="_blank"><strong>A topological approach to selecting models of biological experiments</strong></a> &mdash; Uses topological signatures to decide which of two models is a better fit for experimental data.</span>
+</li>
+<li class="pub-item">
+  <span class="pub-num"></span>
+  <span class="pub-citation"><a href="https://aip.scitation.org/doi/full/10.1063/1.5125493" target="_blank"><strong>Analyzing collective motion with machine learning and topology</strong></a> &mdash; Applying machine learning to topological signatures of data from simulations to estimate parameters.</span>
+</li>
+<li class="pub-item">
+  <span class="pub-num"></span>
+  <span class="pub-citation"><a href="https://cran.r-project.org/web/packages/TDA/vignettes/article.pdf" target="_blank"><strong>Introduction to the R Package TDA</strong></a> &mdash; A tutorial to work through.</span>
+</li>
+<li class="pub-item">
+  <span class="pub-num"></span>
+  <span class="pub-citation"><a href="https://geometrica.saclay.inria.fr/team/Steve.Oudot/courses/TUM/TP/index.html" target="_blank"><strong>R-TDA package tutorial</strong></a> &mdash; Another tutorial to reinforce the above.</span>
 </li>
 </ul>
   </div>
