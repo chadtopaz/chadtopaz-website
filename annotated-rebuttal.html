@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotated Edition: "Why sex-ratios in majors might be more than just bias"</title>
+<meta name="description" content="Line-by-line notes on factual, logical, and rhetorical errors in Luana Maroja's essay. Annotated by Chad M. Topaz.">
+<meta property="og:title" content="Annotated Edition: &quot;Why sex-ratios in majors might be more than just bias&quot;">
+<meta property="og:description" content="Line-by-line notes on factual, logical, and rhetorical errors. Annotated by Chad M. Topaz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.chadtopaz.com/annotated-rebuttal.html">
+<meta property="og:image" content="https://www.chadtopaz.com/images/annotated-rebuttal-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Chad M. Topaz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Annotated Edition: &quot;Why sex-ratios in majors might be more than just bias&quot;">
+<meta name="twitter:description" content="Line-by-line notes on factual, logical, and rhetorical errors. Annotated by Chad M. Topaz.">
+<meta name="twitter:image" content="https://www.chadtopaz.com/images/annotated-rebuttal-og.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --red: #991b1b;
+    --red-bg: #fef2f2;
+    --red-border: #e6b0aa;
+    --orange: #0f766e;
+    --orange-bg: #f0fdfa;
+    --orange-border: #99f6e4;
+    --blue: #4338ca;
+    --blue-bg: #eef2ff;
+    --blue-border: #a5b4fc;
+    --gray: #6b6560;
+    --gray-bg: #f5f5f4;
+    --gray-border: #d6d3d1;
+    --text: #2c3e50;
+    --text-light: #5d6d7e;
+    --bg: #fdfcfb;
+    --sidebar-width: 380px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* ─── Header ─── */
+  .page-header {
+    background: #1b2631;
+    color: #ecf0f1;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .page-header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: #aeb6bf;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .page-header .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 1.2rem;
+  }
+  .page-header .meta a {
+    color: #85c1e9;
+    text-decoration: none;
+    border-bottom: 1px dotted #85c1e9;
+  }
+  .page-header .meta a:hover { color: #fff; border-color: #fff; }
+
+  /* ─── Legend ─── */
+  .legend-bar {
+    background: #fff;
+    border-bottom: 1px solid #e5e8eb;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-dot.red { background: var(--red); border-radius: 50%; }
+  .legend-dot.orange { background: var(--orange); border-radius: 2px; }
+  .legend-dot.blue { background: var(--blue); border-radius: 0; transform: rotate(45deg); width: 10px; height: 10px; }
+  .legend-dot.gray { background: var(--gray); }
+
+  /* ─── Executive summary ─── */
+  .exec-summary {
+    max-width: 780px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+  .exec-summary h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .exec-summary .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .summary-point {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .summary-point .sp-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .summary-point.fatal { background: var(--red-bg); }
+  .summary-point.fatal .sp-num { background: var(--red); }
+  .summary-point.structural { background: var(--orange-bg); }
+  .summary-point.structural .sp-num { background: var(--orange); }
+
+  /* ─── Divider ─── */
+  .section-divider {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    border-top: 2px solid #e5e8eb;
+  }
+  .section-divider h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+  }
+
+  /* ─── Annotated body ─── */
+  .annotated-body {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width);
+    gap: 2rem;
+    align-items: start;
+  }
+  .original-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  .original-text .author-byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .original-text .orig-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .original-text p {
+    margin-bottom: 1.2rem;
+  }
+
+  /* Highlighted spans in original text */
+  .annotated-span {
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    padding: 1px 2px;
+    border-radius: 2px;
+  }
+  .annotated-span:hover { filter: brightness(0.95); }
+  .annotated-span.red { background: var(--red-bg); border-bottom-color: var(--red); }
+  .annotated-span.orange { background: var(--orange-bg); border-bottom-color: var(--orange); }
+  .annotated-span.blue { background: var(--blue-bg); border-bottom-color: var(--blue); }
+  .annotated-span.gray { background: var(--gray-bg); border-bottom-color: var(--gray); }
+
+  /* Active highlight */
+  .annotated-span.active.red { background: #fecaca; }
+  .annotated-span.active.orange { background: #ccfbf1; }
+  .annotated-span.active.blue { background: #c7d2fe; }
+  .annotated-span.active.gray { background: #e7e5e4; }
+
+  /* ─── Margin notes ─── */
+  .margin-notes {
+    position: relative;
+  }
+  .margin-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 0.7rem 0.9rem;
+    border-left: 3px solid;
+    border-radius: 0 5px 5px 0;
+    margin-bottom: 0.8rem;
+    transition: opacity 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .margin-note .note-label {
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .margin-note.red { background: var(--red-bg); border-color: var(--red); }
+  .margin-note.red .note-label { color: var(--red); }
+  .margin-note.orange { background: var(--orange-bg); border-color: var(--orange); }
+  .margin-note.orange .note-label { color: var(--orange); }
+  .margin-note.blue { background: var(--blue-bg); border-color: var(--blue); }
+  .margin-note.blue .note-label { color: var(--blue); }
+  .margin-note.gray { background: var(--gray-bg); border-color: var(--gray); }
+  .margin-note.gray .note-label { color: var(--gray); }
+
+  .margin-note.active {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  .margin-note .note-source {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  .margin-note .note-source a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* Expandable evidence */
+  .note-evidence {
+    display: none;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+  .note-evidence.open { display: block; }
+  .evidence-toggle {
+    font-size: 0.75rem;
+    color: var(--blue);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    display: inline-block;
+    border: none;
+    background: none;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+  }
+  .evidence-toggle:hover { text-decoration: underline; }
+
+  /* ─── Closing section ─── */
+  .closing-section {
+    max-width: 780px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e5e8eb;
+  }
+  .closing-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .closing-section p {
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  /* ─── References ─── */
+  .references {
+    max-width: 780px;
+    margin: 2rem auto 4rem;
+    padding: 0 2rem;
+  }
+  .references h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+  }
+  .references ul {
+    list-style: none;
+    padding: 0;
+  }
+  .references li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+  .references li a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    .annotated-body {
+      grid-template-columns: 1fr;
+    }
+    .margin-notes {
+      order: 2;
+    }
+    :root { --sidebar-width: 100%; }
+  }
+
+  /* ─── Print ─── */
+  @media print {
+    .legend-bar { position: static; box-shadow: none; }
+    .margin-note { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════ HEADER -->
+<header class="page-header">
+  <h1>Annotated Edition</h1>
+  <p class="subtitle">"Why sex-ratios in majors might be more than just bias" by Luana Maroja — with line-by-line critical notes on factual accuracy, logical validity, and rhetorical method.</p>
+  <p class="meta" style="margin-top: 0.6rem;">Annotated by <strong style="color: #ecf0f1;">Chad M. Topaz</strong></p>
+  <p class="meta" style="margin-top: 0.8rem; max-width: 600px; margin-left: auto; margin-right: auto; font-style: italic;">Note: The op-ed frames gender as a strict male/female binary. Gender is more complex than that. This annotation engages with the essay's own framing where necessary, but that should not be read as endorsement of the binary.</p>
+  <p class="meta">
+    Op-ed: <a href="https://williamsrecord.com/472374/opinions/why-sex-ratios-in-majors-might-be-more-than-just-bias/" target="_blank">"Why sex-ratios in majors might be more than just bias"</a> by Luana Maroja (April 15, 2026)&ensp;·&ensp;
+    Responding to <a href="https://williamsrecord.com/472242/news/gender-gap-in-economics-department-persists-despite-faculty-interventions/" target="_blank">"Gender gap in economics department persists despite faculty interventions"</a> by Hadley Levenson (March 18, 2026)
+  </p>
+</header>
+
+<!-- ══════════════════════════════════════════════════ LEGEND -->
+<nav class="legend-bar" aria-label="Annotation color legend">
+  <span class="legend-item"><span class="legend-dot red"></span> Factually false or scientifically misleading</span>
+  <span class="legend-item"><span class="legend-dot orange"></span> Logic or reasoning failure</span>
+  <span class="legend-item"><span class="legend-dot blue"></span> Rhetorical manipulation</span>
+  <span class="legend-item"><span class="legend-dot gray"></span> Fair point, overstated or misused</span>
+</nav>
+
+<!-- ══════════════════════════════════════════════════ EXECUTIVE SUMMARY -->
+<section class="exec-summary">
+  <h2>Why this argument fails</h2>
+  <div class="summary-grid">
+    <div class="summary-point fatal">
+      <span class="sp-num">1</span>
+      <span><strong>Campus-wide arithmetic cannot diagnose a department-level problem.</strong> The essay argues that because Williams is roughly 50/50 male-female, some majors <em>must</em> skew male if others skew female — so concern about economics is misplaced. The math is trivially true. But it says nothing about <em>why</em> economics specifically skews 64/36, or whether that skew reflects a fixable climate problem rather than an inevitable law of nature.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">2</span>
+      <span><strong>The cited studies do not say what the essay claims they say.</strong> The essay invokes a meta-analysis of vocational interests (Su et al., 2009) as proof that preferences predict career choice "more accurately than discrimination." That study never measured discrimination. It also treats the "gender-equality paradox" (Stoet &amp; Geary, 2018) as settled, but the finding required a corrigendum and the correlation is not robust across alternative measures (Richardson et al., 2020).</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">3</span>
+      <span><strong>A field experiment directly challenges the fixed-preference story.</strong> The essay's core claim is that the economics gender gap reflects innate, largely immovable sex differences. But Porter &amp; Serra (2020) found that a single brief role-model visit nearly doubled women's likelihood of choosing an economics major — from 9% to 17%. That result is hard to reconcile with preferences being strongly fixed by biology.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">4</span>
+      <span><strong>The essay attacks proposals nobody made.</strong> A March 18 Record article reported on the economics gender gap and discussed interventions like advising, role models, and inclusive programming. This essay reframes those as "covert quotas," "lowered admission thresholds," and "grade inflation" — then tears down its own inventions.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">5</span>
+      <span><strong>A false dichotomy drives the whole argument.</strong> The essay frames the question as "bias <em>or</em> choice" and picks choice. But in practice, institutional environment shapes choice: what students are exposed to, who teaches them, how welcome they feel, and what information they receive all influence which majors they pursue. The essay treats bias and choice as mutually exclusive, then declares choice the winner without weighing the evidence for interaction.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">6</span>
+      <span><strong>Evolutionary speculation stands in for causal evidence.</strong> The essay leaps from mammalian reproductive biology — females bear higher parental costs, males compete for mates — to the claim that this explains why men outnumber women in the economics major at a small liberal arts college. The inferential gap between "sexual selection shaped some average behavioral tendencies" and "that's why Williams econ is 64/36" is enormous, and the essay never bridges it.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ DIVIDER -->
+<div class="section-divider">
+  <h2>The annotated text</h2>
+</div>
+
+<!-- ══════════════════════════════════════════════════ ANNOTATED BODY -->
+<section class="annotated-body">
+
+<!-- ─── Original text column ─── -->
+<div class="original-text">
+
+<p class="orig-title">Why sex-ratios in majors might be more than just bias</p>
+<p class="author-byline">Luana Maroja · The Williams Record</p>
+
+<!-- ¶1 -->
+<p>On March 18, the Record published a piece on sex-ratio imbalance — an excess of men — in the economics major <span class="annotated-span blue" data-note="n1">while ignoring similar or larger imbalances (including imbalances in the opposite direction) in other departments.</span> <span class="annotated-span orange" data-note="n2">But this is logic and math, pure and simple: In a college that is roughly 50 percent female, an excess of women in some majors (e.g., ~75 percent in biology and psychology in the class of 2026, based on a hand-count of departmental major rosters) must be balanced by an excess of men in others.</span> <span class="annotated-span blue" data-note="n3">Ultimately, this demand for equity (equal representation of the sexes in all majors) might be misguided.</span></p>
+
+<!-- ¶2 -->
+<p><span class="annotated-span blue" data-note="n4">Humans are not blank slates,</span> and many studies show that males and females have, on average, different preferences and behaviors which can affect their choice of major and profession. While some of these differences are influenced by societal norms, <span class="annotated-span red" data-note="n5">others have been molded by a billion years of the evolutionary process of sexual selection.</span> <span class="annotated-span gray" data-note="n6">True fairness in representation lies not in achieving parity, but in respecting individual preferences.</span></p>
+
+<!-- ¶3 -->
+<p>The persistent underrepresentation of women in economics (36 percent in the department's 2023 internal report) is real. But <span class="annotated-span blue" data-note="n7">the sources in the article try to explain this "imbalance" by lack of access, lack of incentives, or outright discrimination against women.</span> <span class="annotated-span red" data-note="n8">A more evidence-based explanation should include the awareness that sex differences in educational and vocational preferences have been documented across decades of psychological research.</span></p>
+
+<!-- ¶4 -->
+<p><span class="annotated-span gray" data-note="n9">It is undeniable that society's incentives and prohibitions guide what is a permissible career path for each sex.</span> However, as someone who studies evolutionary biology, I also note that <span class="annotated-span red" data-note="n10">millions of years of sexual selection have produced average differences in behavior and preferences between the sexes — differences that appear early, are cross-cultural, and persist even in the most egalitarian societies today.</span> Past sexual selection produced not only different body sizes and strengths, but also different behaviors. <span class="annotated-span gray" data-note="n11">In mammals, females bear the far higher reproductive costs — pregnancy, lactation, and extended parental investment — while male investment in most species is limited to a brief copulation and sperm delivery.</span> <span class="annotated-span orange" data-note="n12">Over millions of years, this asymmetry has favored greater male risk-taking, aggression, and drive for resources — all things that could enhance chances of acquiring a mate.</span></p>
+
+<!-- ¶5 -->
+<p>Females typically invest the most in offspring, making them the "limiting" or least available sex for reproduction, and thus the choosy sex. Sexual selection could thus have had some influence behind often-reported preference differences between sexes. <span class="annotated-span red" data-note="n13">Among humans, males are more "things-oriented," while females tend toward being "people-oriented."</span> <span class="annotated-span red" data-note="n14">These patterns appear early: Even young children's drawings reflect this tendency, with girls drawing people more often than do boys, who like to draw vehicles and machines.</span> <span class="annotated-span red" data-note="n15">Meta-analyses of vocational interests (the well-replicated "people vs. things" dimension) show large, cross-cultural sex differences that predict majors and career choices more accurately than discrimination.</span> <span class="annotated-span red" data-note="n16">There is even a well-known paradox: Differences in professional higher education choices are more sex-biased in richer and more equal countries — likely because in these countries, girls are freer to choose careers they love, rather than being motivated to make money to survive.</span></p>
+
+<!-- ¶6 -->
+<p><span class="annotated-span blue" data-note="n17">Society accepts — without outrage — majors and professions that are heavily female-dominated.</span> Today psychology and biology routinely exceed 60 to 80 percent female nationally, and fields such as nursing and several medical specialties are also overwhelmingly female. <span class="annotated-span blue" data-note="n18">We also do not lose sleep over male-dominated professions like policing or trucking.</span> <span class="annotated-span orange" data-note="n19">So, why single out economics (and, similarly, political science) for criticism when in fact the overall distribution of majors must balance out to result in an overall 50 percent of women in the College?</span></p>
+
+<!-- ¶7 -->
+<p><span class="annotated-span blue" data-note="n20">There is danger in assuming every inequality reflects bigotry rather than choice.</span> <span class="annotated-span blue" data-note="n21">Quick-fix "solutions," implemented at other colleges, such as covert quotas, lowered admission thresholds for women, or grade inflation to retain women, can backfire spectacularly.</span> <span class="annotated-span orange" data-note="n22">Consider a simplified "quota" illustration: Suppose there are 100 male applicants and 10 female applicants. In both groups, test scores average 50, ranging uniformly from 1 to 100. If all 10 women are admitted but only the top 10 men are (enforcing equal sex-ratio for limited number of vacancies), the women cohort's average score is still 50 while the men cohort's is now 95. In this hypothetical, the result would lead to greater gender equity but also to a visible achievement gap that reinforces the very stereotypes the intervention aimed to dismantle.</span></p>
+
+<!-- ¶8 -->
+<p><span class="annotated-span orange" data-note="n23">Similar logic applies to artificial grade support.</span> <span class="annotated-span gray" data-note="n24">As the Record article noted, female economics students who do not receive an A in the intro economics courses are less likely to continue with the major than male students who receive a grade lower than an A.</span> <span class="annotated-span orange" data-note="n25">Major choice, however, is driven by intrinsic preferences, which also shape performance.</span> <span class="annotated-span orange" data-note="n26">Thus, efforts to increase representation without addressing underlying preferences might lead to more harm than good.</span></p>
+
+<!-- ¶9 -->
+<p><span class="annotated-span blue" data-note="n27">We should aim for welcoming environments that respect individual preferences and celebrate excellence — whether that leads a student into economics, psychology, or anywhere else — rather than engineering outcomes that ignore the data on why students actually choose their educational paths.</span> <span class="annotated-span orange" data-note="n28">If we are comfortable with women dominating biology and psychology, we must be equally comfortable with men dominating economics and political science.</span></p>
+
+<p class="author-byline">Luana Maroja is a biology professor.</p>
+
+</div><!-- /original-text -->
+
+<!-- ─── Margin notes column ─── -->
+<div class="margin-notes">
+
+<div class="margin-note blue" id="n1">
+  <span class="note-label">Whataboutism</span>
+  A news article about economics need not survey every department. Criticizing it for having a defined scope deflects from the specific evidence it presents.
+</div>
+
+<div class="margin-note orange" id="n2">
+  <span class="note-label">Ecological fallacy</span>
+  The arithmetic is trivially true: at a 50/50 college, female-heavy majors must coexist with male-heavy ones. But that tells us nothing about <em>why</em> any particular major skews the way it does. Bias, climate, information gaps, or some mix could produce multiple distortions at once. System-level balance cannot show that a department-level problem is benign.
+</div>
+
+<div class="margin-note blue" id="n3">
+  <span class="note-label">Straw man</span>
+  The Record article asked why economics specifically skews male and what might help. It never called for "equal representation of the sexes in all majors." Fabricating that demand and then calling it "misguided" is a textbook straw man.
+  <span class="note-source">See the original: <a href="https://williamsrecord.com/472242/news/gender-gap-in-economics-department-persists-despite-faculty-interventions/" target="_blank">Williams Record, March 18</a></span>
+</div>
+
+<div class="margin-note blue" id="n4">
+  <span class="note-label">Straw man</span>
+  Almost no serious researcher holds a "blank slate" position. The mainstream view in psychology and neuroscience is that biology and environment interact. Attacking an extreme position few hold makes the author's own view look moderate by contrast.
+</div>
+
+<div class="margin-note red" id="n5">
+  <span class="note-label">Misleading timescale</span>
+  Sexual reproduction is ancient, but behavioral traits relevant to human career preferences have not been under selection for "a billion years." Mammals are ~200 million years old; primates ~60–80 million; the hominin lineage ~6–7 million. "A billion years" trades on scientific grandeur while implying a far stronger causal link than any evidence supports. Two paragraphs later the author herself writes "millions of years," contradicting her own figure.
+</div>
+
+<div class="margin-note gray" id="n6">
+  <span class="note-label">Fair point, but misused</span>
+  Respecting individual preferences is an unobjectionable principle. But this sentence does motte-and-bailey work: it offers a retreat position ("just let people choose!") that conceals the essay's bolder claim — that the economics gender gap is mainly biological and interventions are harmful.
+</div>
+
+<div class="margin-note blue" id="n7">
+  <span class="note-label">Scare-quote delegitimization</span>
+  Placing "imbalance" in scare quotes signals that the concept itself should not be taken seriously — dismissing the problem before engaging with it. The Record article cited peer-reviewed research, not ideology.
+</div>
+
+<div class="margin-note red" id="n8">
+  <span class="note-label">Unsupported claim</span>
+  Calling biological preferences "a more evidence-based explanation" while dismissing research on access, incentives, and discrimination is a rhetorical assertion of superiority, not an empirical one. The research literature on women in economics documents climate problems, grade sensitivity tied to belonging uncertainty, and the effectiveness of targeted interventions.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Lundberg &amp; Stearns (2019) review decades of evidence on women's attrition from economics, documenting that the leaky pipeline involves climate, advising, and grading norms — not merely "preferences." Bayer &amp; Rouse (2016) document the profession's specific climate problems.
+  </div>
+</div>
+
+<div class="margin-note gray" id="n9">
+  <span class="note-label">Fair point, quickly abandoned</span>
+  This concession — that society shapes career paths — gets immediately overridden by the "However" that follows. The essay never returns to weigh societal factors against biological ones. It works as rhetorical inoculation: acknowledge the other side briefly, then spend the rest of the essay dismissing it.
+</div>
+
+<div class="margin-note red" id="n10">
+  <span class="note-label">Speculative causal leap</span>
+  The claim that sex differences "persist even in the most egalitarian societies today" leans on the contested Stoet &amp; Geary (2018) "gender-equality paradox" — a paper that required a corrigendum correcting multiple errors and whose central correlation is not robust across reasonable alternative gender-equality measures (Richardson et al., 2020: r<sub>s</sub> = −.075, p = .518 with BIGI). Presenting this as settled fact misleads the reader.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Richardson et al. (2020) showed that replacing the GGGI with the Basic Index of Gender Inequality (BIGI) yielded a nonsignificant correlation between national gender equality and women's STEM underrepresentation. The result is sensitive to which equality measure and which countries are included — not the hallmark of a robust finding.
+  </div>
+</div>
+
+<div class="margin-note gray" id="n11">
+  <span class="note-label">Accurate biology, irrelevant application</span>
+  The description of mammalian reproductive asymmetry is broadly correct. The inferential leap that follows is the problem: from "female mammals bear higher parental costs" to "men choose economics." That chain skips the vast complexity of human cultural transmission, institution-building, and socialization.
+</div>
+
+<div class="margin-note orange" id="n12">
+  <span class="note-label">Non sequitur</span>
+  Grant that sexual selection shaped some average behavioral tendencies. The link from "male risk-taking and resource drive" to "men choose economics over biology" still does not follow. Biology involves competitive grant-seeking, fieldwork risk, and career uncertainty. Economics holds no monopoly on "risk" or "resource orientation" among academic fields. The mapping from evolved tendencies to specific modern majors is asserted, not demonstrated.
+</div>
+
+<div class="margin-note red" id="n13">
+  <span class="note-label">Oversimplification</span>
+  The people/things dimension is real, but it is a population-level average with large overlap between sexes. Su et al. (2009) measured interest <em>inventories</em>, not actual career or major choices, and the overall d = 0.93 on Things–People shrinks considerably for specific fields (e.g., d = 0.36 for science interests). Presenting the broadest dimension as though it maps directly onto who majors in economics elides this crucial detail.
+  <span class="note-source">Su, Rounds, &amp; Armstrong (2009), <em>Psychological Bulletin</em>, 135(6), 859–884.</span>
+</div>
+
+<div class="margin-note red" id="n14">
+  <span class="note-label">Confound ignored</span>
+  Even very young children receive gendered toys, clothing, media, and adult modeling from birth. Drawing studies cannot cleanly distinguish "innate" from "very early socialization" — that would require far more controlled experimental designs than observing what kids sketch.
+</div>
+
+<div class="margin-note red" id="n15">
+  <span class="note-label">Fabricated claim</span>
+  The essay's most consequential misrepresentation. Su, Rounds, &amp; Armstrong (2009) document sex differences in vocational <em>interests</em>. They do <strong>not</strong> pit preferences against discrimination in a predictive contest. The comparative claim — "more accurately than discrimination" — is the author's invention, not anything the cited study found.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Su et al. (2009) measured the magnitude and variability of sex differences across Holland/RIASEC interest categories. The study does not measure discrimination at all, let alone compare its predictive power to that of interests. The study concludes that sex differences in interests are large on the Things–People dimension and may contribute to occupational segregation — not that they outperform discrimination as an explanation.
+  </div>
+</div>
+
+<div class="margin-note red" id="n16">
+  <span class="note-label">Contested finding presented as settled</span>
+  The "gender-equality paradox" (Stoet &amp; Geary, 2018) gets treated here as established fact with an obvious interpretation. In reality: (1) the paper required a corrigendum correcting data errors; (2) Richardson et al. (2020) showed the correlation is not significant under BIGI, a different gender-equality index; (3) the preferred causal story — that equality "frees" women to follow innate preferences — is one of several possible readings and remains unestablished.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Stoet &amp; Geary's corrigendum (2019) corrected the description of their propensity measure, data for China, and figure labels. Richardson et al. (2020) replaced the GGGI with the BIGI and found r<sub>s</sub> = −.075, p = .518 for 77 countries — effectively no relationship. They concluded that "these patterns tell us little about global, causal relationships between nation-level measures of gender equality and women in STEM."
+  </div>
+</div>
+
+<div class="margin-note blue" id="n17">
+  <span class="note-label">Unsupported premise</span>
+  "Society accepts — without outrage" is an empirical claim about public attitudes, offered without evidence. True or not, it does rhetorical work: it makes concern about economics look uniquely irrational, when the real question is whether a <em>particular</em> field has specific, documented problems worth addressing.
+</div>
+
+<div class="margin-note blue" id="n18">
+  <span class="note-label">False equivalence</span>
+  Comparing economics to trucking and policing ignores vast differences in prestige, compensation, policy influence, and documented climate dynamics. Different fields can have different causal stories behind their gender gaps. Male-dominated blue-collar work tells us nothing about whether the Williams economics department has a climate that discourages women.
+</div>
+
+<div class="margin-note orange" id="n19">
+  <span class="note-label">Logical error repeated</span>
+  This is the ecological fallacy from paragraph one, restated as a rhetorical question. "The distribution must balance out" is not an argument that any particular imbalance is caused by preference rather than environment. The arithmetic constraint says nothing about the causal story at any specific department.
+</div>
+
+<div class="margin-note blue" id="n20">
+  <span class="note-label">Straw man / loaded framing</span>
+  "Assuming every inequality reflects bigotry" is a position the Record article never took. That article reported evidence on grade sensitivity and climate, and discussed advising and role-model interventions. Reframing measured concern as an assumption of universal bigotry is a straw man wrapped in loaded language.
+</div>
+
+<div class="margin-note blue" id="n21">
+  <span class="note-label">Poisoning the well</span>
+  "Covert quotas, lowered admission thresholds, grade inflation" — the Record article proposed none of these. It discussed information sessions, advising, female role models, and inclusive programming. This sentence links equity efforts to the most disreputable possible versions of intervention, priming the reader to equate concern about the gender gap with corruption or lowered standards.
+  <span class="note-source">See the original: <a href="https://williamsrecord.com/472242/news/gender-gap-in-economics-department-persists-despite-faculty-interventions/" target="_blank">Williams Record, March 18</a></span>
+</div>
+
+<div class="margin-note orange" id="n22">
+  <span class="note-label">Rigged hypothetical</span>
+  A thought experiment built to make intervention look absurd. It assumes an extreme 10:1 applicant ratio, admits all women regardless of score while taking only top men, and treats the intervention as quota-based admission rather than recruitment, mentoring, or climate improvement. None of this resembles anything the Record article discussed. A more realistic scenario — modest outreach increasing the female applicant pool — would likely produce an entirely different result.
+</div>
+
+<div class="margin-note orange" id="n23">
+  <span class="note-label">Bait-and-switch</span>
+  The Record article discussed supportive emails, advising, role models, and inclusion efforts — not "artificial grade support" or grade inflation. Recasting those interventions as grade manipulation is a misrepresentation of the actual discussion.
+</div>
+
+<div class="margin-note gray" id="n24">
+  <span class="note-label">Real finding, multiple interpretations</span>
+  The grade-sensitivity finding is genuine. But its interpretation is contested: it could reflect lower confidence, stereotype threat, belonging uncertainty, advising patterns, perceived returns to effort, or classroom climate — not only "intrinsic preferences." Lundberg &amp; Stearns (2019) review multiple mechanisms.
+</div>
+
+<div class="margin-note orange" id="n25">
+  <span class="note-label">Begging the question</span>
+  "Major choice is driven by intrinsic preferences, which also shape performance" is the contested claim, stated as though it were settled. Whether observed preferences are substantially innate or shaped by institutional environment is exactly what the debate is about. The argument is circular: it assumes the conclusion it needs to prove.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Porter &amp; Serra (2020) showed that a single 15-minute role-model visit nearly doubled women's likelihood of choosing economics as a major (from 9% to 17% baseline). That result is hard to reconcile with a strongly fixed-preference account, though the authors note that disentangling channels (information vs. inspiration) is left for future work. The finding is consistent with preferences being substantially shaped by context, belonging cues, and role models.
+  </div>
+</div>
+
+<div class="margin-note orange" id="n26">
+  <span class="note-label">Non sequitur</span>
+  Even if preferences play a role, it does not follow that environmental interventions produce "more harm than good." The essay never weighs harms from <em>inaction</em> — talented women discouraged from economics by a fixable climate, a loss of human capital and individual flourishing. Worrying about intervention harms while ignoring status-quo harms is not balanced analysis.
+</div>
+
+<div class="margin-note blue" id="n27">
+  <span class="note-label">Motte-and-bailey conclusion</span>
+  "Welcoming environments that respect individual preferences" is the unobjectionable motte — almost no one disagrees. But the essay's actual argument (the bailey) has been that biological sex differences largely explain the economics gap, that interventions resemble quotas and grade inflation, and that equity efforts may do "more harm than good." The conclusion retreats to safe ground after spending the entire essay discrediting those efforts.
+</div>
+
+<div class="margin-note orange" id="n28">
+  <span class="note-label">Symmetry fallacy</span>
+  This assumes the causes are symmetric across fields. But if economics has documented hostile-climate problems that biology does not (or vice versa), comfort with one outcome does not logically require comfort with the other. Different departments can have different causal stories. The parallel is assumed, not demonstrated.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    The AEA's own 2019 Professional Climate Survey (Table 2) found that only 20% of female economists agreed or strongly agreed they were satisfied with the overall climate in the field, compared to 40% of men. Table 3 shows that 48% of female respondents reported personally experiencing discrimination or unfair treatment based on sex, compared to 3% of men. The essay offers no comparable field-specific climate evidence for biology or psychology. The symmetry it assumes is asserted, not demonstrated.
+  </div>
+</div>
+
+</div><!-- /margin-notes -->
+</section><!-- /annotated-body -->
+
+<!-- ══════════════════════════════════════════════════ CLOSING -->
+<section class="closing-section">
+  <h2>What a responsible version of this argument would have had to say</h2>
+
+  <p>A serious essay on this topic would acknowledge that average sex differences in vocational interests exist — while also noting these are population-level averages with large overlap, that their magnitude varies by subfield, and that getting from "average interest difference" to "64/36 representation in one department" requires accounting for many mediating factors.</p>
+
+  <p>It would engage with experimental evidence that information, role models, and climate interventions can substantially shift women's economics enrollment. Porter and Serra's (2020) field experiment found that a single brief role-model visit nearly doubled women's likelihood of majoring in economics. That result is hard to square with a strongly fixed-preference account.</p>
+
+  <p>It would address the documented climate problems specific to economics — the AEA's own 2019 survey found that 48% of female economists reported sex-based discrimination and only 20% were satisfied with the field's climate (Tables 2–3) — rather than asserting the gap must reflect preference because biology and psychology are female-dominated.</p>
+
+  <p>It would describe the <em>actual</em> interventions discussed in the Record article — advising, role models, inclusive programming — instead of substituting "covert quotas" and "grade inflation."</p>
+
+  <p>And it would reckon with a basic fact: if you claim "interventions to increase women in economics may do more harm than good," you need to show you have seriously weighed the harms of doing nothing. This essay never does.</p>
+</section>
+
+<!-- ══════════════════════════════════════════════════ REFERENCES -->
+<section class="references">
+  <h2>References</h2>
+  <ul>
+    <li>American Economic Association. (2019). AEA Professional Climate Survey: Main findings. <a href="https://www.aeaweb.org/resources/member-docs/climate-survey-results-2019" target="_blank">aeaweb.org</a></li>
+    <li>Bayer, A., &amp; Rouse, C. E. (2016). Diversity in the economics profession: A new attack on an old problem. <em>Journal of Economic Perspectives</em>, 30(4), 221–242. <a href="https://doi.org/10.1257/jep.30.4.221" target="_blank">doi:10.1257/jep.30.4.221</a></li>
+    <li>Lundberg, S., &amp; Stearns, J. (2019). Women in economics: Stalled progress. <em>Journal of Economic Perspectives</em>, 33(1), 3–22. <a href="https://doi.org/10.1257/jep.33.1.3" target="_blank">doi:10.1257/jep.33.1.3</a></li>
+    <li>Porter, C., &amp; Serra, D. (2020). Gender differences in the choice of major: The importance of female role models. <em>American Economic Journal: Applied Economics</em>, 12(3), 226–254. <a href="https://doi.org/10.1257/app.20180426" target="_blank">doi:10.1257/app.20180426</a></li>
+    <li>Richardson, S. S., Reiches, M. W., Bruch, J., Boulicault, M., Noll, N. E., &amp; Shattuck-Heidorn, H. (2020). Is there a gender-equality paradox in science, technology, engineering, and math (STEM)? Commentary on the study by Stoet and Geary (2018). <em>Psychological Science</em>, 31(3), 338–341. <a href="https://doi.org/10.1177/0956797619872762" target="_blank">doi:10.1177/0956797619872762</a></li>
+    <li>Stoet, G., &amp; Geary, D. C. (2018). The gender-equality paradox in science, technology, engineering, and mathematics education. <em>Psychological Science</em>, 29(4), 581–593. <a href="https://doi.org/10.1177/0956797617741719" target="_blank">doi:10.1177/0956797617741719</a></li>
+    <li>Stoet, G., &amp; Geary, D. C. (2019). Corrigendum: The gender-equality paradox in science, technology, engineering, and mathematics education. <em>Psychological Science</em>. <a href="https://doi.org/10.1177/0956797619892892" target="_blank">doi:10.1177/0956797619892892</a></li>
+    <li>Su, R., Rounds, J., &amp; Armstrong, P. I. (2009). Men and things, women and people: A meta-analysis of sex differences in interests. <em>Psychological Bulletin</em>, 135(6), 859–884. <a href="https://doi.org/10.1037/a0017364" target="_blank">doi:10.1037/a0017364</a></li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════════════ JS -->
+<script>
+  // Highlight connection between text spans and margin notes
+  document.querySelectorAll('.annotated-span').forEach(span => {
+    const noteId = span.dataset.note;
+    const note = document.getElementById(noteId);
+    if (!note) return;
+
+    span.addEventListener('mouseenter', () => {
+      span.classList.add('active');
+      note.classList.add('active');
+      note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    span.addEventListener('mouseleave', () => {
+      span.classList.remove('active');
+      note.classList.remove('active');
+    });
+    span.addEventListener('click', () => {
+      note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    note.addEventListener('mouseenter', () => {
+      span.classList.add('active');
+      note.classList.add('active');
+    });
+    note.addEventListener('mouseleave', () => {
+      span.classList.remove('active');
+      note.classList.remove('active');
+    });
+  });
+
+  // Toggle expandable evidence sections
+  function toggleEvidence(btn) {
+    const evidence = btn.nextElementSibling;
+    if (evidence.classList.contains('open')) {
+      evidence.classList.remove('open');
+      btn.textContent = 'Show evidence ▸';
+    } else {
+      evidence.classList.add('open');
+      btn.textContent = 'Hide evidence ▾';
+    }
+  }
+</script>
+
+</body>
+</html>
