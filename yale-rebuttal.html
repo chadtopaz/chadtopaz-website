@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotated Edition: Report of the Committee on Trust in Higher Education (Yale University, 2026)</title>
+<meta name="description" content="Line-by-line critical analysis of the Yale Committee's Trust in Higher Education Report. Annotated by Chad M. Topaz.">
+<meta property="og:title" content="Annotated Edition: Yale Trust Report (2026)">
+<meta property="og:description" content="Critical analysis of the Committee on Trust in Higher Education report. Annotated by Chad M. Topaz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.chadtopaz.com/yale-rebuttal.html">
+<meta property="og:site_name" content="Chad M. Topaz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Annotated Edition: Yale Trust Report (2026)">
+<meta name="twitter:description" content="Critical analysis of the Committee on Trust in Higher Education report. Annotated by Chad M. Topaz.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --red: #991b1b;
+    --red-bg: #fef2f2;
+    --red-border: #e6b0aa;
+    --orange: #0f766e;
+    --orange-bg: #f0fdfa;
+    --orange-border: #99f6e4;
+    --blue: #4338ca;
+    --blue-bg: #eef2ff;
+    --blue-border: #a5b4fc;
+    --gray: #6b6560;
+    --gray-bg: #f5f5f4;
+    --gray-border: #d6d3d1;
+    --text: #2c3e50;
+    --text-light: #5d6d7e;
+    --bg: #fdfcfb;
+    --sidebar-width: 380px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* ─── Header ─── */
+  .page-header {
+    background: #1b2631;
+    color: #ecf0f1;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .page-header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: #aeb6bf;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .page-header .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 1.2rem;
+  }
+  .page-header .meta a {
+    color: #85c1e9;
+    text-decoration: none;
+    border-bottom: 1px dotted #85c1e9;
+  }
+  .page-header .meta a:hover { color: #fff; border-color: #fff; }
+
+  /* ─── Legend ─── */
+  .legend-bar {
+    background: #fff;
+    border-bottom: 1px solid #e5e8eb;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-dot.red { background: var(--red); border-radius: 50%; }
+  .legend-dot.orange { background: var(--orange); border-radius: 2px; }
+  .legend-dot.blue { background: var(--blue); border-radius: 0; transform: rotate(45deg); width: 10px; height: 10px; }
+  .legend-dot.gray { background: var(--gray); }
+
+  /* ─── Executive summary ─── */
+  .exec-summary {
+    max-width: 780px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+  .exec-summary h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .exec-summary .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .summary-point {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .summary-point .sp-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .summary-point.fatal { background: var(--red-bg); }
+  .summary-point.fatal .sp-num { background: var(--red); }
+  .summary-point.structural { background: var(--orange-bg); }
+  .summary-point.structural .sp-num { background: var(--orange); }
+
+  /* ─── Divider ─── */
+  .section-divider {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    border-top: 2px solid #e5e8eb;
+  }
+  .section-divider h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+  }
+
+  /* ─── Annotated body ─── */
+  .annotated-body {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width);
+    gap: 2rem;
+    align-items: start;
+  }
+  .original-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  .original-text .author-byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .original-text .orig-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .original-text p {
+    margin-bottom: 1.2rem;
+  }
+
+  /* Highlighted spans in original text */
+  .annotated-span {
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    padding: 1px 2px;
+    border-radius: 2px;
+  }
+  .annotated-span:hover { filter: brightness(0.95); }
+  .annotated-span:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 2px; }
+  .annotated-span.red { background: var(--red-bg); border-bottom-color: var(--red); }
+  .annotated-span.orange { background: var(--orange-bg); border-bottom-color: var(--orange); }
+  .annotated-span.blue { background: var(--blue-bg); border-bottom-color: var(--blue); }
+  .annotated-span.gray { background: var(--gray-bg); border-bottom-color: var(--gray); }
+
+  /* Active highlight */
+  .annotated-span.active.red { background: #fecaca; }
+  .annotated-span.active.orange { background: #ccfbf1; }
+  .annotated-span.active.blue { background: #c7d2fe; }
+  .annotated-span.active.gray { background: #e7e5e4; }
+
+  /* ─── Analysis spans (our commentary, not direct quotes) ─── */
+  .analysis {
+    font-style: italic;
+    font-size: 0.97em;
+    color: #444;
+  }
+
+  /* ─── Margin notes ─── */
+  .margin-notes {
+    position: relative;
+  }
+  .margin-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 0.7rem 0.9rem;
+    border-left: 3px solid;
+    border-radius: 0 5px 5px 0;
+    margin-bottom: 0.8rem;
+    transition: opacity 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .margin-note .note-label {
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .margin-note.red { background: var(--red-bg); border-color: var(--red); }
+  .margin-note.red .note-label { color: var(--red); }
+  .margin-note.orange { background: var(--orange-bg); border-color: var(--orange); }
+  .margin-note.orange .note-label { color: var(--orange); }
+  .margin-note.blue { background: var(--blue-bg); border-color: var(--blue); }
+  .margin-note.blue .note-label { color: var(--blue); }
+  .margin-note.gray { background: var(--gray-bg); border-color: var(--gray); }
+  .margin-note.gray .note-label { color: var(--gray); }
+
+  .margin-note.active {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  .margin-note .note-source {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  .margin-note .note-source a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* Expandable evidence */
+  .note-evidence {
+    display: none;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+  .note-evidence.open { display: block; }
+  .evidence-toggle {
+    font-size: 0.75rem;
+    color: var(--blue);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    display: inline-block;
+    border: none;
+    background: none;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+  }
+  .evidence-toggle:hover { text-decoration: underline; }
+
+  /* ─── Closing section ─── */
+  .closing-section {
+    max-width: 780px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e5e8eb;
+  }
+  .closing-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .closing-section p {
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  /* ─── References ─── */
+  .references {
+    max-width: 780px;
+    margin: 2rem auto 4rem;
+    padding: 0 2rem;
+  }
+  .references h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+  }
+  .references ul {
+    list-style: none;
+    padding: 0;
+  }
+  .references li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+  .references li a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 900px) {
+    .annotated-body {
+      grid-template-columns: 1fr;
+    }
+    .margin-notes {
+      order: 2;
+    }
+    :root { --sidebar-width: 100%; }
+  }
+
+  /* ─── Print ─── */
+  @media print {
+    .legend-bar { position: static; box-shadow: none; }
+    .margin-note { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════ HEADER -->
+<header class="page-header">
+  <h1>Annotated Edition</h1>
+  <p class="subtitle">Line-by-line critical notes on factual accuracy, logical validity, and rhetorical method.</p>
+  <p class="meta" style="margin-top: 1rem;">Annotated by <a href="https://www.chadtopaz.com" style="color: #ecf0f1; font-weight: 700; border-bottom: 1px dotted #85c1e9;">Chad M. Topaz</a>, author of <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank" rel="noopener noreferrer" style="color: #85c1e9; border-bottom: 1px dotted #85c1e9;"><em>Unlocking Justice</em></a></p>
+  <p class="meta" style="margin-top: 1rem; line-height: 1.8;">
+    Full report:<br>
+    <a href="https://president.yale.edu/posts/2026-04-15-report-of-the-committee-on-trust-in-higher-education" target="_blank" rel="noopener noreferrer"><em>Report of the Committee on Trust in Higher Education</em></a><br>
+    Yale University, April 10, 2026
+  </p>
+</header>
+
+<!-- ══════════════════════════════════════════════════ LEGEND -->
+<nav class="legend-bar" aria-label="Annotation color legend">
+  <span class="legend-item"><span class="legend-dot red"></span> Factually false or misleading</span>
+  <span class="legend-item"><span class="legend-dot orange"></span> Logic or reasoning failure</span>
+  <span class="legend-item"><span class="legend-dot blue"></span> Rhetorical manipulation</span>
+  <span class="legend-item"><span class="legend-dot gray"></span> Fair point, overstated or misused</span>
+</nav>
+
+<!-- ══════════════════════════════════════════════════ EXECUTIVE SUMMARY -->
+<section class="exec-summary">
+  <h2>Where this report falls short</h2>
+  <div class="summary-grid">
+    <div class="summary-point fatal">
+      <span class="sp-num">1</span>
+      <span><strong>The report cherry-picks its own sources.</strong> The Brookings/Looney paper is cited for the claim that tuition has "more than doubled" — but the paper's central finding is that net tuition (what students actually pay) is "essentially unchanged since the 1990s." The report leads with the most alarming number while relegating the source's central counterargument to a brief later mention.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">2</span>
+      <span><strong>The report's own cited source undermines its SAT recommendation.</strong> The committee cites Alvero et al. (2021) to argue that essays "pose their own problems." But that paper finds that essay topic features predict household income better than SAT composite scores do (R² = .16 vs. .12). The report then recommends a minimum SAT score — the very instrument its own source shows is also income-stratified.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">3</span>
+      <span><strong>Key cultural claims rest on an opt-in survey the study itself flags as non-representative.</strong> The claim that "more than half of college students feel intimidated" comes from the Buckley Institute's National Undergraduate Study — which uses a self-selected online panel and explicitly states that "no estimates of sampling error can be calculated."</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">4</span>
+      <span><strong>"Trust" is never defined, creating a moving target.</strong> The report's central concept conflates at least four distinct phenomena: economic confidence (is a degree worth the cost?), procedural trust (are admissions fair?), epistemic trust (does the university pursue truth?), and ideological alignment (do I approve of what's taught?). These have different causes and solutions, but the report treats "trust" as a single quantity.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">5</span>
+      <span><strong>The committee was assembled with no disclosed selection criteria.</strong> President McInnis convened the committee, asking all 10 members to serve — all tenured senior Yale faculty — with no disclosed criteria. No untenured faculty, students, staff, alumni, or anyone outside Yale. The report calls for transparency while providing none about its own composition.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">6</span>
+      <span><strong>Unsupported causal claims pervade the document.</strong> Committee impressions from listening sessions are repeatedly presented as empirical findings. "Nearly everyone agreed," "large numbers of students," "no greater threat" — sweeping claims the report offers without proportionate evidence. What the committee heard becomes what the data shows.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">7</span>
+      <span><strong>Because the report relies so heavily on judgment rather than evidence, who the authors are matters.</strong> President McInnis convened the committee — all tenured senior faculty, no disclosed selection criteria. Several members have extensive public records on topics the report addresses, including free speech, academic freedom, and law-and-economics approaches to governance. The report's reliance on committee impressions rather than data makes these compositional choices substantive, not merely symbolic. (<a href="#committee-profiles" style="color: inherit;">See full profiles below.</a>)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ DIVIDER -->
+<div class="section-divider">
+  <h2>The annotated text</h2>
+</div>
+
+<!-- ══════════════════════════════════════════════════ ANNOTATED BODY -->
+<section class="annotated-body">
+
+<!-- ─── Original text column ─── -->
+<div class="original-text">
+
+<p class="orig-title">Report of the Committee on Trust in Higher Education: Key Passages</p>
+<p class="author-byline">Selected annotations from the Yale Committee Report (April 10, 2026)</p>
+<p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: #888; margin-bottom: 1.5rem; line-height: 1.5; border-left: 3px solid #ddd; padding-left: 0.8rem;">Text in roman type is quoted directly from the report. <em>Italic text is our analysis.</em> Color-coded highlighting indicates the type of issue; margin notes provide detailed evidence.</p>
+
+<!-- Section 1: Trust in Higher Education -->
+
+<p><strong>Section 1: Identifying the Crisis</strong></p>
+
+<p><span class="annotated-span blue" data-note="n1">"Our committee identified three immediate factors behind the rise of public distrust. The first involves the soaring price of higher education…. The second focuses on the college admissions system…. The third includes an array of issues about what is said and taught on university campuses."</span> <span class="annotated-span orange analysis" data-note="n2">The report opens with national polling data showing declining confidence in all colleges, then pivots to Yale-specific recommendations without establishing that Yale's problems match the national trend or that fixing Yale would address national concerns.</span></p>
+
+<p><em class="analysis" style="font-size:0.97em; color:#444;">The report claims:</em> <span class="annotated-span red" data-note="n3">"No sector of higher education faces greater public skepticism than the Ivy League"</span> — <em class="analysis" style="font-size:0.97em; color:#444;">a claim resting on a private AAU presentation not available to readers.</em> <span class="annotated-span blue analysis" data-note="n1b">The framing of a national crisis creates urgency for institutional self-examination, but the report never clarifies whether Yale's specific role warrants the 20 recommendations that follow.</span></p>
+
+<p><span class="annotated-span red analysis" data-note="n2b">The report treats the decline in public trust as a uniform, organic response to institutional failures — but does not seriously examine whether political actors have driven the decline. This is a significant omission.</span></p>
+
+<!-- Section 2: The Committee -->
+
+<p><strong>Section 2: Committee Composition and Process</strong></p>
+
+<p><span class="annotated-span blue" data-note="n4">"We were also acutely aware that the protections of tenure gave us both the ability and the obligation to speak frankly."</span> <span class="annotated-span red analysis" data-note="n5">But President McInnis formed the committee herself, asking all ten members to serve — all tenured senior faculty — with no disclosed selection criteria. All members are professors; no untenured faculty, graduate students, postdocs, undergraduates, staff, alumni, or external experts were included.</span> <span class="annotated-span orange analysis" data-note="n5b">A committee tasked with examining trust began by operating in opacity about its own composition.</span></p>
+
+<!-- Section 4: Cost -->
+
+<p><strong>Section 4: The Cost Problem</strong></p>
+
+<p><span class="annotated-span red" data-note="n6">"Over the past three decades, the average sticker price of undergraduate tuition at American colleges and universities, adjusted for inflation, has more than doubled."</span> <span class="annotated-span red analysis" data-note="n6b">This is factually accurate — Looney documents a 114% increase — but the cited paper's central finding is that net tuition (what families actually pay after aid) rose only 46%, and after accounting for tax benefits remains "essentially unchanged since the 1990s." The report leads with the most alarming number while giving minimal weight to the paper's central finding — that net costs have barely changed.</span></p>
+
+<p><span class="annotated-span blue" data-note="n7">"But it has had a disastrous impact on public trust. By its nature, the system is complicated, unpredictable, secretive, and highly variable."</span> <span class="annotated-span orange" data-note="n8">"According to the U.S. Department of Education, almost a quarter of all Americans with federal student loans are currently in default, the highest rate since the federal government began keeping track."</span> <span class="annotated-span orange analysis" data-note="n8b">But 88% of Yale undergraduates graduate debt-free (per Yale's admissions data for the class of 2024). Invoking a national student loan crisis in a section about Yale's cost is misleading — the national problem is real but largely irrelevant to Yale specifically.</span></p>
+
+<!-- Section 5: Admissions -->
+
+<p><strong>Section 5: Admissions and Equity</strong></p>
+
+<p><span class="annotated-span red" data-note="n9">"One widely cited paper finds that, conditional on SAT/ACT scores, applicants from families in the top 1 percent of the income distribution are substantially more likely to be admitted to highly selective private colleges than are middle- or upper-middle-income applicants with similar academic credentials."</span> <span class="annotated-span red analysis" data-note="n9b">The paper's finding is more dramatic than the report lets on: applicants from top-1% families are 58% more likely to be admitted than middle-class applicants with comparable test scores (p. 55), and more than twice as likely to attend an Ivy-Plus college (abstract). "Substantially more likely" understates the magnitude. The decomposition attributes 24% to athletics recruiting, 46% to legacy preferences, and 30% to other non-academic factors.</span></p>
+
+<p><span class="annotated-span orange" data-note="n10">"The current admissions system is effective at yielding a class of talented students; it works well for those who get in."</span> <span class="annotated-span orange analysis" data-note="n10b">This is survivorship bias — treating the existence of successful admits as evidence that the system works well overall, without defining what "works well" means or providing comparative outcome data.</span></p>
+
+<p><span class="annotated-span red" data-note="n11">"Whatever else holistic review allows Yale to take into account, the absence of any clear academic standard is difficult to reconcile with a mission built on academic excellence."</span> <span class="annotated-span red analysis" data-note="n11b">Yale's own admissions page lists "Academic ability" as a primary category and describes holistic review. The absence of a published floor is not the absence of an academic standard.</span></p>
+
+<p><span class="annotated-span red" data-note="n12">"Research suggests that qualitative measures, such as student essays, pose their own problems." <span class="analysis">The committee then recommends:</span> "A floor such as a minimum SAT score or a Yale-specific entrance exam would ensure that no student is admitted without the requisite academic preparation and ability."</span> <span class="annotated-span red analysis" data-note="n12b">But Alvero et al.'s central finding is that essay features are themselves strongly stratified by socioeconomic class — and in fact are <em>more</em> predictive of household income than SAT scores are (essay topics R² = .16 vs. SAT R² = .12 for predicting income). The paper does not support treating standardized tests as a class-neutral remedy. The report's own source undermines its recommendation.</span></p>
+
+<!-- Section 6: Free Speech -->
+
+<p><strong>Section 6: Campus Speech and Belonging</strong></p>
+
+<p><span class="annotated-span blue" data-note="n13">"The very word 'Halloween' remains charged around campus. Few episodes have done more to raise public questions about Yale's commitment to freedom of expression and open, reasoned debate."</span> <span class="annotated-span blue analysis" data-note="n13b">"Few episodes have done more" is a dramatic claim without supporting evidence. The statement invokes a single incident from 2015 as if its significance is self-evident, adopting one side's interpretation while claiming to describe fact.</span></p>
+
+<p><span class="annotated-span red" data-note="n14">"A recent Buckley Institute survey suggested that more than half of college students nationwide feel 'intimidated in sharing their opinions, ideas, or beliefs in class.'"</span> <span class="annotated-span red analysis" data-note="n14b">The 53% figure is accurate, but the underlying study uses a self-selected online panel, not a probability sample. The study itself states: "Because the sample is based on those who initially self-selected for participation rather than a probability sample, no estimates of sampling error can be calculated." The report treats an unverifiable survey finding as empirical fact.</span></p>
+
+<p><span class="annotated-span orange" data-note="n15">"In a 2025 survey by the university, nearly a third of undergraduate respondents disagreed with the statement that 'I feel free to express my political beliefs on campus,' up from 17 percent in 2015."</span> <span class="annotated-span orange analysis" data-note="n15b">These figures measure whether students "feel free to express political beliefs" — a construct that relates to but is not identical to "self-censorship." Feeling socially uncomfortable is not the same as being censored.</span></p>
+
+<p><span class="annotated-span orange analysis" data-note="n16">The report discusses student discomfort, faculty career anxieties, and international students' fears of government retaliation as a single phenomenon.</span> <span class="annotated-span orange analysis" data-note="n16b">These are distinct phenomena with different power dynamics and different solutions. Conflating peer social pressure with state surveillance is conceptually sloppy and empirically misleading.</span></p>
+
+<!-- Section 7: Intellectual Pluralism -->
+
+<p><strong>Section 7: Political Diversity and Intellectual Pluralism</strong></p>
+
+<p><span class="annotated-span red" data-note="n17">"Estimates suggest that registered Democrats outnumber registered Republicans among faculty nationwide by a margin of about 10 to 1."</span> <span class="annotated-span red analysis" data-note="n17b">The "10 to 1" comes from Langbert (2018), which studied only top-tier liberal arts colleges. Broader work by Langbert & Stevens (2020) found 8.5:1 nationally and explicitly noted this was "lower than previous findings for the highest-ranked institutions." The report presents an elite-only ratio as a national one.</span></p>
+
+<p><span class="annotated-span orange" data-note="n18">"While such issues remain contested, nearly everyone we spoke to agreed on one thing: Echo chambers do not produce the best teaching, research, or scholarship."</span> <span class="annotated-span orange analysis" data-note="n18b">"Nearly everyone we spoke to" is not auditable evidence. The underlying claim conflates intellectual diversity (methodological, theoretical) with partisan diversity. The report never establishes that the former requires the latter.</span></p>
+
+<p><span class="annotated-span orange" data-note="n19">"Our committee reviewed Yale College's course catalogues back to the 1960s. Overall, we found considerable continuity across time."</span> <span class="annotated-span orange analysis" data-note="n19b">The committee provides no coding scheme, summary statistics, or examples. This is an impression from browsing, not systematic analysis.</span></p>
+
+<!-- Section 8: The Classroom -->
+
+<p><strong>Section 8: Teaching and Learning</strong></p>
+
+<p><span class="annotated-span blue" data-note="n20">"There is arguably no greater threat to higher education than the devaluing of teaching and learning."</span> <span class="annotated-span blue analysis" data-note="n20b">A sweeping ranking claim without evidence. Is this greater than defunding public universities? Political attacks on academic freedom? Student debt? AI disruption? "Arguably" does not make an unsupported superlative defensible.</span></p>
+
+<p><span class="annotated-span red" data-note="n21">"In 1963, ten percent of grades in Yale College were an A or A-. In 2022–23, that number was seventy-nine percent."</span> <span class="annotated-span red analysis" data-note="n21b">The comparison omits that Yale's admission rate was approximately 33% in 1963 vs. 4.2% today — roughly 8-fold more selective. A dramatically more rigorously selected student body may produce higher average grades. The report treats the entire increase as "inflation" without accounting for changes in the student population.</span></p>
+
+<p><span class="annotated-span blue" data-note="n22">"AI in its current use on campus undermines the expectations of focused, disciplined thinking that have long been the standard features of a rigorous education."</span> <span class="annotated-span blue analysis" data-note="n22b">The committee provides no evidence. AI use is heterogeneous; the statement treats all current uses as uniformly harmful while ignoring pedagogical benefits and research applications.</span></p>
+
+<!-- Section 9: Governance -->
+
+<p><strong>Section 9: Institutional Governance and Transparency</strong></p>
+
+<p><span class="annotated-span gray" data-note="n23">"We reviewed Yale's internal records on administration and staffing and found that answering even basic questions proved remarkably difficult."</span> <span class="annotated-span gray analysis" data-note="n23b">This is a fair observation about institutional opacity. But the committee uses this difficulty to assert conclusions about administrative excess without providing the evidence. The inability to get data does not prove the thesis.</span></p>
+
+<!-- Section 10: Recommendations -->
+
+<p><strong>Section 10: Key Recommendations</strong></p>
+
+<p><span class="annotated-span orange" data-note="n24"><span class="analysis">Recommendation:</span> "A floor such as a minimum SAT score or a Yale-specific entrance exam would ensure that no student is admitted without the requisite academic preparation and ability."</span> <span class="annotated-span orange analysis" data-note="n24b">The report itself states standardized tests are "an imperfect measure of academic promise." Claiming a testing floor would "ensure" requisite ability is too strong given the report's own premises.</span></p>
+
+<p><span class="annotated-span orange" data-note="n25">"Starting in 2026–27, each department and school should engage in a self-study examining the breadth of its intellectual and methodological commitments; the range of scholarly approaches represented on its faculty; the diversity of perspectives in its curriculum; and the openness of its hiring and admissions practices to dissenting or underrepresented traditions."</span> <span class="annotated-span orange analysis" data-note="n25b">Terms like "open" and "breadth" are undefined. Without a clear framework, this recommendation is vulnerable to ideological auditing and could be weaponized to police hiring and curriculum.</span></p>
+
+<p><span class="annotated-span orange analysis" data-note="n26">The report simultaneously recommends protecting academic freedom (Recommendations 3-4) and directs departments to conduct "Open Minds" self-studies on pluralism (Recommendation 7).</span> <span class="annotated-span orange analysis" data-note="n26b">If academic freedom means faculty choose what to research and teach, directing departments to demonstrate ideological diversity constrains that freedom. The report acknowledges this tension but does not resolve it.</span></p>
+
+<p><span class="annotated-span blue" data-note="n27">"Today's newspapers are filled with stories of faculty dismissed or sanctioned for teaching or speaking in ways that run afoul of federal or state initiatives."</span> <span class="annotated-span blue analysis" data-note="n27b">"Newspapers are filled with stories" is rhetoric standing in for evidence. No specific, documented cases are cited. This is an appeal to impressions, not data.</span></p>
+
+<p><span class="annotated-span red analysis" data-note="n28">Throughout the report, key claims rest on sources not available to readers: a private AAU memo (Goldstein), an internal Yale Office of Institutional Research survey, and the Buckley Institute's opt-in online panel.</span> <span class="annotated-span red analysis" data-note="n28b">A report about trust and transparency should be scrupulous about making evidence public. Multiple central claims rest on sources the reader cannot verify or assess.</span></p>
+
+</div><!-- /original-text -->
+
+<!-- ─── Margin notes column ─── -->
+<div class="margin-notes">
+
+<div class="margin-note blue" id="n1">
+  <span class="note-label">Rhetorical positioning</span>
+  Presenting these as factors the committee "identified" implies discovery from data analysis. The committee selected three themes. Polling shows trust levels but does not attribute causes.
+</div>
+
+<div class="margin-note orange" id="n2">
+  <span class="note-label">Unjustified scope leap</span>
+  The report opens with national data on all colleges (community colleges most trusted, state flagships more trusted than Ivies) and pivots to Yale without distinguishing. The report never defends the implicit argument — that solving Yale's problems will address national distrust. The report wants the urgency of a national crisis while proposing solutions for one atypical institution.
+</div>
+
+<div class="margin-note red" id="n3">
+  <span class="note-label">Inaccessible source</span>
+  The Goldstein memo is a private AAU presentation, not public data. A report celebrating the virtues of transparency should not anchor claims on sources readers cannot access or verify.
+  <span class="note-source">AAU presentation (private), referenced in report but not publicly available</span>
+</div>
+
+<div class="margin-note blue" id="n1b">
+  <span class="note-label">Framing as solution without problem</span>
+  The committee assumes fixing Yale addresses the crisis, but never demonstrates that Yale's specific issues drive national distrust or that Yale's solutions would move national opinion.
+</div>
+
+<div class="margin-note red" id="n2b">
+  <span class="note-label">Significant omission</span>
+  The report's own cited Gallup data shows the trust decline is heavily partisan: Republican confidence in higher education dropped ~35 points (from ~56% to ~20%) between 2015 and 2024, while Democratic confidence fell ~12 points (68% to 56%). Gallup's own analysis finds that Republicans who lack confidence primarily cite political grievances ("too liberal," "push their own agenda"), while Democrats cite cost. The Pew 2025 survey finds broad pessimism — 77% of Republicans and 65% of Democrats say higher ed is headed in the wrong direction — but this pessimism has different sources in each party, and the sharpest declines have been among Republicans. A coordinated legislative campaign has accompanied this shift: the AAUP's <em>Manufacturing Backlash</em> report (May 2024) documents 155 bills introduced during the 2021–2023 legislative sessions targeting academic freedom, DEI, tenure, and accreditation, of which 21 were signed into law — 97% with exclusively Republican sponsors (pp. 64–66). UCLA Law's CRT Forward Tracking Project counts 870 anti-CRT measures introduced by 249 government entities since September 2020. The report acknowledges partisan asymmetry in trust but does not analyze organized political backlash as a driver — or whether institutional reforms can remedy a phenomenon that organized political campaigns have partly driven.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Gallup (2024): Republican confidence fell from 56% (2015) to 20% (2024); Democratic confidence fell from 68% to 56%. Gallup (2025): slight recovery — R 26%, D 61%, I 41%. The partisan gap exceeds 30 points. Pew (2025): 77% of Republicans/Republican leaners and 65% of Democrats/Democratic leaners say higher ed is headed in the wrong direction — broad pessimism, but driven by different concerns in each party, and the sharpest drops have been among Republicans. AAUP, <em>Manufacturing Backlash</em> (May 2024): 155 bills tracked across 2021–2023 legislative sessions targeting higher education (academic gag orders, anti-DEI bills, tenure-weakening, accreditation undermining, governance mandates); 21 signed into law; 97%+ exclusively Republican-sponsored (pp. 64–66). Named think tanks include the Center for Renewing America, Heritage Foundation, Manhattan Institute, ALEC, Claremont Institute, ACTA, and NAS (Ch. 2). UCLA Law CRT Forward Tracking Project: 870 anti-CRT measures introduced by 249 local, state, and federal government entities since September 2020 (data collection concluded December 31, 2024).
+  </div>
+  <span class="note-source">Gallup (2024); Pew Research Center (2025); AAUP (2024); UCLA Law CRT Forward Project</span>
+</div>
+
+<div class="margin-note blue" id="n4">
+  <span class="note-label">Selective self-description</span>
+  Tenure does enable candor — and also correlates with specific demographic and ideological profiles. Framing potential bias as institutional credibility is incomplete.
+</div>
+
+<div class="margin-note red" id="n5">
+  <span class="note-label">Opacity about composition</span>
+  McInnis confirmed she "asked ten faculty members to serve" (April 15, 2026 response to faculty). No selection criteria disclosed. No explanation of why these 10 and not others. A report that calls for transparency began by operating without it.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    McInnis, in an April 15, 2026 response to faculty criticism, confirmed: "I asked ten faculty members to serve" — without explaining the selection process or why the committee's composition, while all senior tenured faculty, did not include untenured faculty, students, staff, or outside voices.
+  </div>
+</div>
+
+<div class="margin-note orange" id="n5b">
+  <span class="note-label">Self-undermining structure</span>
+  A committee examining trust in institutions began by demonstrating opacity. This goes beyond a methodological flaw — it mirrors the very problem the report claims to address.
+</div>
+
+<div class="margin-note red" id="n6">
+  <span class="note-label">Verified but selectively quoted</span>
+  The 114% increase in sticker prices is accurate per Looney (2024, p. 3).
+</div>
+
+<div class="margin-note red" id="n6b">
+  <span class="note-label">Cherry-picking from source</span>
+  Looney's central claim (p. 6): "In real terms, net tuition paid by families has increased 46 percent, and when we account for tax benefits, has been essentially unchanged since the 1990s." The report cites the paper for the most alarming number while giving minimal weight to the paper's central finding.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Looney, A. (2024). "How much does college cost, and how does it relate to student borrowing?" Brookings Institution, July 31, 2024. The paper's abstract and conclusions emphasize net tuition stasis, not sticker price increases.
+  </div>
+  <span class="note-source">Looney (2024), Brookings Institution, pp. 3, 6</span>
+</div>
+
+<div class="margin-note blue" id="n7">
+  <span class="note-label">Loaded language</span>
+  "Disastrous" is unsupported by the evidence presented. The report shows misunderstanding of aid, not demonstrated system failure.
+</div>
+
+<div class="margin-note orange" id="n8">
+  <span class="note-label">Repeating an official claim without context</span>
+  The report repeats an official Education Department claim (March 19, 2026 press release) about the national default rate. The figure comes from the Department itself.
+</div>
+
+<div class="margin-note orange" id="n8b">
+  <span class="note-label">Ecological fallacy applied to cost</span>
+  The national student loan crisis is real. It is not applicable to Yale, where debt is minimal. Invoking it in Yale's cost section suggests a problem Yale does not have.
+  <span class="note-source">U.S. Dept. of Education press release, March 19, 2026</span>
+</div>
+
+<div class="margin-note red" id="n9">
+  <span class="note-label">Significant understatement of finding</span>
+  Chetty, Deming &amp; Friedman (2025) confirms the cited claim.
+</div>
+
+<div class="margin-note red" id="n9b">
+  <span class="note-label">Muting dramatic inequity findings</span>
+  Chetty, Deming & Friedman (2025, p. 55): top-1% applicants are "58 percent more likely to be admitted" than middle-class applicants with similar test scores. The abstract reports they are "more than twice as likely to attend." The advantage decomposes into athletics (24%), legacy (46%), and other non-academic factors (30%). The report's "substantially more likely" obscures the magnitude. Additionally, the paper aggregates across Ivy-Plus institutions; the report applies pooled estimates to Yale without flagging the extrapolation.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Chetty, Deming & Friedman (2025), QJE 141(1), p. 55: "children from families in the top 1 percent are 58 percent more likely to be admitted." Abstract: "more than twice as likely to attend." Decomposition (p. 55): 24% athletics, 46% legacy, 30% other factors. The paper aggregates Ivy-Plus schools and notes institutional heterogeneity; the report applies pooled estimates to Yale specifically.
+  </div>
+  <span class="note-source">Chetty, Deming & Friedman (2025), QJE 141(1): 51-145, p. 55</span>
+</div>
+
+<div class="margin-note orange" id="n10">
+  <span class="note-label">Survivorship bias</span>
+  The existence of successful admits proves the system produces some talent. It does not prove the system is optimal, equitable, or effective compared to alternatives.
+</div>
+
+<div class="margin-note orange" id="n10b">
+  <span class="note-label">Begging the question</span>
+  "Works well for those who get in" is a tautology — of course admitted students do OK; they were selected. This says nothing about whether the selection process itself is justified.
+</div>
+
+<div class="margin-note red" id="n11">
+  <span class="note-label">False dichotomy</span>
+  Yale lists academic ability as a primary factor on its own admissions page. The absence of a published minimum does not mean the absence of a standard.
+</div>
+
+<div class="margin-note red" id="n11b">
+  <span class="note-label">Mischaracterization of policy</span>
+  Yale Admissions page explicitly describes holistic review and "Academic ability" as central. Claiming there is "no clear academic standard" is inaccurate.
+  <span class="note-source">Yale Admissions, "What Yale Looks For"</span>
+</div>
+
+<div class="margin-note red" id="n12">
+  <span class="note-label">Logical incoherence</span>
+  Alvero et al. show essays are income-stratified — but SAT scores are at least equally so. The report cites the paper to question essays, then recommends SAT floors, contradicting the source's own data.
+</div>
+
+<div class="margin-note red" id="n12b">
+  <span class="note-label">Own source undermines recommendation</span>
+  Alvero et al. (2021), Science Advances 7(42), finds that essay topic models predict household income better than SAT scores do (R² = .161 vs. R² = .119). If both measures are income-stratified but essays are cited to question essays and then the report recommends SAT floors, the logical thread has snapped. The report uses the source selectively.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Alvero et al. use out-of-sample prediction models. Essay topics predict household income at R² = .161; SAT composite predicts at R² = .119. Essays are actually MORE income-predictive than SAT scores. Using this paper to argue against essays while recommending SAT floors is incoherent.
+  </div>
+  <span class="note-source">Alvero et al. (2021), Science Advances 7(42)</span>
+</div>
+
+<div class="margin-note blue" id="n13">
+  <span class="note-label">Unsupported magnitude claim</span>
+  "Few episodes have done more" ranks the 2015 incident as uniquely consequential without evidence. This adopts one side's framing while claiming to describe fact.
+</div>
+
+<div class="margin-note blue" id="n13b">
+  <span class="note-label">Rhetorical invocation without evidence</span>
+  A single incident from 2015 is invoked as self-evidently important to public perception. The report provides no survey data, polling, or comparative analysis of its actual influence.
+</div>
+
+<div class="margin-note red" id="n14">
+  <span class="note-label">Non-probability sample presented as representative</span>
+  The Buckley Institute study (2025) reports the 53% figure correctly. But the study itself explicitly limits inference.
+</div>
+
+<div class="margin-note red" id="n14b">
+  <span class="note-label">Masking methodological limitation</span>
+  The study uses self-selected online respondents. The study itself states: "Because the sample is based on those who initially self-selected for participation rather than a probability sample, no estimates of sampling error can be calculated." The report presents this without caveats as evidence.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Buckley Institute & Inquire (2025), National Undergraduate Study, p. 2: "Respondents are self-selected online panelists, not a probability sample. No estimates of sampling error can be calculated." Sample size n=820. The report cites 53% without noting these limitations.
+  </div>
+  <span class="note-source">Buckley Institute, National Undergraduate Study (2025), pp. 2-3</span>
+</div>
+
+<div class="margin-note orange" id="n15">
+  <span class="note-label">Construct slippage</span>
+  The survey item measures whether students "feel free to express political beliefs" — related to but not identical to "self-censorship." The constructs are different.
+</div>
+
+<div class="margin-note orange" id="n15b">
+  <span class="note-label">Language inflation</span>
+  Social discomfort is not the same as censorship. Students may feel peer pressure but remain free to speak. The terminology overstates the phenomenon.
+</div>
+
+<div class="margin-note orange" id="n16">
+  <span class="note-label">Problematic conflation</span>
+  Peer social pressure, faculty career anxiety, and international students' fear of state retaliation are distinct phenomena with different power structures and different solutions. Treating them as one problem obscures more than it reveals.
+</div>
+
+<div class="margin-note orange" id="n16b">
+  <span class="note-label">Category error</span>
+  Government retaliation is an extraordinary power asymmetry. Peer discomfort is social. Conflating them under "self-censorship" loses important distinctions.
+</div>
+
+<div class="margin-note red" id="n17">
+  <span class="note-label">Elite bias in citation</span>
+  Langbert (2018) studied only "elite liberal arts colleges." The report presents this elite-only finding as national.
+</div>
+
+<div class="margin-note red" id="n17b">
+  <span class="note-label">Narrowing scope without acknowledging</span>
+  Langbert & Stevens (2020) found 8.5:1 nationally and noted this was "lower than previous findings for the highest-ranked institutions." The report cites the 10:1 from elite schools without clarifying the finding applies only to top-tier colleges.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    Langbert (2018): focused on 51 top liberal arts colleges. Langbert & Stevens (2020): broader sample, 8.5:1 ratio, explicitly lower than earlier elite-only estimates. The report selects the more dramatic figure without disclosing the narrower scope.
+  </div>
+  <span class="note-source">Langbert (2018); Langbert & Stevens (2020), pp. 3-4</span>
+</div>
+
+<div class="margin-note orange" id="n18">
+  <span class="note-label">Anecdotal evidence presented as fact</span>
+  "Nearly everyone we spoke to" is not auditable. It is a listening-session impression, not systematically gathered data.
+</div>
+
+<div class="margin-note orange" id="n18b">
+  <span class="note-label">Conflation of concepts</span>
+  Intellectual diversity (diverse methods, theories, empirical approaches) is different from partisan diversity. The report does not establish that the former requires the latter.
+</div>
+
+<div class="margin-note orange" id="n19">
+  <span class="note-label">Unsupported claim based on browsing</span>
+  The committee provides no coding scheme, statistics, or examples. This is an impression, not analysis.
+</div>
+
+<div class="margin-note orange" id="n19b">
+  <span class="note-label">Missing methodology</span>
+  What counts as "continuity"? Over what time period? Which courses? The claim is unverifiable because the method is not described.
+</div>
+
+<div class="margin-note blue" id="n20">
+  <span class="note-label">Ranking without evidence</span>
+  Is this greater than defunding public universities, political attacks on academic freedom, or student debt crises? The superlative is asserted, not argued.
+</div>
+
+<div class="margin-note blue" id="n20b">
+  <span class="note-label">Rhetorical superlative</span>
+  "Arguably no greater threat" does not make an unsupported claim defensible. What are the alternatives? What evidence would rank this claim higher or lower?
+</div>
+
+<div class="margin-note red" id="n21">
+  <span class="note-label">Misleading comparison without cohort adjustment</span>
+  Yale's admission rate in 1963 was roughly 33%; today it is 4.2% &mdash; an 8-fold selectivity increase. The 1963 student body was also entirely male. A dramatically more rigorously selected cohort may earn higher grades because they perform at a higher level, not because standards have declined. The report treats the entire increase as "inflation" without considering this possibility.
+</div>
+
+<div class="margin-note red" id="n21b">
+  <span class="note-label">Unexamined assumption: grades should be normally distributed</span>
+  The report assumes without argument that a B+ average is the natural and correct baseline for grading. But Yale's admission rate dropped from ~33% in 1963 to 4.2% today — an 8-fold selectivity increase. A dramatically more rigorously selected cohort may earn higher grades because they perform at a higher level, not solely because standards have declined. The committee's recommendation (a 3.0 mean, percentile rankings) would reimpose competitive ranking without citing evidence that this improves learning outcomes or trust. The committee's own acknowledgment that "grading practices vary widely" also undermines the claim that percentiles would provide a "stable, comparable measure."
+</div>
+
+<div class="margin-note blue" id="n22">
+  <span class="note-label">Sweeping claim without evidence</span>
+  The committee presents no data on whether AI use undermines focused thinking. The statement is affective rather than empirical.
+</div>
+
+<div class="margin-note blue" id="n22b">
+  <span class="note-label">Heterogeneous treatment as uniform</span>
+  AI use in classrooms is diverse — some uses may harm learning, others enhance it. The report presents a uniformly negative view without evidence or nuance.
+</div>
+
+<div class="margin-note gray" id="n23">
+  <span class="note-label">Fair observation, misapplied</span>
+  The difficulty obtaining data is real. But a lack of data does not prove the underlying claim about administrative excess.
+</div>
+
+<div class="margin-note gray" id="n23b">
+  <span class="note-label">Gap between observation and conclusion</span>
+  The committee correctly identifies institutional opacity. But it then asserts conclusions without providing the missing evidence. Not being able to measure something does not prove the thesis.
+</div>
+
+<div class="margin-note orange" id="n24">
+  <span class="note-label">Overclaimed causal power</span>
+  The report itself calls tests "imperfect measures." Claiming a floor would "ensure" requisite preparation overstates what the committee's own "imperfect measure" can guarantee.
+</div>
+
+<div class="margin-note orange" id="n24b">
+  <span class="note-label">Inconsistency in argument</span>
+  The report acknowledges standardized tests' limitations, then recommends them as a floor requirement. The logical thread has snapped.
+</div>
+
+<div class="margin-note orange" id="n25">
+  <span class="note-label">Vague terms, high stakes</span>
+  "Breadth," "dissenting traditions," "demonstrably open" are undefined. Without clear operationalizations, this recommendation invites ideological auditing. Who decides what counts? What is "demonstrable openness"?
+</div>
+
+<div class="margin-note orange" id="n25b">
+  <span class="note-label">Risk of weaponization</span>
+  The report warns against politicized scrutiny while proposing a mechanism that could enable it. If departments must examine their ideological balance, they face pressure to hire for political representation, not scholarly merit.
+</div>
+
+<div class="margin-note orange" id="n26">
+  <span class="note-label">Unresolved tension between freedoms</span>
+  Academic freedom (Recs. 3-4) and directed pluralism studies (Rec. 7) are in tension. The report notes this but does not reconcile it.
+</div>
+
+<div class="margin-note orange" id="n26b">
+  <span class="note-label">Fundamental conflict in recommendations</span>
+  If faculty freedom means choosing what to teach, directing them to achieve ideological diversity constrains that freedom. This is a core tension, not a minor inconsistency, and the report leaves it unresolved.
+</div>
+
+<div class="margin-note blue" id="n27">
+  <span class="note-label">Impressionistic rhetoric masquerading as fact</span>
+  "Today's newspapers are filled with" is a rhetorical flourish, not evidence. The report cites no specific cases, documents no frequency, and provides no longitudinal comparison.
+</div>
+
+<div class="margin-note blue" id="n27b">
+  <span class="note-label">Appeal to ambient narrative</span>
+  The statement relies on readers' sense that such stories are common. It is rhetorical work, not documentation.
+</div>
+
+<div class="margin-note red" id="n28">
+  <span class="note-label">Opacity about sources</span>
+  The AAU memo (Goldstein), Yale OIR survey, and Buckley opt-in panel are inaccessible to readers. A report celebrating transparency rests on sources the reader cannot verify.
+</div>
+
+<div class="margin-note red" id="n28b">
+  <span class="note-label">Self-undermining methodology</span>
+  The report calls for transparency while relying on private sources readers cannot access. Multiple key empirical claims rest on unverifiable evidence — a direct contradiction between the report's stated values and its practice.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
+  <div class="note-evidence">
+    The report cites: (1) a private AAU presentation (Goldstein memo) not publicly available; (2) an internal Yale OIR survey described but not publicly released; (3) the Buckley study, a self-selected opt-in panel. A report about "trust" and "transparency" should not anchor major claims on sources readers cannot examine.
+  </div>
+</div>
+
+</div><!-- /margin-notes -->
+</section><!-- /annotated-body -->
+
+<!-- ══════════════════════════════════════════════════ CLOSING -->
+<section class="closing-section">
+  <h2>What a responsible version of this report would have included</h2>
+
+  <p><strong>Public methodology and transparent sourcing.</strong> A report about trust and transparency should model those values. Key claims should rest on publicly accessible sources. The committee should either make its private memos, internal surveys, and opt-in panels public or stop using them as foundations for major conclusions. The report asks Yale to be more transparent while being opaque about its own evidence.</p>
+
+  <p><strong>Careful engagement with cited sources rather than cherry-picking.</strong> When a source does not support the stated claim — like Looney (2024) showing net tuition is essentially unchanged, or Alvero et al. showing essays are no less income-stratified than SAT scores — a responsible report either uses the source correctly or selects a different one. The report uses sources as rhetorical authority while ignoring their actual findings.</p>
+
+  <p><strong>A clear definition of "trust" that distinguishes conceptually distinct phenomena.</strong> The report conflates economic confidence (is a degree worth the cost?), procedural fairness (are admissions systems equitable?), epistemic trust (does the university pursue truth?), and ideological alignment (do I approve of what's taught?). These are different concepts with different causes and solutions. Treating "trust" as a unitary quantity measured by Gallup polls obscures this complexity.</p>
+
+  <p><strong>Acknowledgment that criticism of higher education has heterogeneous sources.</strong> The report takes at face value complaints from listening sessions and surveys without distinguishing between concerns grounded in institutional experience (real climate problems, genuine access barriers) and those driven primarily by partisan or ideological agendas (pressuring departments to hire for political balance, auditing curricula for conformity). A responsible analysis would acknowledge this heterogeneity rather than treating all criticism as equally diagnostic.</p>
+
+  <p><strong>Transparent examination of the committee's own composition and potential biases.</strong> The president convened the committee from tenured Yale faculty. She included no untenured faculty, students, staff, alumni, or external experts. A report about trust should acknowledge its own potential limitations. Why were these 10 asked to serve? What perspectives are missing? How might the committee's composition have shaped its findings?</p>
+
+  <p><strong>Serious cost-benefit analysis of the 20 recommendations.</strong> The report calls for a major SAT testing floor, department-level diversity audits, administrative reviews, and expanded committees — each with resource and time costs, risks of unintended consequences, and uncertain benefits. A responsible version would estimate costs and benefits, acknowledge trade-offs, and justify why each recommendation is proportionate to the problem it claims to solve. Instead, the report asserts recommendations without doing this accounting.</p>
+</section>
+
+<!-- ══════════════════════════════════════════════════ COMMITTEE PROFILES -->
+<section class="closing-section" id="committee-profiles" style="max-width: 780px; margin: 3rem auto; padding: 2rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #e5e8eb;">
+  <h2 style="font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">Who wrote this report — and why it matters</h2>
+
+  <p style="margin-bottom: 1rem; font-size: 0.95rem;">Because the report relies so extensively on committee impressions, listening sessions, and phrases like "nearly everyone we spoke to agreed," the authors' own intellectual orientations become directly relevant. A purely empirical report can stand on its data regardless of who wrote it. A report built substantially on judgment cannot. Here is what is publicly documentable about the ten committee members, with links to sources.</p>
+
+  <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.6;">
+
+  <p style="margin-bottom: 0.8rem;"><strong>Julia Adams</strong> (Co-Chair) &mdash; Margaret H. Marshall Professor of Sociology. Historical and comparative sociology (state formation, gender, colonialism). Led the Calhoun&rarr;Grace Hopper College renaming. NSF-funded research on gender bias in Wikipedia representation of academics. <a href="https://sociology.yale.edu/people/julia-adams" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Beverly Gage</strong> (Co-Chair) &mdash; John Lewis Gaddis Professor of History. Pulitzer Prize winner (<em>G-Man</em>, 2023). Specialist in 20th-century US political history: liberalism, conservatism, ideology. Regular contributor to the <em>New York Times</em> and <em>New Yorker</em>. Currently writing a biography of Ronald Reagan. <a href="https://history.yale.edu/people/beverly-gage" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Anton Bennett</strong> &mdash; Dorys McConnell Duberg Professor of Pharmacology; Professor of Comparative Medicine. Basic biomedical researcher (signal transduction, metabolism). No public commentary on higher-education policy found. <a href="https://medicine.yale.edu/profile/anton-bennett/" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Marijeta Bozovic</strong> &mdash; Professor of Slavic Languages &amp; Literatures and Women's, Gender, &amp; Sexuality Studies. Chair of the FAS-SEAS Senate. Scholarly work critiques both authoritarianism and Western liberalism. Previously Dean of Faculty at Yale-NUS College (Singapore). <a href="https://slavic.yale.edu/people/marijeta-bozovic" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>David Bromwich</strong> &mdash; Sterling Professor of English (Yale's highest academic rank). Publishes widely in the <em>London Review of Books</em>, <em>New York Review of Books</em>, <em>The Nation</em>, and <em>Dissent</em>. Author of <em>Politics by Other Means</em>, which defends liberal education against political encroachments from both left and right. Has published extensively on free speech, academic freedom, and self-censorship. <a href="https://english.yale.edu/people/tenured-and-tenure-track-faculty-professors/david-bromwich" target="_blank" rel="noopener noreferrer">Faculty profile</a> &middot; <a href="https://www.lrb.co.uk/contributors/david-bromwich" target="_blank" rel="noopener noreferrer">LRB archive</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Judith Chevalier</strong> &mdash; William S. Beinecke Professor of Finance and Economics. Empirical economist (industrial organization, technology's impact on firms). Former chair of the AEA's Committee on the Status of Women in the Economics Profession. Pragmatic, evidence-based orientation. <a href="https://som.yale.edu/faculty-research/faculty-directory/judith-chevalier" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Jason Hockenberry</strong> &mdash; Associate Dean for Faculty Affairs, School of Public Health. Health economist (quality metrics, insurance expansions, behavioral health policy). Published in <em>JAMA</em>, <em>Health Affairs</em>. No public commentary on higher-education politics found. <a href="https://ysph.yale.edu/profile/jason-hockenberry/" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Anthony Leiserowitz</strong> &mdash; Professor, Yale School of the Environment. Director, Yale Program on Climate Change Communication. Expert in public trust, risk perception, and bridging political polarization. Named second-most influential climate scientist worldwide by Reuters (2020). His research emphasizes that communicating scientific consensus is effective even with conservative audiences. <a href="https://environment.yale.edu/directory/faculty/anthony-leiserowitz" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Priyamvada Natarajan</strong> &mdash; Joseph S. and Sophia S. Fruton Professor of Astronomy and Physics. TIME 100 Most Influential (2024). Carnegie "Great Immigrant" (2025). Director, Franke Program in Science and the Humanities. Has written and spoken publicly about scientific denialism and the responsibility of scientists to communicate more effectively. <a href="https://physics.yale.edu/people/priyamvada-natarajan" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-bottom: 0.8rem;"><strong>Sarath Sanga</strong> &mdash; Professor of Law; Co-Director, Yale Law School Center for the Study of Corporate Law. Law and economics specialist (contracts, corporate governance). <a href="https://fedsoc.org/bio/sarath-sanga" target="_blank" rel="noopener noreferrer">Listed on the Federalist Society website</a> as a participant (the Society's website states that listing does not imply endorsement or membership). Co-founded SCALES, an initiative to make federal court records freely accessible. <a href="https://law.yale.edu/sarath-sanga" target="_blank" rel="noopener noreferrer">Faculty profile</a></p>
+
+  <p style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid #e5e8eb;"><strong>Structural observations:</strong> All 10 members are tenured senior faculty. No untenured faculty, graduate students, postdocs, undergraduates, staff, alumni, or external experts were included. President McInnis convened the committee; no selection criteria have been disclosed. For a report that calls for transparency, the absence of any explanation for how these 10 were chosen is notable.</p>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ REFERENCES -->
+<section class="references">
+  <h2>References</h2>
+  <ul>
+    <li>American Association of University Professors (AAUP). (2024). <em>Manufacturing Backlash: Right-Wing Think Tanks and Legislative Attacks on Higher Education</em>. <a href="https://www.aaup.org/file/Manufacturing_Backlash_final.pdf" target="_blank" rel="noopener noreferrer">aaup.org</a></li>
+    <li>Alvero, A. J., et al. (2021). Essay content and style are strongly related to household income and SAT scores: Evidence from 60,000 undergraduate applications. <em>Science Advances</em>, 7(42). <a href="https://doi.org/10.1126/sciadv.abi9031" target="_blank" rel="noopener noreferrer">doi:10.1126/sciadv.abi9031</a></li>
+    <li>Buckley Institute. (2025). <em>A Report on Faculty Political Diversity</em> (fall 2025). <a href="https://buckleyinstitute.com" target="_blank" rel="noopener noreferrer">buckleyinstitute.com</a></li>
+    <li>Buckley Institute &amp; Inquire. (2025). <em>National Undergraduate Study</em> (September 2025). <a href="https://buckleyinstitute.com/content/uploads/2025/09/2025-Buckley-Institute-Survey.pdf" target="_blank" rel="noopener noreferrer">PDF</a></li>
+    <li>Chetty, R., Deming, D. J., &amp; Friedman, J. N. (2025). Diversifying society's leaders? The determinants and causal effects of admission to highly selective private colleges. <em>Quarterly Journal of Economics</em>, 141(1), 51&ndash;145. <a href="https://doi.org/10.1093/qje/qjae031" target="_blank" rel="noopener noreferrer">doi:10.1093/qje/qjae031</a></li>
+    <li>Gallup. (2024). U.S. confidence in higher education now closely divided. July 8, 2024. <a href="https://news.gallup.com/poll/646880/confidence-higher-education-closely-divided.aspx" target="_blank" rel="noopener noreferrer">news.gallup.com</a></li>
+    <li>Gallup. (2025). U.S. public trust in higher ed rises from recent low. July 16, 2025. <a href="https://news.gallup.com/poll/692519/public-trust-higher-rises-recent-low.aspx" target="_blank" rel="noopener noreferrer">news.gallup.com</a></li>
+    <li>Langbert, M. (2018). Homogenous: The political affiliations of elite liberal arts college faculty. <em>Academic Questions</em>, 31(2), 186&ndash;197. <a href="https://doi.org/10.1007/s12129-018-9700-x" target="_blank" rel="noopener noreferrer">doi:10.1007/s12129-018-9700-x</a></li>
+    <li>Langbert, M., &amp; Stevens, S. (2020). Partisan registration and contributions of faculty in flagship colleges. National Association of Scholars. <a href="https://www.nas.org/reports/partisan-registration-and-contributions-of-faculty-in-flagship-colleges" target="_blank" rel="noopener noreferrer">nas.org</a></li>
+    <li>Looney, A. (2024). How much does college cost, and how does it relate to student borrowing? Tuition growth and borrowing over the past 30 years. <em>Brookings Institution</em>, July 31, 2024. <a href="https://www.brookings.edu/articles/how-much-does-college-cost/" target="_blank" rel="noopener noreferrer">brookings.edu</a></li>
+    <li>Pew Research Center. (2025). Growing share of Americans say the U.S. higher education system is headed in the wrong direction. October 15, 2025. <a href="https://www.pewresearch.org/short-reads/2025/10/15/growing-share-of-americans-say-the-us-higher-education-system-is-headed-in-the-wrong-direction/" target="_blank" rel="noopener noreferrer">pewresearch.org</a></li>
+    <li>UCLA School of Law. (2024). CRT Forward Tracking Project. <a href="https://crtforward.law.ucla.edu/" target="_blank" rel="noopener noreferrer">crtforward.law.ucla.edu</a></li>
+    <li>U.S. Department of Education &amp; U.S. Department of the Treasury. (2026). Press release: Historic Federal Student Assistance Partnership. March 19, 2026. <a href="https://www.ed.gov/about/news/press-release/us-department-of-education-and-us-department-of-treasury-announce-historic-federal-student-assistance-partnership" target="_blank" rel="noopener noreferrer">ed.gov</a></li>
+    <li>Yale University, Committee on Trust in Higher Education. (2026). <em>Report of the Committee on Trust in Higher Education</em>. April 10, 2026. <a href="https://president.yale.edu/sites/default/files/2026-04/Report-of-the-Committee-on-Trust-in-Higher-Education.pdf" target="_blank" rel="noopener noreferrer">PDF</a></li>
+    <li>Yale University, Office of the President. (2026). Report of the Committee on Trust in Higher Education [post]. April 15, 2026. <a href="https://president.yale.edu/posts/2026-04-15-report-of-the-committee-on-trust-in-higher-education" target="_blank" rel="noopener noreferrer">president.yale.edu</a></li>
+    <li>Yale University, Office of the President. (2026). Committee on Trust in Higher Education [committee page]. <a href="https://president.yale.edu/committees-programs/presidents-committees/committee-on-trust-in-higher-education" target="_blank" rel="noopener noreferrer">president.yale.edu</a></li>
+    <li>Yale University Undergraduate Admissions. (2026). Affordability. Accessed April 2026. <a href="https://admissions.yale.edu/affordability" target="_blank" rel="noopener noreferrer">admissions.yale.edu</a></li>
+    <li>Yale University Undergraduate Admissions. (2026). What Yale Looks For. Accessed March 31, 2026. <a href="https://perma.cc/N4P8-64XQ" target="_blank" rel="noopener noreferrer">perma.cc/N4P8-64XQ</a></li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════════════ JS -->
+<script>
+  // Highlight connection between text spans and margin notes
+  document.querySelectorAll('.annotated-span').forEach(span => {
+    const noteId = span.dataset.note;
+    const note = document.getElementById(noteId);
+    if (!note) return;
+
+    // Make spans keyboard-accessible
+    span.setAttribute('tabindex', '0');
+    span.setAttribute('role', 'button');
+    span.setAttribute('aria-label', 'View note ' + noteId);
+
+    span.addEventListener('mouseenter', () => {
+      span.classList.add('active');
+      note.classList.add('active');
+      note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    span.addEventListener('mouseleave', () => {
+      span.classList.remove('active');
+      note.classList.remove('active');
+    });
+    span.addEventListener('click', () => {
+      note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    span.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        span.classList.add('active');
+        note.classList.add('active');
+        note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    note.addEventListener('mouseenter', () => {
+      span.classList.add('active');
+      note.classList.add('active');
+    });
+    note.addEventListener('mouseleave', () => {
+      span.classList.remove('active');
+      note.classList.remove('active');
+    });
+  });
+
+  // Toggle expandable evidence sections
+  function toggleEvidence(btn) {
+    const evidence = btn.nextElementSibling;
+    if (evidence.classList.contains('open')) {
+      evidence.classList.remove('open');
+      btn.textContent = 'Show evidence ▸';
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      evidence.classList.add('open');
+      btn.textContent = 'Hide evidence ▾';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Initialize aria-expanded on all evidence toggles
+  document.querySelectorAll('.evidence-toggle').forEach(btn => {
+    btn.setAttribute('aria-expanded', 'false');
+  });
+</script>
+
+<script data-goatcounter="https://chadtopaz.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
