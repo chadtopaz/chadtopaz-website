@@ -896,8 +896,10 @@
   }
 
   // Initialize aria-expanded on all evidence toggles
+  // Also stop clicks from bubbling to the parent note's click handler
   document.querySelectorAll('.evidence-toggle').forEach(btn => {
     btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', (e) => e.stopPropagation());
   });
 </script>
 
