@@ -715,6 +715,7 @@
 
   // Toggle expandable evidence sections
   function toggleEvidence(btn) {
+    const rect = btn.getBoundingClientRect();
     const evidence = btn.nextElementSibling;
     if (evidence.classList.contains('open')) {
       evidence.classList.remove('open');
@@ -723,6 +724,8 @@
       evidence.classList.add('open');
       btn.textContent = 'Hide evidence ▾';
     }
+    const newRect = btn.getBoundingClientRect();
+    window.scrollBy(0, newRect.top - rect.top);
   }
 </script>
 

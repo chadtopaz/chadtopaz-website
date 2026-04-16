@@ -645,7 +645,7 @@
 
 <div class="margin-note red" id="n12">
   <span class="note-label">Own source undermines recommendation</span>
-  Alvero et al. (2021) show that essay features are income-stratified — but SAT scores are at least equally so. Essay topics predict household income at R² = .161; SAT composite predicts at R² = .119. Essays are actually more income-predictive than SAT scores. The report cites the paper to question essays, then recommends SAT floors — the logical thread has snapped. The report's own source undermines its recommendation.
+  Alvero et al. (2021) show that essay features are income-stratified — but SAT scores are at least equally so. Essay topics predict household income at R² = .161; SAT composite predicts at R² = .119. Essays are actually more income-predictive than SAT scores. The report cites the paper to question essays, then recommends SAT floors. The report's own source undermines its recommendation.
   <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>
   <div class="note-evidence">
     Alvero et al. (2021), Science Advances 7(42): out-of-sample prediction models show essay topics predict household income at R² = .161; SAT composite predicts at R² = .119. If both measures are income-stratified but essays are cited to discredit essays while SAT floors are recommended, the argument is internally incoherent.
@@ -715,7 +715,7 @@
 
 <div class="margin-note orange" id="n24">
   <span class="note-label">Internal inconsistency</span>
-  The report itself calls standardized tests "an imperfect measure of academic promise." Claiming a testing floor would "ensure" requisite ability overstates what the committee's own "imperfect measure" can guarantee. The logical thread between premise and recommendation has snapped.
+  The report itself calls standardized tests "an imperfect measure of academic promise." Claiming a testing floor would "ensure" requisite ability overstates what the committee's own "imperfect measure" can guarantee.
 </div>
 
 <div class="margin-note orange" id="n25">
@@ -880,6 +880,7 @@
 
   // Toggle expandable evidence sections
   function toggleEvidence(btn) {
+    const rect = btn.getBoundingClientRect();
     const evidence = btn.nextElementSibling;
     if (evidence.classList.contains('open')) {
       evidence.classList.remove('open');
@@ -890,6 +891,8 @@
       btn.textContent = 'Hide evidence ▾';
       btn.setAttribute('aria-expanded', 'true');
     }
+    const newRect = btn.getBoundingClientRect();
+    window.scrollBy(0, newRect.top - rect.top);
   }
 
   // Initialize aria-expanded on all evidence toggles
