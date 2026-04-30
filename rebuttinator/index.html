@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebuttinator — Chad M. Topaz</title>
+<meta name="description" content="Build professional annotated rebuttals and critical analyses. Paste your source text, highlight passages to annotate, and export a self-contained HTML page. Free and open to all.">
+<meta property="og:title" content="Rebuttinator — Chad M. Topaz">
+<meta property="og:description" content="Build professional annotated rebuttals and critical analyses. Free and open to all.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.chadtopaz.com/rebuttinator/">
+<meta property="og:image" content="https://www.chadtopaz.com/images/headshot.jpg">
+<meta property="og:site_name" content="Chad M. Topaz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rebuttinator — Chad M. Topaz">
+<meta name="twitter:description" content="Build professional annotated rebuttals and critical analyses. Free and open to all.">
+<meta name="twitter:image" content="https://www.chadtopaz.com/images/headshot.jpg">
+<link rel="canonical" href="https://www.chadtopaz.com/rebuttinator/">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ─── App-specific overrides ─── */
+  .app-topbar {
+    background: #1b2631;
+    color: #ecf0f1;
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .app-topbar-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+  .app-topbar-title span { color: #85c1e9; }
+  .app-topbar-actions { display: flex; gap: 0.5rem; }
+
+  .app-main { max-width: 960px; margin: 0 auto; padding: 1.5rem; font-family: 'Inter', sans-serif; font-size: 14px; }
+
+  /* ─── Buttons ─── */
+  .b { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; padding: 0.45rem 0.9rem; border-radius: 6px; border: 1px solid #e2e5e9; background: #fff; color: #1a1a2e; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap; }
+  .b:hover { border-color: #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .b:disabled { opacity: 0.4; cursor: default; }
+  .b-pri { background: #4338ca; color: #fff; border-color: #4338ca; }
+  .b-pri:hover { background: #3730a3; border-color: #3730a3; }
+  .b-dan { color: #991b1b; border-color: #fca5a5; }
+  .b-dan:hover { background: #fef2f2; }
+  .b-sm { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+  .b-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ecf0f1; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.7rem; border-radius: 6px; cursor: pointer; }
+  .b-ghost:hover { background: rgba(255,255,255,0.1); }
+
+  /* ─── Panels ─── */
+  .pnl { background: #fff; border: 1px solid #e2e5e9; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+  .pnl-hd { padding: 0.8rem 1.2rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; background: #f5f6f8; border-bottom: 1px solid #e2e5e9; }
+  .pnl-hd:hover { background: #eef0f3; }
+  .pnl-hd-left { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+  .sn { background: #4338ca; color: #fff; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+  .pnl-chev { font-size: 0.8rem; color: #718096; transition: transform 0.2s; }
+  .pnl-chev.open { transform: rotate(180deg); }
+  .pnl-bd { padding: 1.2rem; font-family: 'Inter', sans-serif; }
+  .pnl-bd.collapsed { display: none; }
+
+  /* ─── Forms ─── */
+  .app-main label { display: block; font-size: 0.78rem; font-weight: 600; color: #4a5568; margin-bottom: 0.25rem; font-family: 'Inter', sans-serif; }
+  .app-main input[type="text"], .app-main textarea, .app-main select { font-family: 'Inter', sans-serif; font-size: 0.85rem; width: 100%; padding: 0.5rem 0.7rem; border: 1px solid #e2e5e9; border-radius: 6px; background: #f5f6f8; color: #1a1a2e; transition: border-color 0.15s; }
+  .app-main input[type="text"]:focus, .app-main textarea:focus { outline: none; border-color: #4338ca; box-shadow: 0 0 0 3px rgba(67,56,202,0.1); }
+  .app-main textarea { resize: vertical; line-height: 1.6; }
+  .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.8rem; }
+  .fg { margin-bottom: 0.8rem; }
+  .ht { font-size: 0.75rem; color: #718096; margin-top: 0.2rem; font-family: 'Inter', sans-serif; }
+
+  /* ─── Category editor ─── */
+  .cat-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; }
+  .cat-row input[type="text"] { flex: 1; }
+  .cat-row select { width: 110px; font-size: 0.8rem; padding: 0.45rem 0.5rem; }
+
+  /* ─── Summary point editor ─── */
+  .sp-row { display: flex; gap: 0.5rem; align-items: flex-start; margin-bottom: 0.6rem; padding: 0.6rem 0.7rem; background: #f9fafb; border: 1px solid #e2e5e9; border-radius: 6px; }
+  .sp-row select { width: 110px; font-size: 0.8rem; padding: 0.45rem 0.5rem; flex-shrink: 0; margin-top: 1px; }
+  .sp-row textarea { flex: 1; font-size: 0.84rem; padding: 0.4rem 0.6rem; min-height: 52px; resize: vertical; line-height: 1.5; }
+  .sp-row .sp-num { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.8rem; color: #4a5568; min-width: 20px; margin-top: 6px; flex-shrink: 0; }
+
+  /* ─── Annotate view: two columns ─── */
+  .annotate-layout { display: grid; grid-template-columns: 1fr 360px; gap: 1.2rem; align-items: start; }
+  @media (max-width: 860px) { .annotate-layout { grid-template-columns: 1fr; } }
+
+  /* Text display area */
+  .text-display {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    padding: 1rem;
+    border: 1px solid #e2e5e9;
+    border-radius: 8px;
+    background: #fdfcfb;
+    cursor: text;
+    position: relative;
+    min-height: 200px;
+  }
+  .text-display p { margin-bottom: 1rem; }
+  .text-display .ann-span {
+    border-bottom: 2px solid;
+    padding: 1px 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .text-display .ann-span:hover { filter: brightness(0.95); }
+  .text-display .ann-span.c-red { background: #fef2f2; border-bottom-color: #991b1b; }
+  .text-display .ann-span.c-teal { background: #f0fdfa; border-bottom-color: #0f766e; }
+  .text-display .ann-span.c-blue { background: #eef2ff; border-bottom-color: #4338ca; }
+  .text-display .ann-span.c-gray { background: #f5f5f4; border-bottom-color: #6b6560; }
+  .text-display .ann-span.c-orange { background: #fff7ed; border-bottom-color: #c2410c; }
+  .text-display .ann-span.c-purple { background: #f5f3ff; border-bottom-color: #7c3aed; }
+  .text-display .ann-span.c-pink { background: #fdf2f8; border-bottom-color: #be185d; }
+  .text-display .ann-span.c-green { background: #f0fdf4; border-bottom-color: #15803d; }
+  .text-display .ann-span.active.c-red { background: #fecaca; }
+  .text-display .ann-span.active.c-teal { background: #ccfbf1; }
+  .text-display .ann-span.active.c-blue { background: #c7d2fe; }
+  .text-display .ann-span.active.c-gray { background: #e7e5e4; }
+  .text-display .ann-span.active.c-orange { background: #fed7aa; }
+  .text-display .ann-span.active.c-purple { background: #ddd6fe; }
+  .text-display .ann-span.active.c-pink { background: #fbcfe8; }
+  .text-display .ann-span.active.c-green { background: #bbf7d0; }
+  .text-display .nbadge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    color: #fff;
+    vertical-align: super;
+    margin-left: 2px;
+    line-height: 1;
+  }
+
+  /* Floating annotate button */
+  .float-btn {
+    position: absolute;
+    z-index: 200;
+    background: #4338ca;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    display: none;
+    white-space: nowrap;
+  }
+  .float-btn:hover { background: #3730a3; }
+
+  /* Divider insertion zones */
+  .div-zone { position: relative; height: 0; overflow: visible; }
+  .div-zone-btn { position: absolute; left: 50%; top: -10px; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 0.65rem; padding: 0.12rem 0.5rem; opacity: 0; transition: opacity 0.15s; background: #fff; border: 1px dashed #e2e5e9; color: #718096; border-radius: 4px; cursor: pointer; font-weight: 600; z-index: 10; }
+  .div-zone:hover .div-zone-btn { opacity: 1; }
+
+  .text-divider { display: flex; align-items: center; gap: 0.5rem; margin: 1rem 0; }
+  .text-divider-line { flex: 1; height: 1px; background: #e2e5e9; }
+  .text-divider input { width: 180px; text-align: center; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #4a5568; border: 1px dashed #e2e5e9; background: transparent; padding: 0.25rem 0.4rem; border-radius: 4px; }
+  .text-divider input:focus { border-style: solid; border-color: #4338ca; outline: none; }
+
+  /* ─── Annotations panel (right side) ─── */
+  .ann-panel { position: sticky; top: 120px; }
+  .ann-panel-header { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
+  .ann-card {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 0.7rem 0.8rem;
+    border-left: 3px solid;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    position: relative;
+  }
+  .ann-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .ann-card.c-red { background: #fef2f2; border-color: #991b1b; }
+  .ann-card.c-teal { background: #f0fdfa; border-color: #0f766e; }
+  .ann-card.c-blue { background: #eef2ff; border-color: #4338ca; }
+  .ann-card.c-gray { background: #f5f5f4; border-color: #6b6560; }
+  .ann-card.c-orange { background: #fff7ed; border-color: #c2410c; }
+  .ann-card.c-purple { background: #f5f3ff; border-color: #7c3aed; }
+  .ann-card.c-pink { background: #fdf2f8; border-color: #be185d; }
+  .ann-card.c-green { background: #f0fdf4; border-color: #15803d; }
+  .ann-card.active { box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+  .ann-card-label { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.3rem; }
+  .ann-card-label .rd { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .ann-card-label .rd.red { background: #991b1b; }
+  .ann-card-label .rd.teal { background: #0f766e; border-radius: 2px; }
+  .ann-card-label .rd.blue { background: #4338ca; border-radius: 0; transform: rotate(45deg); width: 7px; height: 7px; }
+  .ann-card-label .rd.gray { background: #6b6560; }
+  .ann-card-quote { font-size: 0.75rem; font-style: italic; color: #718096; border-left: 2px solid #e2e5e9; padding-left: 0.5rem; margin-bottom: 0.4rem; max-height: 40px; overflow: hidden; }
+  .ann-card-note { font-size: 0.8rem; }
+  .ann-card-actions { position: absolute; top: 6px; right: 6px; display: flex; gap: 3px; opacity: 0; transition: opacity 0.15s; }
+  .ann-card:hover .ann-card-actions { opacity: 1; }
+  .ann-card-actions button { font-family: 'Inter', sans-serif; font-size: 0.65rem; padding: 2px 5px; border: 1px solid #e2e5e9; border-radius: 3px; background: #fff; cursor: pointer; color: #718096; }
+  .ann-card-actions button:hover { background: #f5f6f8; }
+  .ann-card-actions button.del:hover { background: #fef2f2; color: #991b1b; }
+
+  /* ─── Annotation editor (modal-like inline) ─── */
+  .ann-editor {
+    background: #fff;
+    border: 2px solid #4338ca;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  .ann-editor-hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+  .ann-editor-hd-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; }
+  .ae-quote { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: #4a5568; font-style: italic; border-left: 2px solid #e2e5e9; padding-left: 0.6rem; margin-bottom: 0.7rem; max-height: 50px; overflow: hidden; }
+  .rating-opts { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+  .ro { font-family: 'Inter', sans-serif; font-size: 0.73rem; font-weight: 600; padding: 0.3rem 0.65rem; border-radius: 20px; border: 2px solid #e2e5e9; background: #fff; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 0.3rem; }
+  .ro:hover { border-color: #aaa; }
+  .ro.sel[data-r="red"] { border-color: #991b1b; background: #fef2f2; color: #991b1b; }
+  .ro.sel[data-r="teal"] { border-color: #0f766e; background: #f0fdfa; color: #0f766e; }
+  .ro.sel[data-r="blue"] { border-color: #4338ca; background: #eef2ff; color: #4338ca; }
+  .ro.sel[data-r="gray"] { border-color: #6b6560; background: #f5f5f4; color: #6b6560; }
+  .ro.sel[data-r="orange"] { border-color: #c2410c; background: #fff7ed; color: #c2410c; }
+  .ro.sel[data-r="purple"] { border-color: #7c3aed; background: #f5f3ff; color: #7c3aed; }
+  .ro.sel[data-r="pink"] { border-color: #be185d; background: #fdf2f8; color: #be185d; }
+  .ro.sel[data-r="green"] { border-color: #15803d; background: #f0fdf4; color: #15803d; }
+  .rd { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .rd.red { background: #991b1b; }
+  .rd.teal { background: #0f766e; border-radius: 2px; }
+  .rd.blue { background: #4338ca; border-radius: 0; transform: rotate(45deg); width: 8px; height: 8px; }
+  .rd.gray { background: #6b6560; }
+  .rd.orange { background: #c2410c; border-radius: 0; width: 10px; height: 5px; }
+  .rd.purple { background: #7c3aed; border-radius: 50% 50% 50% 0; }
+  .rd.pink { background: #be185d; width: 8px; height: 8px; clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%); border-radius: 0; }
+  .rd.green { background: #15803d; clip-path: polygon(50% 0%,100% 100%,0% 100%); border-radius: 0; width: 10px; height: 9px; }
+
+  .ev-item { display: flex; gap: 0.4rem; margin-bottom: 0.4rem; align-items: center; }
+  .ev-item input { flex: 1; font-size: 0.8rem; padding: 0.35rem 0.5rem; }
+  .ev-item .ev-url { flex: 0.5; }
+
+  /* ─── Export bar ─── */
+  .export-bar { position: sticky; bottom: 0; background: #fff; border-top: 1px solid #e2e5e9; padding: 0.8rem 1.5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 -2px 8px rgba(0,0,0,0.06); z-index: 500; font-family: 'Inter', sans-serif; }
+  .export-bar-info { font-size: 0.82rem; color: #718096; }
+  .export-bar-info strong { color: #1a1a2e; }
+
+  /* ─── Toast ─── */
+  .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: #1a1a2e; color: #fff; padding: 0.7rem 1.4rem; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.84rem; font-weight: 500; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transition: transform 0.3s ease; z-index: 9999; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  .ann-empty { text-align: center; padding: 2rem; color: #718096; font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+
+  @media (max-width: 700px) { .fr { grid-template-columns: 1fr; } .app-main { padding: 1rem; } }
+</style>
+</head>
+<body>
+
+<!-- site chrome -->
+<div class="banner">
+  <div class="banner-text">Pre-order <em>Unlocking Justice</em> — forthcoming June 2, 2026</div>
+  <div class="banner-links">
+    <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank">Amazon</a>
+    <a href="https://www.barnesandnoble.com/w/unlocking-justice-chad-m-topaz/1148313126" target="_blank">Barnes &amp; Noble</a>
+    <a href="https://bookshop.org/p/books/unlocking-justice-the-power-of-data-to-confront-inequity-and-create-change-chad-m-topaz/1899bc1e644edf72" target="_blank">Bookshop.org</a>
+    <a href="https://press.princeton.edu/books/hardcover/9780691276151/unlocking-justice" target="_blank">PUP</a>
+  </div>
+</div>
+<nav>
+  <a class="nav-name" href="../index.html">Chad M. Topaz</a>
+  <ul class="nav-links"><li class="nav-item"><a href="../book/index.html">Book</a></li><li class="nav-item has-dropdown">
+      <a href="#">About</a>
+      <div class="dropdown"><a href="../about/index.html">Biography</a><a href="https://docs.google.com/document/d/1Bf2vmmtSaV-XOin092E-2IbTA_JIVmyOYWAx2m5WKbw/edit?usp=sharing" target="_blank">CV</a><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a><a href="../music/index.html">Music</a></div>
+    </li><li class="nav-item has-dropdown">
+      <a href="#">Research</a>
+      <div class="dropdown"><a href="../research/index.html">Publications</a><a href="../research/presentations.html">Presentations</a><a href="../tda/index.html">Getting Started with TDA</a></div>
+    </li><li class="nav-item"><a href="../speaking/index.html">Speaking</a></li><li class="nav-item has-dropdown">
+      <a href="#">Press</a>
+      <div class="dropdown"><a href="../press/index.html">Op-Eds</a><a href="../press/coverage.html">Media Coverage</a></div>
+    </li><li class="nav-item has-dropdown">
+      <a href="#">Connect</a>
+      <div class="dropdown"><a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a><a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a><a href="https://chadtopaz.medium.com/" target="_blank">Blog (Medium)</a></div>
+    </li></ul>
+  <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <div class="mobile-menu-section">Book</div><a href="../book/index.html">Unlocking Justice</a>
+  <div class="mobile-menu-section">About</div><a href="../about/index.html">Biography</a><a href="https://docs.google.com/document/d/1Bf2vmmtSaV-XOin092E-2IbTA_JIVmyOYWAx2m5WKbw/edit?usp=sharing" target="_blank">CV</a><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a><a href="../music/index.html">Music</a>
+  <div class="mobile-menu-section">Research</div><a href="../research/index.html">Publications</a><a href="../research/presentations.html">Presentations</a><a href="../tda/index.html">Getting Started with TDA</a>
+  <div class="mobile-menu-section">Speaking</div><a href="../speaking/index.html">Speaking</a>
+  <div class="mobile-menu-section">Press</div><a href="../press/index.html">Op-Eds</a><a href="../press/coverage.html">Media Coverage</a>
+  <div class="mobile-menu-section">Connect</div><a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a><a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a><a href="https://chadtopaz.medium.com/" target="_blank">Blog (Medium)</a>
+</div>
+
+<!-- app bar -->
+<div class="app-topbar">
+  <div class="app-topbar-title">Rebutti<span>nator</span></div>
+  <div class="app-topbar-actions">
+    <button class="b-ghost" onclick="saveProject()">Save project</button>
+    <button class="b-ghost" onclick="document.getElementById('load-input').click()">Load project</button>
+    <input type="file" id="load-input" accept=".json" style="display:none" onchange="loadProject(event)">
+  </div>
+</div>
+
+<div class="app-main">
+
+  <!-- Intro / instructions -->
+  <div style="margin-bottom:1.2rem; padding:1.2rem 1.4rem; background:linear-gradient(135deg,#f8f7ff 0%,#eef2ff 100%); border:1px solid #e0e0ef; border-radius:10px; font-family:'Inter',sans-serif; font-size:0.88rem; line-height:1.7; color:#2c3e50;">
+    <div style="font-weight:700; font-size:1.05rem; margin-bottom:0.5rem; color:#1a1a2e;">Welcome to the Rebuttinator</div>
+    <p style="margin-bottom:0.6rem;">This free tool lets you create polished, professional annotated rebuttals and critical analyses&mdash;no coding required. Here&rsquo;s how it works:</p>
+    <ol style="margin:0 0 0.6rem 1.2rem; padding:0;">
+      <li style="margin-bottom:0.25rem;">Fill in some basic document info and customize your annotation categories (or keep the defaults).</li>
+      <li style="margin-bottom:0.25rem;">Paste the full text you want to annotate.</li>
+      <li style="margin-bottom:0.25rem;">Click and drag to select passages, then rate and comment on each one.</li>
+      <li>Preview your finished document and download it as a self-contained HTML file you can open in any browser&mdash;or print to PDF.</li>
+    </ol>
+    <p style="margin-bottom:0.6rem;">You can <strong>save</strong> your work-in-progress at any time (as a JSON file) and <strong>load</strong> it later to pick up where you left off. Use the buttons in the dark bar above. Want to see what the finished product looks like? <a href="https://www.chadtopaz.com/yale-rebuttal.html" target="_blank" style="color:#4338ca; font-weight:600;">View an example annotated document</a>.</p>
+    <div style="margin-top:0.8rem; padding:0.8rem 1rem; background:#fff; border:1px solid #e2e5e9; border-radius:8px; font-size:0.84rem;">
+      <span style="font-weight:700;">Support this project &amp; social justice:</span> The Rebuttinator is free and was developed without institutional resources. If you find it useful, please consider supporting my work by purchasing my book <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank" style="color:#4338ca; font-weight:600; text-decoration:underline;"><em>Unlocking Justice: The Power of Data to Confront Inequity and Create Change</em></a> (Princeton University Press, 2026). Also available at <a href="https://www.barnesandnoble.com/w/unlocking-justice-chad-m-topaz/1148313126" target="_blank" style="color:#4338ca;">Barnes&nbsp;&amp;&nbsp;Noble</a> and <a href="https://bookshop.org/p/books/unlocking-justice-the-power-of-data-to-confront-inequity-and-create-change-chad-m-topaz/1899bc1e644edf72" target="_blank" style="color:#4338ca;">Bookshop.org</a>.
+    </div>
+    <p style="margin-top:0.8rem; font-size:0.82rem; color:#4a5568;"><strong>Citation:</strong> Topaz, C.M. Rebuttinator [computer software]. <a href="https://www.chadtopaz.com/rebuttinator/" style="color:#4338ca;">https://www.chadtopaz.com/rebuttinator/</a></p>
+    <p style="margin-top:0.4rem; font-size:0.82rem; color:#4a5568;"><strong>Feedback &amp; suggestions:</strong> <span id="ct-email" style="cursor:pointer; color:#4338ca; text-decoration:underline;" onclick="this.textContent='chad.topaz'+'@'+'icloud.com';this.style.cursor='default';this.onclick=null;">click to reveal email</span></p>
+    <p style="margin-top:0.4rem; font-size:0.82rem; color:#4a5568;"><strong>Privacy:</strong> The Rebuttinator runs entirely in your browser. No data is collected, stored, or transmitted to any server. Your text and annotations never leave your computer.</p>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="pnl">
+    <div class="pnl-hd" onclick="tog('meta')"><div class="pnl-hd-left"><span class="sn">1</span> Document info</div><span class="pnl-chev open" id="ch-meta">▾</span></div>
+    <div class="pnl-bd" id="bd-meta">
+      <div class="fr"><div class="fg"><label for="doc-title">Document title</label><input type="text" id="doc-title" placeholder='e.g. "Annotated Edition"'></div><div class="fg"><label for="doc-author">Your name</label><input type="text" id="doc-author" placeholder="e.g. Jane Smith"></div></div>
+      <div class="fg"><label for="doc-subtitle">Subtitle</label><input type="text" id="doc-subtitle" placeholder="e.g. Line-by-line critical analysis of…"></div>
+      <div class="fr"><div class="fg"><label for="doc-source-title">Original source title</label><input type="text" id="doc-source-title" placeholder="Title of the document being annotated"></div><div class="fg"><label for="doc-source-url">Original source URL</label><input type="text" id="doc-source-url" placeholder="https://…"></div></div>
+      <div class="fr"><div class="fg"><label for="doc-source-author">Original author/org</label><input type="text" id="doc-source-author" placeholder="e.g. Committee on Higher Education"></div><div class="fg"><label for="doc-source-date">Original date</label><input type="text" id="doc-source-date" placeholder="e.g. April 10, 2026"></div></div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="pnl">
+    <div class="pnl-hd" onclick="tog('cats')"><div class="pnl-hd-left"><span class="sn">2</span> Annotation categories</div><span class="pnl-chev" id="ch-cats">▾</span></div>
+    <div class="pnl-bd collapsed" id="bd-cats">
+      <p class="ht" style="margin-bottom:0.6rem;">Customize the rating categories for your annotations.</p>
+      <div id="cat-list"></div>
+      <button class="b b-sm" style="margin-top:0.5rem;" onclick="addCat()">+ Add category</button>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="pnl">
+    <div class="pnl-hd" onclick="tog('text')"><div class="pnl-hd-left"><span class="sn">3</span> Paste source text</div><span class="pnl-chev open" id="ch-text">▾</span></div>
+    <div class="pnl-bd" id="bd-text">
+      <p class="ht" style="margin-bottom:0.6rem;">Paste the full text of the document you want to annotate. Separate paragraphs with blank lines.</p>
+      <textarea id="src-text" rows="10" style="min-height:160px;font-family:'Inter',sans-serif;font-size:0.88rem;" placeholder="Paste the entire source document here…"></textarea>
+      <button class="b b-pri" style="margin-top:0.6rem;" onclick="parseText()">Load text &amp; start annotating</button>
+    </div>
+  </div>
+
+  <!-- Step 4: Executive summary (optional) -->
+  <div class="pnl" id="pnl-summary" style="display:none;">
+    <div class="pnl-hd" onclick="tog('summary')"><div class="pnl-hd-left"><span class="sn">4</span> Executive summary <span style="font-weight:400;font-size:0.78rem;color:#718096;margin-left:0.3rem;">(optional)</span></div><span class="pnl-chev" id="ch-summary">▾</span></div>
+    <div class="pnl-bd collapsed" id="bd-summary">
+      <p class="ht" style="margin-bottom:0.6rem;">Add a brief overview of your key findings. Each point is color-coded by category. This section appears at the top of your exported document, before the annotated text. Leave blank to skip.</p>
+      <div class="fg"><label for="summary-heading">Section heading</label><input type="text" id="summary-heading" value="Key findings" placeholder="e.g. Key findings, Where this falls short…"></div>
+      <div class="fg" style="margin-top:0.3rem;"><label for="summary-intro">Introductory paragraph</label><textarea id="summary-intro" rows="2" placeholder="(Optional) Brief context before the numbered points…" style="font-size:0.85rem;"></textarea></div>
+      <div id="summary-list" style="margin-top:0.8rem;"></div>
+      <button class="b b-sm" style="margin-top:0.5rem;" onclick="addSummaryPoint()">+ Add point</button>
+    </div>
+  </div>
+
+  <!-- Step 5: Annotate -->
+  <div class="pnl" id="pnl-ann" style="display:none;">
+    <div class="pnl-hd" onclick="tog('ann')"><div class="pnl-hd-left"><span class="sn">5</span> Annotate</div><span class="pnl-chev open" id="ch-ann">▾</span></div>
+    <div class="pnl-bd" id="bd-ann">
+      <p class="ht" style="margin-bottom:0.8rem;">Select text by clicking and dragging to annotate it. Unannotated text passes through as plain text. Hover between paragraphs to insert section dividers.</p>
+      <div class="annotate-layout">
+        <div style="position:relative;">
+          <div class="text-display" id="text-display"></div>
+          <button class="float-btn" id="float-btn" onmousedown="onFloatClick(event)">+ Annotate</button>
+        </div>
+        <div class="ann-panel" id="ann-panel">
+          <div class="ann-panel-header">
+            <span>Annotations <span id="ann-count-badge" style="background:#eef2ff;color:#4338ca;padding:0.15rem 0.5rem;border-radius:10px;font-size:0.72rem;">0</span></span>
+          </div>
+          <div id="ann-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Export bar -->
+<div class="export-bar" id="export-bar" style="display:none;">
+  <div class="export-bar-info"><strong id="ann-count">0</strong> annotations</div>
+  <div style="display:flex;gap:0.5rem;">
+    <button class="b" onclick="previewHTML()">Preview</button>
+    <button class="b b-pri" onclick="exportHTML()">Download HTML</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-copy">&copy; Chad Higdon-Topaz</div>
+  <ul class="footer-links">
+    <li><a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a></li>
+    <li><a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+    <li><a href="https://chadtopaz.medium.com/" target="_blank">Blog</a></li>
+  </ul>
+</footer>
+<script data-goatcounter="https://chadtopaz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════════
+
+let S = {
+  meta: {},
+  cats: [
+    { color: 'red', label: 'Factually false or misleading' },
+    { color: 'teal', label: 'Logic or reasoning failure' },
+    { color: 'blue', label: 'Rhetorical manipulation' },
+    { color: 'gray', label: 'Fair point, overstated or misused' },
+  ],
+  paragraphs: [],   // [{text, dividerBefore: null|'title'}]
+  annotations: [],   // [{id, paraIdx, startChar, endChar, selectedText, rating, note, evidence:[]}]
+  summary: { heading: 'Key findings', intro: '', points: [] },  // points: [{text, color}]
+};
+let annId = 0;
+let activeAnn = -1;  // id of annotation being edited
+let pendingSel = null; // {paraIdx, startChar, endChar, selectedText}
+
+// ══════════════════════════════════════════════════════════════
+// PANELS
+// ══════════════════════════════════════════════════════════════
+
+function tog(n) {
+  const b = document.getElementById('bd-' + n);
+  const c = document.getElementById('ch-' + n);
+  if (b) b.classList.toggle('collapsed');
+  if (c) c.classList.toggle('open');
+}
+
+// ══════════════════════════════════════════════════════════════
+// CATEGORIES
+// ══════════════════════════════════════════════════════════════
+
+function renderCats() {
+  const el = document.getElementById('cat-list');
+  el.innerHTML = '';
+  S.cats.forEach((c, i) => {
+    const r = document.createElement('div');
+    r.className = 'cat-row';
+    r.innerHTML = `<select onchange="S.cats[${i}].color=this.value;"><option value="red" ${c.color==='red'?'selected':''}>Red</option><option value="teal" ${c.color==='teal'?'selected':''}>Teal</option><option value="blue" ${c.color==='blue'?'selected':''}>Blue</option><option value="gray" ${c.color==='gray'?'selected':''}>Gray</option><option value="orange" ${c.color==='orange'?'selected':''}>Orange</option><option value="purple" ${c.color==='purple'?'selected':''}>Purple</option><option value="pink" ${c.color==='pink'?'selected':''}>Pink</option><option value="green" ${c.color==='green'?'selected':''}>Green</option></select>
+      <input type="text" value="${ea(c.label)}" onchange="S.cats[${i}].label=this.value;">
+      ${S.cats.length>1?`<button class="b b-sm b-dan" onclick="S.cats.splice(${i},1);renderCats();">×</button>`:''}`;
+    el.appendChild(r);
+  });
+}
+function addCat() { S.cats.push({color:'gray',label:'New category'}); renderCats(); }
+
+// ══════════════════════════════════════════════════════════════
+// EXECUTIVE SUMMARY
+// ══════════════════════════════════════════════════════════════
+
+function renderSummary() {
+  const el = document.getElementById('summary-list');
+  if (!el) return;
+  if (!S.summary) S.summary = { heading: 'Key findings', intro: '', points: [] };
+  document.getElementById('summary-heading').value = S.summary.heading || '';
+  document.getElementById('summary-intro').value = S.summary.intro || '';
+  el.innerHTML = '';
+  const colorOpts = ['red','teal','blue','gray','orange','purple','pink','green'];
+  const colorLabels = {red:'Red',teal:'Teal',blue:'Blue',gray:'Gray',orange:'Orange',purple:'Purple',pink:'Pink',green:'Green'};
+  S.summary.points.forEach((pt, i) => {
+    const optHTML = colorOpts.map(c => `<option value="${c}" ${pt.color===c?'selected':''}>${colorLabels[c]}</option>`).join('');
+    const r = document.createElement('div');
+    r.className = 'sp-row';
+    r.innerHTML = `<span class="sp-num">${i+1}.</span><select onchange="S.summary.points[${i}].color=this.value;">${optHTML}</select><textarea onchange="S.summary.points[${i}].text=this.value;" oninput="S.summary.points[${i}].text=this.value;">${ea(pt.text)}</textarea>${S.summary.points.length>1?`<button class="b b-sm b-dan" onclick="S.summary.points.splice(${i},1);renderSummary();">×</button>`:`<button class="b b-sm b-dan" onclick="S.summary.points.splice(${i},1);renderSummary();">×</button>`}`;
+    el.appendChild(r);
+  });
+}
+
+function collectSummary() {
+  if (!S.summary) S.summary = { heading: '', intro: '', points: [] };
+  S.summary.heading = document.getElementById('summary-heading').value;
+  S.summary.intro = document.getElementById('summary-intro').value;
+}
+
+function addSummaryPoint() {
+  if (!S.summary) S.summary = { heading: 'Key findings', intro: '', points: [] };
+  collectSummary();
+  S.summary.points.push({ text: '', color: S.cats[0] ? S.cats[0].color : 'red' });
+  renderSummary();
+}
+
+// ══════════════════════════════════════════════════════════════
+// TEXT PARSING
+// ══════════════════════════════════════════════════════════════
+
+function parseText() {
+  const raw = document.getElementById('src-text').value.trim();
+  if (!raw) { toast('Paste some text first'); return; }
+  const newParas = raw.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+  const oldParas = S.paragraphs;
+  const oldAnns = S.annotations;
+
+  // Build new paragraphs, preserving dividers where text matches
+  S.paragraphs = newParas.map(t => {
+    const match = oldParas.find(op => op.text === t);
+    return { text: t, dividerBefore: match ? match.dividerBefore : null };
+  });
+
+  // Try to remap existing annotations to new paragraph positions
+  if (oldAnns.length > 0) {
+    const kept = [];
+    const lost = [];
+    oldAnns.forEach(a => {
+      // First try: find the exact paragraph text in the new set
+      const newIdx = newParas.findIndex(t => {
+        const oldText = oldParas[a.paraIdx] ? oldParas[a.paraIdx].text : null;
+        return t === oldText;
+      });
+      if (newIdx !== -1) {
+        // Paragraph still exists at (possibly different) index
+        kept.push({ ...a, paraIdx: newIdx });
+      } else {
+        // Paragraph gone — search for the selected text in all new paragraphs
+        let found = false;
+        for (let pi = 0; pi < newParas.length; pi++) {
+          const idx = newParas[pi].indexOf(a.selectedText);
+          if (idx !== -1) {
+            kept.push({ ...a, paraIdx: pi, startChar: idx, endChar: idx + a.selectedText.length });
+            found = true;
+            break;
+          }
+        }
+        if (!found) lost.push(a);
+      }
+    });
+    S.annotations = kept;
+    if (lost.length) toast(lost.length + ' annotation(s) could not be remapped and were removed');
+    else if (kept.length) toast(newParas.length + ' paragraphs loaded — ' + kept.length + ' annotation(s) preserved');
+    else toast(newParas.length + ' paragraphs loaded');
+  } else {
+    S.annotations = [];
+    toast(newParas.length + ' paragraphs loaded');
+  }
+
+  activeAnn = -1;
+  if (S.annotations.length) annId = Math.max(0, ...S.annotations.map(a => a.id || 0)) + 1;
+  else annId = 0;
+  document.getElementById('pnl-summary').style.display = '';
+  document.getElementById('pnl-ann').style.display = '';
+  document.getElementById('export-bar').style.display = '';
+  renderSummary();
+  renderTextDisplay();
+  renderAnnList();
+  document.getElementById('bd-text').classList.add('collapsed');
+  document.getElementById('ch-text').classList.remove('open');
+}
+
+// ══════════════════════════════════════════════════════════════
+// TEXT DISPLAY WITH HIGHLIGHTS
+// ══════════════════════════════════════════════════════════════
+
+function renderTextDisplay() {
+  const el = document.getElementById('text-display');
+  let html = '';
+
+  // Sort annotations by paraIdx, then startChar
+  const sorted = [...S.annotations].sort((a, b) => a.paraIdx - b.paraIdx || a.startChar - b.startChar);
+
+  S.paragraphs.forEach((para, pi) => {
+    // Divider before?
+    if (para.dividerBefore !== null) {
+      html += `<div class="text-divider"><span class="text-divider-line"></span><input type="text" value="${ea(para.dividerBefore)}" placeholder="Section heading" onchange="S.paragraphs[${pi}].dividerBefore=this.value;"><button class="b b-sm b-dan" onclick="S.paragraphs[${pi}].dividerBefore=null;renderTextDisplay();" style="margin-left:4px;">×</button><span class="text-divider-line"></span></div>`;
+    }
+
+    // Insert divider hover zone (between paragraphs)
+    if (pi > 0 && para.dividerBefore === null) {
+      html += `<div class="div-zone"><button class="div-zone-btn" onclick="event.stopPropagation();S.paragraphs[${pi}].dividerBefore='';renderTextDisplay();">+ Section divider</button></div>`;
+    }
+
+    // Get annotations for this paragraph
+    const anns = sorted.filter(a => a.paraIdx === pi);
+    const text = para.text;
+
+    // Assign note numbers (global order)
+    const noteNums = {};
+    let nn = 0;
+    S.annotations.forEach(a => { nn++; noteNums[a.id] = nn; });
+
+    if (anns.length === 0) {
+      html += `<p data-pi="${pi}">${esc(text)}</p>`;
+    } else {
+      // Build segments
+      let segments = [];
+      let pos = 0;
+      anns.forEach(a => {
+        if (a.startChar > pos) segments.push({ type: 'plain', text: text.substring(pos, a.startChar) });
+        segments.push({ type: 'ann', text: text.substring(a.startChar, a.endChar), ann: a });
+        pos = a.endChar;
+      });
+      if (pos < text.length) segments.push({ type: 'plain', text: text.substring(pos) });
+
+      let pHtml = '';
+      segments.forEach(seg => {
+        if (seg.type === 'plain') {
+          pHtml += esc(seg.text);
+        } else {
+          const c = seg.ann.rating;
+          const isActive = seg.ann.id === activeAnn;
+          const cv = { red: '#991b1b', teal: '#0f766e', blue: '#4338ca', gray: '#6b6560', orange: '#c2410c', purple: '#7c3aed', pink: '#be185d', green: '#15803d' };
+          pHtml += `<span class="ann-span c-${c}${isActive?' active':''}" data-ann-id="${seg.ann.id}" onclick="event.stopPropagation();selectAnn(${seg.ann.id})">${esc(seg.text)}<span class="nbadge" style="background:${cv[c]||cv.gray};">${noteNums[seg.ann.id]}</span></span>`;
+        }
+      });
+      html += `<p data-pi="${pi}">${pHtml}</p>`;
+    }
+  });
+
+  el.innerHTML = html;
+  updateCounts();
+}
+
+// ══════════════════════════════════════════════════════════════
+// TEXT SELECTION → ANNOTATION
+// ══════════════════════════════════════════════════════════════
+
+document.addEventListener('mouseup', function(e) {
+  const fb = document.getElementById('float-btn');
+  const td = document.getElementById('text-display');
+  if (!td) return;
+
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || sel.rangeCount === 0) { fb.style.display = 'none'; pendingSel = null; return; }
+
+  // Check selection is inside text-display
+  const range = sel.getRangeAt(0);
+  if (!td.contains(range.commonAncestorContainer)) { fb.style.display = 'none'; pendingSel = null; return; }
+
+  const selectedText = sel.toString().trim();
+  if (!selectedText) { fb.style.display = 'none'; pendingSel = null; return; }
+
+  // Find the paragraph
+  let node = range.startContainer;
+  let pEl = null;
+  while (node && node !== td) {
+    if (node.nodeType === 1 && node.tagName === 'P' && node.dataset.pi !== undefined) { pEl = node; break; }
+    node = node.parentNode;
+  }
+  if (!pEl) { fb.style.display = 'none'; pendingSel = null; return; }
+
+  // Check end is in same paragraph
+  let endNode = range.endContainer;
+  let pEl2 = null;
+  while (endNode && endNode !== td) {
+    if (endNode.nodeType === 1 && endNode.tagName === 'P' && endNode.dataset.pi !== undefined) { pEl2 = endNode; break; }
+    endNode = endNode.parentNode;
+  }
+
+  const paraIdx = parseInt(pEl.dataset.pi);
+  const paraText = S.paragraphs[paraIdx].text;
+
+  // Calculate character offsets
+  // Find the selected text in the paragraph
+  let startChar, endChar;
+  if (pEl === pEl2 || !pEl2) {
+    // Same paragraph — find the selected text position
+    const selText = sel.toString();
+    // Use the offset calculation by walking text nodes
+    startChar = getCharOffset(pEl, range.startContainer, range.startOffset);
+    endChar = getCharOffset(pEl, range.endContainer, range.endOffset);
+    if (startChar === -1 || endChar === -1 || startChar >= endChar) {
+      // Fallback: find the text in the paragraph
+      startChar = paraText.indexOf(selectedText);
+      if (startChar === -1) { fb.style.display = 'none'; return; }
+      endChar = startChar + selectedText.length;
+    }
+  } else {
+    fb.style.display = 'none'; pendingSel = null; return; // cross-paragraph, skip
+  }
+
+  // Check for overlapping annotations
+  const overlaps = S.annotations.some(a => a.paraIdx === paraIdx && !(endChar <= a.startChar || startChar >= a.endChar));
+  if (overlaps) { fb.style.display = 'none'; pendingSel = null; toast('Selection overlaps an existing annotation'); return; }
+
+  pendingSel = { paraIdx, startChar, endChar, selectedText: paraText.substring(startChar, endChar) };
+
+  // Position the float button near the selection
+  const rect = range.getBoundingClientRect();
+  const tdRect = td.getBoundingClientRect();
+  fb.style.left = (rect.right - tdRect.left + 5) + 'px';
+  fb.style.top = (rect.top - tdRect.top - 5) + 'px';
+  fb.style.display = 'block';
+});
+
+function getCharOffset(container, targetNode, targetOffset) {
+  // Walk text nodes in the container, counting characters
+  // Skip nbadge spans (note number badges)
+  let count = 0;
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_ALL, {
+    acceptNode: function(node) {
+      if (node.nodeType === 1 && (node.classList.contains('nbadge'))) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  let n;
+  while (n = walker.nextNode()) {
+    if (n.nodeType === 3) { // text node
+      if (n === targetNode) return count + targetOffset;
+      count += n.length;
+    }
+  }
+  return -1;
+}
+
+function onFloatClick(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (!pendingSel) return;
+
+  const ann = {
+    id: ++annId,
+    paraIdx: pendingSel.paraIdx,
+    startChar: pendingSel.startChar,
+    endChar: pendingSel.endChar,
+    selectedText: pendingSel.selectedText,
+    rating: S.cats[0]?.color || 'red',
+    note: '',
+    evidence: []
+  };
+  S.annotations.push(ann);
+  activeAnn = ann.id;
+  pendingSel = null;
+  document.getElementById('float-btn').style.display = 'none';
+  window.getSelection().removeAllRanges();
+  renderTextDisplay();
+  renderAnnList();
+}
+
+// ══════════════════════════════════════════════════════════════
+// ANNOTATION LIST (right panel)
+// ══════════════════════════════════════════════════════════════
+
+function selectAnn(id) {
+  activeAnn = activeAnn === id ? -1 : id;
+  renderTextDisplay();
+  renderAnnList();
+  // Scroll the editor into view
+  setTimeout(() => {
+    const ed = document.querySelector('.ann-editor');
+    if (ed) ed.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 50);
+}
+
+function renderAnnList() {
+  const el = document.getElementById('ann-list');
+  if (S.annotations.length === 0) {
+    el.innerHTML = '<div class="ann-empty">Select text in the document to create your first annotation.</div>';
+    return;
+  }
+
+  let html = '';
+  S.annotations.forEach((a, i) => {
+    const c = a.rating;
+    const catLabel = (S.cats.find(cc => cc.color === c) || S.cats[0] || { label: 'Note' }).label;
+    const num = i + 1;
+
+    if (activeAnn === a.id) {
+      // Inline editor
+      const ratingHTML = S.cats.map(cat =>
+        `<button class="ro ${a.rating===cat.color?'sel':''}" data-r="${cat.color}" onclick="setRating(${a.id},'${cat.color}')"><span class="rd ${cat.color}"></span> ${esc(cat.label)}</button>`
+      ).join('');
+
+      const evHTML = (a.evidence||[]).map((ev,ei) =>
+        `<div class="ev-item"><input type="text" value="${ea(ev.text)}" placeholder="Evidence…" onchange="updEv(${a.id},${ei},'text',this.value)"><input type="text" class="ev-url" value="${ea(ev.url)}" placeholder="URL" onchange="updEv(${a.id},${ei},'url',this.value)"><button class="b b-sm b-dan" onclick="rmEv(${a.id},${ei})">×</button></div>`
+      ).join('');
+
+      html += `<div class="ann-editor">
+        <div class="ann-editor-hd"><div class="ann-editor-hd-title">Note ${num}</div><div style="display:flex;gap:4px;"><button class="b b-sm b-dan" onclick="rmAnn(${a.id})">Delete</button><button class="b b-sm" onclick="activeAnn=-1;renderTextDisplay();renderAnnList();">Close</button></div></div>
+        <div class="ae-quote">"${esc(a.selectedText.substring(0,120))}${a.selectedText.length>120?'…':''}"</div>
+        <div class="rating-opts">${ratingHTML}</div>
+        <div class="fg"><label>Your annotation</label><textarea rows="3" id="ann-note-${a.id}" oninput="updNote(${a.id},this.value)" placeholder="Your critical note…">${esc(a.note)}</textarea></div>
+        <div class="fg"><label>Evidence (optional)</label><div id="ev-list-${a.id}">${evHTML}</div><button class="b b-sm" onclick="addEv(${a.id})">+ Add evidence</button></div>
+      </div>`;
+    } else {
+      const preview = a.note ? (a.note.length > 80 ? a.note.substring(0,80) + '…' : a.note) : '<em style="color:#718096">No note yet</em>';
+      html += `<div class="ann-card c-${c} ${activeAnn===a.id?'active':''}" onclick="selectAnn(${a.id})">
+        <div class="ann-card-actions"><button onclick="event.stopPropagation();rmAnn(${a.id})" class="del">×</button></div>
+        <div class="ann-card-label"><span class="rd ${c}"></span> ${num}. ${esc(catLabel)}</div>
+        <div class="ann-card-quote">"${esc(a.selectedText.substring(0,60))}${a.selectedText.length>60?'…':''}"</div>
+        <div class="ann-card-note">${preview}</div>
+      </div>`;
+    }
+  });
+  el.innerHTML = html;
+  updateCounts();
+}
+
+function setRating(id, color) {
+  const a = S.annotations.find(x => x.id === id);
+  if (a) a.rating = color;
+  renderTextDisplay();
+  renderAnnList();
+  setTimeout(() => { const ta = document.getElementById('ann-note-' + id); if (ta) ta.focus(); }, 50);
+}
+
+function updNote(id, val) {
+  const a = S.annotations.find(x => x.id === id);
+  if (a) a.note = val;
+  updateCounts();
+}
+
+function rmAnn(id) {
+  S.annotations = S.annotations.filter(x => x.id !== id);
+  if (activeAnn === id) activeAnn = -1;
+  renderTextDisplay();
+  renderAnnList();
+}
+
+function addEv(id) {
+  const a = S.annotations.find(x => x.id === id);
+  if (a) { a.evidence.push({ text: '', url: '' }); renderAnnList(); }
+}
+function rmEv(id, ei) {
+  const a = S.annotations.find(x => x.id === id);
+  if (a) { a.evidence.splice(ei, 1); renderAnnList(); }
+}
+function updEv(id, ei, f, v) {
+  const a = S.annotations.find(x => x.id === id);
+  if (a && a.evidence[ei]) a.evidence[ei][f] = v;
+}
+
+function updateCounts() {
+  const n = S.annotations.length;
+  const el1 = document.getElementById('ann-count');
+  const el2 = document.getElementById('ann-count-badge');
+  if (el1) el1.textContent = n;
+  if (el2) el2.textContent = n;
+}
+
+// ══════════════════════════════════════════════════════════════
+// SAVE / LOAD
+// ══════════════════════════════════════════════════════════════
+
+function collectMeta() {
+  S.meta = {
+    title: document.getElementById('doc-title').value,
+    subtitle: document.getElementById('doc-subtitle').value,
+    author: document.getElementById('doc-author').value,
+    sourceTitle: document.getElementById('doc-source-title').value,
+    sourceUrl: document.getElementById('doc-source-url').value,
+    sourceAuthor: document.getElementById('doc-source-author').value,
+    sourceDate: document.getElementById('doc-source-date').value,
+  };
+}
+function applyMeta() {
+  const m = S.meta || {};
+  document.getElementById('doc-title').value = m.title || '';
+  document.getElementById('doc-subtitle').value = m.subtitle || '';
+  document.getElementById('doc-author').value = m.author || '';
+  document.getElementById('doc-source-title').value = m.sourceTitle || '';
+  document.getElementById('doc-source-url').value = m.sourceUrl || '';
+  document.getElementById('doc-source-author').value = m.sourceAuthor || '';
+  document.getElementById('doc-source-date').value = m.sourceDate || '';
+}
+function saveProject() {
+  collectMeta();
+  collectSummary();
+  S._raw = document.getElementById('src-text').value;
+  dlBlob(new Blob([JSON.stringify(S,null,2)],{type:'application/json'}), (S.meta.title||'rebuttinator').replace(/[^a-zA-Z0-9]/g,'-').toLowerCase()+'.json');
+  toast('Project saved!');
+}
+function loadProject(e) {
+  const f = e.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = function(ev) {
+    try {
+      S = JSON.parse(ev.target.result);
+      if (S._raw) document.getElementById('src-text').value = S._raw;
+      annId = Math.max(0, ...S.annotations.map(a=>a.id||0)) + 1;
+      applyMeta(); renderCats();
+      if (!S.summary) S.summary = { heading: 'Key findings', intro: '', points: [] };
+      if (S.paragraphs.length) {
+        document.getElementById('pnl-summary').style.display = '';
+        document.getElementById('pnl-ann').style.display = '';
+        document.getElementById('export-bar').style.display = '';
+        activeAnn = -1;
+        renderSummary(); renderTextDisplay(); renderAnnList();
+      }
+      toast('Project loaded!');
+    } catch(err) { toast('Error loading file'); }
+  };
+  r.readAsText(f); e.target.value = '';
+}
+
+// ══════════════════════════════════════════════════════════════
+// HTML GENERATION
+// ══════════════════════════════════════════════════════════════
+
+function buildSummaryHTML(cv) {
+  const sum = S.summary;
+  if (!sum || !sum.points || !sum.points.filter(p => p.text.trim()).length) return '';
+  const validPts = sum.points.filter(p => p.text.trim());
+  let html = '<section class="exec-summary">';
+  if (sum.heading) html += `\n  <h2>${esc(sum.heading)}</h2>`;
+  if (sum.intro && sum.intro.trim()) html += `\n  <p class="summary-intro">${esc(sum.intro)}</p>`;
+  html += '\n  <div class="summary-grid">';
+  validPts.forEach((pt, i) => {
+    const cc = cv[pt.color] || cv.gray;
+    html += `\n    <div class="summary-point" style="background:${cc.b};"><span class="sp-num" style="background:${cc.m};">${i+1}</span><span>${esc(pt.text)}</span></div>`;
+  });
+  html += '\n  </div>\n</section>';
+  return html;
+}
+
+function generateHTML() {
+  collectMeta();
+  collectSummary();
+  const m = S.meta;
+  const cv = { red:{m:'#991b1b',b:'#fef2f2'},teal:{m:'#0f766e',b:'#f0fdfa'},blue:{m:'#4338ca',b:'#eef2ff'},gray:{m:'#6b6560',b:'#f5f5f4'},orange:{m:'#c2410c',b:'#fff7ed'},purple:{m:'#7c3aed',b:'#f5f3ff'},pink:{m:'#be185d',b:'#fdf2f8'},green:{m:'#15803d',b:'#f0fdf4'} };
+  const shp = { red:'border-radius:50%;',teal:'border-radius:2px;',blue:'border-radius:0;transform:rotate(45deg);width:10px;height:10px;',gray:'border-radius:3px;',orange:'border-radius:0;width:10px;height:5px;',purple:'border-radius:50% 50% 50% 0;',pink:'width:8px;height:8px;clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);border-radius:0;',green:'clip-path:polygon(50% 0%,100% 100%,0% 100%);border-radius:0;width:10px;height:9px;' };
+
+  const legendItems = S.cats.map(c => `<span class="legend-item"><span class="legend-dot" style="width:12px;height:12px;background:${(cv[c.color]||cv.gray).m};${shp[c.color]||''}display:inline-block;flex-shrink:0;"></span> ${esc(c.label)}</span>`).join('\n    ');
+
+  let srcLine = '';
+  if (m.sourceTitle) {
+    const tp = m.sourceUrl ? `<a href="${ea(m.sourceUrl)}" target="_blank" rel="noopener"><em>${esc(m.sourceTitle)}</em></a>` : `<em>${esc(m.sourceTitle)}</em>`;
+    srcLine = `<p class="meta" style="margin-top:1rem;line-height:1.8;">Original document: ${tp}${m.sourceAuthor?'<br>'+esc(m.sourceAuthor):''}${m.sourceDate?', '+esc(m.sourceDate):''}</p>`;
+  }
+
+  // Group paragraphs into blocks separated by dividers
+  const sorted = [...S.annotations].sort((a,b) => a.paraIdx-b.paraIdx || a.startChar-b.startChar);
+  let bodyHTML = '';
+  let noteNum = 0;
+
+  // Build groups
+  const groups = [];
+  let cur = { paras: [] };
+  S.paragraphs.forEach((p, pi) => {
+    if (p.dividerBefore !== null) {
+      if (cur.paras.length) groups.push(cur);
+      groups.push({ divider: p.dividerBefore });
+      cur = { paras: [] };
+    }
+    cur.paras.push({ ...p, idx: pi });
+  });
+  if (cur.paras.length) groups.push(cur);
+
+  groups.forEach(g => {
+    if (g.divider !== undefined) {
+      bodyHTML += `\n<div class="section-divider"><h2>${esc(g.divider||'')}</h2></div>`;
+      return;
+    }
+
+    let textParts = [];
+    let noteParts = [];
+    const hasAnyAnn = g.paras.some(p => sorted.some(a => a.paraIdx === p.idx));
+
+    g.paras.forEach(p => {
+      const anns = sorted.filter(a => a.paraIdx === p.idx);
+      const text = p.text;
+
+      if (anns.length === 0) {
+        textParts.push(`<p>${esc(text)}</p>`);
+      } else {
+        let segments = [];
+        let pos = 0;
+        anns.forEach(a => {
+          if (a.startChar > pos) segments.push({ type:'plain', text: text.substring(pos, a.startChar) });
+          segments.push({ type:'ann', text: text.substring(a.startChar, a.endChar), ann: a });
+          pos = a.endChar;
+        });
+        if (pos < text.length) segments.push({ type:'plain', text: text.substring(pos) });
+
+        noteNum = 0;
+        // recalculate noteNum for each annotation
+        let pH = '';
+        segments.forEach(seg => {
+          if (seg.type === 'plain') { pH += esc(seg.text); }
+          else {
+            const nn = S.annotations.indexOf(seg.ann) + 1;
+            const c = seg.ann.rating;
+            const cc = cv[c] || cv.gray;
+            pH += `<span class="annotated-span" style="background:${cc.b};border-bottom:2px solid ${cc.m};padding:1px 2px;border-radius:2px;">${esc(seg.text)}<span class="note-num" style="background:${cc.m};">${nn}</span></span>`;
+
+            // Build margin note (only once per annotation)
+            const catLabel = (S.cats.find(cc2 => cc2.color === c) || S.cats[0] || {label:'Note'}).label;
+            let evHTML = '';
+            const validEv = (seg.ann.evidence||[]).filter(e=>e.text);
+            if (validEv.length) {
+              const evItems = validEv.map(e => {
+                let u = '';
+                if (e.url) { try { u = ` (<a href="${ea(e.url)}" target="_blank" rel="noopener">${esc(new URL(e.url).hostname.replace('www.',''))}</a>)`; } catch(_) { u = ` (<a href="${ea(e.url)}" target="_blank">link</a>)`; } }
+                return `<p>• ${esc(e.text)}${u}</p>`;
+              }).join('\n          ');
+              evHTML = `\n        <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence ▸</button>\n        <div class="note-evidence">\n          ${evItems}\n        </div>`;
+            }
+            noteParts.push(`<div class="margin-note" style="background:${cc.b};border-color:${cc.m};"><span class="note-label" style="color:${cc.m};"><span class="note-num-label" style="background:${cc.m};">${nn}</span>${esc(catLabel).toUpperCase()}</span><p>${esc(seg.ann.note||'')}</p>${evHTML}</div>`);
+          }
+        });
+        textParts.push(`<p>${pH}</p>`);
+      }
+    });
+
+    if (noteParts.length) {
+      bodyHTML += `\n<div class="annotated-body"><div class="original-text">\n    ${textParts.join('\n    ')}\n  </div><div class="margin-notes">\n    ${noteParts.join('\n    ')}\n  </div></div>`;
+    } else {
+      bodyHTML += `\n<div class="plain-text-block">\n  ${textParts.join('\n  ')}\n</div>`;
+    }
+  });
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(m.title||'Annotated Document')}</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Source Serif 4',Georgia,serif;color:#2c3e50;background:#fdfcfb;line-height:1.7;font-size:17px;}
+  .page-header{background:#1b2631;color:#ecf0f1;padding:3rem 2rem 2.5rem;text-align:center;}
+  .page-header h1{font-family:'Inter',sans-serif;font-weight:700;font-size:2rem;margin-bottom:0.5rem;letter-spacing:-0.02em;}
+  .page-header .subtitle{font-family:'Inter',sans-serif;font-weight:400;font-size:1.05rem;color:#aeb6bf;max-width:680px;margin:0 auto;line-height:1.5;}
+  .page-header .meta{font-family:'Inter',sans-serif;font-size:0.85rem;color:#7f8c8d;margin-top:1.2rem;}
+  .page-header .meta a{color:#85c1e9;text-decoration:none;border-bottom:1px dotted #85c1e9;}
+  .page-header .meta a:hover{color:#fff;border-color:#fff;}
+  .legend-bar{background:#fff;border-bottom:1px solid #e5e8eb;padding:1rem 2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;font-family:'Inter',sans-serif;font-size:0.82rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+  .legend-item{display:flex;align-items:center;gap:0.4rem;}
+  .annotated-body{max-width:1200px;margin:2rem auto;padding:0 2rem;display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:start;}
+  .original-text{font-size:1.05rem;line-height:1.8;}
+  .original-text p{margin-bottom:1.2rem;}
+  .plain-text-block{max-width:780px;margin:1.5rem auto;padding:0 2rem;font-size:1.05rem;line-height:1.8;}
+  .plain-text-block p{margin-bottom:1.2rem;}
+  .annotated-span{cursor:default;transition:background 0.15s;}
+  .note-num{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;width:1.3em;height:1.3em;border-radius:50%;color:#fff;vertical-align:super;margin-left:2px;line-height:1;}
+  .margin-notes{position:relative;}
+  .margin-note{font-family:'Inter',sans-serif;font-size:0.82rem;line-height:1.5;padding:0.7rem 0.9rem;border-left:3px solid;border-radius:0 5px 5px 0;margin-bottom:0.8rem;}
+  .margin-note .note-label{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem;display:block;}
+  .margin-note .note-num-label{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;width:1.4em;height:1.4em;border-radius:50%;color:#fff;margin-right:0.4rem;vertical-align:middle;line-height:1;}
+  .margin-note p{margin-bottom:0.3rem;}
+  .note-evidence{display:none;margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid rgba(0,0,0,0.08);font-size:0.78rem;color:#5d6d7e;}
+  .note-evidence.open{display:block;}
+  .note-evidence p{margin-bottom:0.3rem;}
+  .note-evidence a{color:#4338ca;text-decoration:none;border-bottom:1px dotted #4338ca;}
+  .evidence-toggle{font-size:0.75rem;color:#4338ca;cursor:pointer;font-weight:600;margin-top:0.4rem;display:inline-block;border:none;background:none;font-family:'Inter',sans-serif;padding:0;}
+  .evidence-toggle:hover{text-decoration:underline;}
+  .section-divider{max-width:780px;margin:2rem auto;padding:0 2rem;border-top:2px solid #e5e8eb;}
+  .section-divider h2{font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:700;margin-top:2rem;margin-bottom:0.5rem;color:#5d6d7e;text-transform:uppercase;letter-spacing:0.06em;}
+  .footer{text-align:center;padding:2rem 2rem 2.5rem;font-family:'Inter',sans-serif;font-size:0.78rem;color:#7f8c8d;border-top:1px solid #e5e8eb;margin-top:3rem;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.6;}
+  .footer a{color:#4338ca;text-decoration:none;}
+  .footer p{margin-bottom:0;}
+  .exec-summary{max-width:780px;margin:2.5rem auto;padding:0 2rem;}
+  .exec-summary h2{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:1rem;color:#2c3e50;}
+  .exec-summary .summary-intro{font-size:0.95rem;color:#5d6d7e;margin-bottom:1.2rem;line-height:1.6;}
+  .exec-summary .summary-grid{display:grid;grid-template-columns:1fr;gap:0.8rem;}
+  .summary-point{display:flex;gap:0.8rem;align-items:flex-start;padding:0.8rem 1rem;border-radius:6px;font-size:0.95rem;line-height:1.5;}
+  .summary-point .sp-num{font-family:'Inter',sans-serif;font-weight:700;font-size:0.85rem;min-width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;flex-shrink:0;margin-top:2px;}
+  @media(max-width:900px){.annotated-body{grid-template-columns:1fr;}.margin-notes{order:2;}}
+</style>
+</head>
+<body>
+<header class="page-header">
+  <h1>${esc(m.title||'Annotated Document')}</h1>
+  ${m.subtitle?`<p class="subtitle">${esc(m.subtitle)}</p>`:''}
+  ${m.author?`<p class="meta" style="margin-top:1rem;">Annotated by <strong>${esc(m.author)}</strong></p>`:''}
+  ${srcLine}
+</header>
+<nav class="legend-bar" aria-label="Annotation color legend">${legendItems}</nav>
+${buildSummaryHTML(cv)}
+${bodyHTML}
+<div class="footer">
+  <p>Created with <a href="https://www.chadtopaz.com/rebuttinator/" target="_blank"><strong>Rebuttinator</strong></a>, a free tool by <a href="https://www.chadtopaz.com" target="_blank">Chad M. Topaz</a>. Please cite as: Topaz, C.M. Rebuttinator [computer software]. https://www.chadtopaz.com/rebuttinator/</p>
+  <p style="margin-top:0.8rem;">If you found this tool useful, please consider supporting the work by ordering <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank"><em>Unlocking Justice: The Power of Data to Confront Inequity and Create Change</em></a> (Princeton University Press, 2026).</p>
+</div>
+<script>
+function toggleEvidence(btn){var r=btn.getBoundingClientRect();var ev=btn.nextElementSibling;if(ev.classList.contains('open')){ev.classList.remove('open');btn.textContent='Show evidence \\u25b8';}else{ev.classList.add('open');btn.textContent='Hide evidence \\u25be';}var nr=btn.getBoundingClientRect();window.scrollBy(0,nr.top-r.top);}
+<\/script>
+</body>
+</html>`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// PREVIEW & EXPORT
+// ══════════════════════════════════════════════════════════════
+
+function previewHTML() {
+  const html = generateHTML();
+  const w = window.open('','_blank');
+  if (w) { w.document.write(html); w.document.close(); }
+  else toast('Pop-up blocked — allow pop-ups for this site');
+}
+
+function exportHTML() {
+  const html = generateHTML();
+  dlBlob(new Blob([html],{type:'text/html;charset=utf-8'}), (S.meta.title||'annotated-document').replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase()+'.html');
+  toast('HTML downloaded!');
+}
+
+function dlBlob(blob, name) {
+  const u = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = u; a.download = name;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(u), 5000);
+}
+
+// ══════════════════════════════════════════════════════════════
+// UTILITIES
+// ══════════════════════════════════════════════════════════════
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s||''; return d.innerHTML; }
+function ea(s) { return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function toast(m) { const t = document.getElementById('toast'); t.textContent = m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 2500); }
+
+// ══════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════
+renderCats();
+</script>
+</body>
+</html>
