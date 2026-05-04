@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotated Edition: Faculty Steering Committee Email on Grade Inflation (Williams College, May 2026)</title>
+<meta name="description" content="Line-by-line critical analysis of the Williams Faculty Steering Committee's May 2026 email on grade inflation. Annotated by Chad M. Topaz.">
+<meta property="og:title" content="Annotated Edition: Williams Grade-Inflation Email (May 2026)">
+<meta property="og:description" content="Line-by-line critical notes on factual accuracy, logical validity, and rhetorical method. Annotated by Chad M. Topaz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.chadtopaz.com/williams-grade-inflation-rebuttal.html">
+<meta property="og:image" content="https://www.chadtopaz.com/images/williams-rebuttal-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Chad M. Topaz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Annotated Edition: Williams Grade-Inflation Email (May 2026)">
+<meta name="twitter:description" content="Line-by-line critical notes on factual accuracy, logical validity, and rhetorical method. Annotated by Chad M. Topaz.">
+<meta name="twitter:image" content="https://www.chadtopaz.com/images/williams-rebuttal-og.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --red: #991b1b;
+    --red-bg: #fef2f2;
+    --red-border: #e6b0aa;
+    --teal: #0f766e;
+    --teal-bg: #f0fdfa;
+    --teal-border: #99f6e4;
+    --blue: #4338ca;
+    --blue-bg: #eef2ff;
+    --blue-border: #a5b4fc;
+    --gray: #6b6560;
+    --gray-bg: #f5f5f4;
+    --gray-border: #d6d3d1;
+    --text: #2c3e50;
+    --text-light: #5d6d7e;
+    --bg: #fdfcfb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* ─── Header ─── */
+  .page-header {
+    background: #1b2631;
+    color: #ecf0f1;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .page-header .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: #aeb6bf;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .page-header .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 1.2rem;
+  }
+  .page-header .meta a {
+    color: #85c1e9;
+    text-decoration: none;
+    border-bottom: 1px dotted #85c1e9;
+  }
+  .page-header .meta a:hover { color: #fff; border-color: #fff; }
+
+  /* ─── Legend ─── */
+  .legend-bar {
+    background: #fff;
+    border-bottom: 1px solid #e5e8eb;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-dot.red { background: var(--red); border-radius: 50%; }
+  .legend-dot.teal { background: var(--teal); border-radius: 2px; }
+  .legend-dot.blue { background: var(--blue); border-radius: 0; transform: rotate(45deg); width: 10px; height: 10px; }
+  .legend-dot.gray { background: var(--gray); }
+
+  /* ─── Executive summary ─── */
+  .exec-summary {
+    max-width: 780px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+  .exec-summary h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .exec-summary p.lede {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+  .exec-summary .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .summary-point {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .summary-point .sp-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .summary-point.fatal { background: var(--red-bg); }
+  .summary-point.fatal .sp-num { background: var(--red); }
+  .summary-point.structural { background: var(--teal-bg); }
+  .summary-point.structural .sp-num { background: var(--teal); }
+
+  /* ─── Onboarding hint ─── */
+  .annotation-hint {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    padding: 0.5rem 2rem;
+    background: #fafbfc;
+    border-bottom: 1px solid #eee;
+  }
+  .annotation-hint span {
+    background: var(--blue-bg);
+    border-bottom: 2px solid var(--blue);
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* ─── Divider ─── */
+  .section-divider {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    border-top: 2px solid #e5e8eb;
+  }
+  .section-divider h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+  }
+
+  /* ─── Annotated body ─── */
+  .annotated-body {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  .margin-notes {
+    /* Hidden on all screen sizes; content is shown in the drawer */
+    display: none;
+  }
+  .original-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  .original-text .author-byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .original-text .orig-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .original-text p {
+    margin-bottom: 1.2rem;
+  }
+
+  /* Highlighted spans in original text */
+  .annotated-span {
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    padding: 1px 2px;
+    border-radius: 2px;
+  }
+  .annotated-span:hover { filter: brightness(0.95); }
+  .annotated-span.red { background: var(--red-bg); border-bottom-color: var(--red); }
+  .annotated-span.teal { background: var(--teal-bg); border-bottom-color: var(--teal); }
+  .annotated-span.blue { background: var(--blue-bg); border-bottom-color: var(--blue); }
+  .annotated-span.gray { background: var(--gray-bg); border-bottom-color: var(--gray); }
+
+  /* Active highlight */
+  .annotated-span.active.red { background: #fecaca; }
+  .annotated-span.active.teal { background: #ccfbf1; }
+  .annotated-span.active.blue { background: #c7d2fe; }
+  .annotated-span.active.gray { background: #e7e5e4; }
+
+  /* ─── Margin notes (hidden; content displayed in drawer) ─── */
+  .margin-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 0.7rem 0.9rem;
+    border-left: 3px solid;
+    border-radius: 0 5px 5px 0;
+    margin-bottom: 0.8rem;
+    transition: opacity 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .margin-note .note-label {
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .margin-note.red { background: var(--red-bg); border-color: var(--red); }
+  .margin-note.red .note-label { color: var(--red); }
+  .margin-note.teal { background: var(--teal-bg); border-color: var(--teal); }
+  .margin-note.teal .note-label { color: var(--teal); }
+  .margin-note.blue { background: var(--blue-bg); border-color: var(--blue); }
+  .margin-note.blue .note-label { color: var(--blue); }
+  .margin-note.gray { background: var(--gray-bg); border-color: var(--gray); }
+  .margin-note.gray .note-label { color: var(--gray); }
+
+  .margin-note.active {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  .margin-note .note-source {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  .margin-note .note-source a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* Expandable evidence */
+  .note-evidence {
+    display: none;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+  .note-evidence.open { display: block; }
+  .evidence-toggle {
+    font-size: 0.75rem;
+    color: var(--blue);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    display: inline-block;
+    border: none;
+    background: none;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+  }
+  .evidence-toggle:hover { text-decoration: underline; }
+
+  /* ─── Closing section ─── */
+  .closing-section {
+    max-width: 780px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e5e8eb;
+  }
+  .closing-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .closing-section h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1.4rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+  .closing-section p {
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  /* ─── References ─── */
+  .references {
+    max-width: 780px;
+    margin: 2rem auto 2rem;
+    padding: 0 2rem;
+  }
+  .references h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+  }
+  .references ul {
+    list-style: none;
+    padding: 0;
+  }
+  .references li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    color: var(--text-light);
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+  .references li a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 600px) {
+    .page-header { padding: 2rem 1.2rem 1.8rem; }
+    .page-header h1 { font-size: 1.5rem; }
+    .exec-summary { padding: 0 1.2rem; }
+    .annotated-body { padding: 0 1.2rem; }
+    .closing-section { margin-left: 1rem; margin-right: 1rem; }
+    .references { padding: 0 1.2rem; }
+    .legend-bar { gap: 0.6rem; padding: 0.7rem 1rem; font-size: 0.75rem; }
+  }
+
+  /* ─── Note drawer (fixed bottom panel) ─── */
+  .note-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: #fff;
+    border-top: 3px solid var(--blue);
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+    max-height: 45vh;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.25s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .note-drawer.open { transform: translateY(0); }
+  .note-drawer.red { border-top-color: var(--red); }
+  .note-drawer.teal { border-top-color: var(--teal); }
+  .note-drawer.blue { border-top-color: var(--blue); }
+  .note-drawer.gray { border-top-color: var(--gray); }
+  .note-drawer-inner { max-width: 780px; margin: 0 auto; padding: 1.2rem 2rem 1.5rem; position: relative; }
+  .note-drawer-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
+  .note-drawer-label { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .note-drawer-label.red { color: var(--red); }
+  .note-drawer-label.teal { color: var(--teal); }
+  .note-drawer-label.blue { color: var(--blue); }
+  .note-drawer-label.gray { color: var(--gray); }
+  .note-drawer-close { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; background: none; border: 1px solid #e2e5e9; border-radius: 5px; padding: 0.25rem 0.6rem; cursor: pointer; color: var(--text-light); flex-shrink: 0; margin-left: 1rem; }
+  .note-drawer-close:hover { background: #f5f6f8; }
+  .note-drawer-body p { margin-bottom: 0.6rem; }
+  .note-drawer-body a { color: var(--blue); text-decoration: none; border-bottom: 1px dotted var(--blue); }
+  .note-drawer-body .note-evidence {
+    display: block;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .note-drawer-body .note-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  /* ─── Footer ─── */
+  .page-footer {
+    max-width: 780px;
+    margin: 0 auto 3rem;
+    padding: 2rem 2rem 0;
+    border-top: 1px solid #e5e8eb;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.6;
+  }
+  .page-footer a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--blue);
+  }
+
+  /* ─── Print ─── */
+  @media print {
+    .legend-bar { position: static; box-shadow: none; }
+    .annotation-hint { display: none; }
+    .note-drawer { display: none !important; }
+    .margin-notes { display: block; }
+    .margin-note { break-inside: avoid; }
+    .page-footer { border: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════ HEADER -->
+<header class="page-header">
+  <h1>Annotated Edition</h1>
+  <p class="subtitle">May 4, 2026 email on "grade inflation"</p>
+  <p class="meta" style="margin-top: 1rem;"><strong>From:</strong> Williams College Faculty Steering Committee and President Maud S. Mandel</p>
+  <p class="meta" style="margin-top: 0.4rem;"><strong>Annotation:</strong> Line-by-line notes on factual accuracy, logical validity, and rhetorical method</p>
+  <p class="meta" style="margin-top: 0.4rem;"><strong>By:</strong> <a href="https://www.chadtopaz.com" style="color: #85c1e9; font-weight: 700; border-bottom: 1px dotted #85c1e9;">Chad M. Topaz</a></p>
+</header>
+
+<!-- ══════════════════════════════════════════════════ LEGEND -->
+<nav class="legend-bar" aria-label="Annotation color legend">
+  <span class="legend-item"><span class="legend-dot red"></span> Factually false or misleading</span>
+  <span class="legend-item"><span class="legend-dot teal"></span> Logic or reasoning failure</span>
+  <span class="legend-item"><span class="legend-dot blue"></span> Rhetorical framing or loading</span>
+  <span class="legend-item"><span class="legend-dot gray"></span> Fair point, overstated or misused</span>
+</nav>
+<div class="annotation-hint">Click any <span>highlighted passage</span> in the annotated text below to read the note. Press Escape or click elsewhere to close.</div>
+
+<!-- ══════════════════════════════════════════════════ THE EMAIL (FULL TEXT) -->
+<section class="exec-summary" style="max-width: 780px;">
+  <h2>The email</h2>
+  <div style="background: #f8f9fa; border-left: 4px solid #6b6560; padding: 1.4rem 1.6rem; border-radius: 0 5px 5px 0; font-size: 0.98rem; line-height: 1.7;">
+    <p style="margin-bottom: 1rem;">Dear Faculty Colleagues,</p>
+    <p style="margin-bottom: 1rem;">Grade inflation has been a matter of concern at Williams for many years and has recently become the subject of intense discussion across higher education. In light of our upcoming decennial accreditation process, the Steering Committee and President Mandel are considering whether this is an appropriate moment to evaluate this issue on our campus. We are exploring the formation of a committee (potentially a special subcommittee of the CEA or an ad hoc committee) to examine grading trends at the College and, if necessary, propose policy recommendations.</p>
+    <p style="margin-bottom: 1rem;">We are writing to gauge your support for this initiative. We would be grateful if you would respond to the brief set of questions linked below, which will be used to inform our next steps. Responses are anonymous unless you choose to provide your contact information. [Survey link]</p>
+    <p style="margin-bottom: 1rem;">We would appreciate your response by 5pm on Monday, May 18.</p>
+    <p style="margin-bottom: 0.6rem;">Thank you,</p>
+    <p style="margin-bottom: 0;">The Faculty Steering Committee and President Maud S. Mandel</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ EXECUTIVE SUMMARY -->
+<section class="exec-summary">
+  <h2>Why the email itself is the problem, not the survey</h2>
+  <p class="lede">An email this short, under 200 words of substance, isn't the place to expect rigor. The brevity is part of the problem: a short message is doing a lot of work in a small space, and most of that work locks in the conclusion before the survey opens. Seven things go wrong.</p>
+  <div class="summary-grid">
+    <div class="summary-point fatal">
+      <span class="sp-num">1</span>
+      <span><strong>The email itself is the intervention; the survey results can't undo it.</strong> Once "grade inflation at Williams" shows up in a faculty-wide message from the President and the full Steering Committee, that framing is now the agenda, whatever the survey returns. The relevant research is on framing effects (Tversky and Kahneman, 1981), agenda-setting (McCombs and Shaw, 1972), and the continued-influence effect (Lewandowsky et al., 2012). The short version: institutional communications shape what faculty are asked to think about before they shape what faculty think, and once a frame is set, dissent tends to happen inside it.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">2</span>
+      <span><strong>The framing presupposes its conclusion.</strong> "Grade inflation" is one of several contested interpretations of why mean grades have risen. Other possibilities: grade compression, criterion-referenced grading, much higher selectivity in admissions, better teaching, the way student course evaluations push junior faculty toward higher grades, and a tradition that doubts grades are useful at all (Kohn, 2002; Blum, 2020; Stommel, 2018). Pattison, Grodsky, and Muller (2013, <em>Educational Researcher</em>) used nationally representative data and found that "the signaling power of grades has attenuated little, if at all" &mdash; which contests the strong form of the grade-inflation claim head on. The email forecloses two prior questions: whether "grade inflation" is the right name, and whether <em>grades</em> are the right instrument at all. Williams faculty debated the second of these in 2024, when a mandatory first-semester Credit/No Credit transcript policy was on the table.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">3</span>
+      <span><strong>The accreditation framing is misleading.</strong> Williams' next comprehensive evaluation by the New England Commission of Higher Education (NECHE) is in Fall 2027, under NECHE's 2026 <em>Standards for Accreditation</em> (effective July 1, 2026). Those standards ask for evidence of academic quality, student achievement, learning outcomes, and educational effectiveness. Williams could discuss grading under any of those headings. But none of the standards requires, mentions, or specifically invites an inquiry into grade inflation, grade compression, grade ranges, or grade distributions. Invoking the decennial review makes the inquiry sound externally required when it's actually a choice the President and Steering Committee are making.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">4</span>
+      <span><strong>Williams already has the aggregate data, and a plausible structural cause is already on the record.</strong> A 2024 memo from the Committee on Educational Affairs (CEA), reported in the <em>Williams Record</em>, showed that 76% of grades in 2023&ndash;24 were in the A range and 50% were straight As, up from 11% in 1985&ndash;86. Faculty have discussed this. Statistics professor Richard De Veaux told the <em>Record</em> in 2024 that "young faculty perceive that to give low grades, to give Bs and B+s, is certainly not, they think, the road to a safe tenure evaluation" &mdash; pointing at the Student Course Survey (SCS) regime and tenure incentives, not faculty laxity. David Love (Williams) and Matthew Kotchen (UC Santa Barbara, NBER) modeled the same dynamic formally in 2010 in the <em>Eastern Economic Journal</em>: "placing more emphasis on course evaluations exacerbates the problems of grade inflation." So the aggregate trends are not in dispute, and a plausible structural cause is already named. There's still useful work to do at the department, course-level, subgroup, SCS, honors, and outcome level. But a committee that "examines grading trends" without engaging the existing diagnosis is starting from scratch on a question Williams has already partly answered.</span>
+    </div>
+    <div class="summary-point fatal">
+      <span class="sp-num">5</span>
+      <span><strong>Faculty are being asked to support a committee without being told what such committees have historically produced.</strong> The email is silent on remedy &mdash; it just says the committee would "examine grading trends and, if necessary, propose policy recommendations." But comparable committees at peer institutions have generated numerical grade targets and caps, and the empirical record on those is cautionary. Wellesley capped course averages at B+ in Fall 2004. Butcher, McEwan, and Weerapana (2014, <em>Journal of Economic Perspectives</em>) studied what happened: grades dropped more for African-American students and students with low entering test scores, <em>magna cum laude</em> in affected departments fell from 20% to 16%, major enrollments in those departments dropped about 30%, and student evaluations of the affected faculty went down. Princeton set numerical targets for A-range grades in 2004 (the widely discussed 35% guideline) and removed them in 2014 after the review committee said they had been "too often misinterpreted as quotas," raised student stress, and pulled attention away from feedback. Harvard proposed in 2026 to cap "flat A" grades at 20 percent plus four students per class (no cap on A-minus). Per the <em>Harvard Crimson</em>, implementation has been delayed to fall 2027 if it passes, the proposal was still in faculty governance as of early May 2026, and a Harvard Undergraduate Association survey of nearly 800 respondents found 84.9% "definitely" opposed limiting A grades. The lesson isn't that grading interventions are always bad. It's that numerical caps and forced decompression generate serious equity, behavioral, and legitimacy problems &mdash; and faculty asked to support a committee that <em>might</em> recommend such remedies should know the record before voting on it.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">6</span>
+      <span><strong>The email fails the standard of evidence we hold our students to.</strong> "A matter of concern at Williams for many years"; "the subject of intense discussion across higher education." A student who opened a paper with sentences like these &mdash; vague consensus, no citations, no specification of whose concern, no engagement with counter-views &mdash; would be marked down. The standards we teach apply to institutional communications too, especially when those communications are proposing to evaluate our <em>academic</em> standards.</span>
+    </div>
+    <div class="summary-point structural">
+      <span class="sp-num">7</span>
+      <span><strong>The email frames the survey in a loaded way.</strong> The relevant political-science term is <em>push poll</em>: a survey designed to plant a position rather than measure one, where the question itself does the persuading by smuggling in a premise the respondent has to either accept or fight. The email's own description: the survey is "to gauge your support for this initiative." But the initiative's framing has already done the diagnostic work. This isn't a push poll in the strict sense the American Association for Public Opinion Research (AAPOR) uses; they reserve the term for political telemarketing disguised as research. It's a structural cousin: the email asks faculty to register support for a pre-named initiative, not to evaluate whether the initiative is well framed. Whether the actual Qualtrics instrument is structured that way is a separate question about the instrument; the critique here is about how the email sets it up.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ DIVIDER -->
+<div class="section-divider">
+  <h2>The annotated text</h2>
+</div>
+
+<!-- ══════════════════════════════════════════════════ ANNOTATED BODY -->
+<section class="annotated-body">
+
+<!-- ─── Original text column ─── -->
+<div class="original-text">
+
+<p class="orig-title">Faculty Steering Committee email on grade inflation</p>
+<p class="author-byline">From the Faculty Steering Committee and President Maud S. Mandel &middot; May 4, 2026</p>
+
+<p>Dear Faculty Colleagues,</p>
+
+<p><span class="annotated-span blue" data-note="n1">Grade inflation has been a matter of concern at Williams for many years</span> <span class="annotated-span blue" data-note="n2">and has recently become the subject of intense discussion across higher education.</span> <span class="annotated-span red" data-note="n3">In light of our upcoming decennial accreditation process,</span> <span class="annotated-span teal" data-note="n4">the Steering Committee and President Mandel are considering whether this is an appropriate moment to evaluate this issue on our campus.</span> We are exploring the formation of a committee (potentially a special subcommittee of the CEA or an ad hoc committee) <span class="annotated-span blue" data-note="n5">to examine grading trends at the College and, if necessary, propose policy recommendations.</span></p>
+
+<p><span class="annotated-span blue" data-note="n6">We are writing to gauge your support for this initiative.</span> We would be grateful if you would respond to the brief set of questions linked below, which will be used to inform our next steps. Responses are anonymous unless you choose to provide your contact information. <span class="annotated-span gray" data-note="n7">[Survey link]</span> We would appreciate your response by 5pm on Monday, May 18.</p>
+
+<p>Thank you,<br>
+<span class="annotated-span blue" data-note="n8">The Faculty Steering Committee and President Maud S. Mandel</span></p>
+
+</div><!-- /original-text -->
+
+<!-- ─── Margin notes column ─── -->
+<div class="margin-notes">
+
+<div class="margin-note blue" id="n1">
+  <span class="note-label">Presupposition, and the framing harm</span>
+  This sentence treats "grade inflation" as a settled, named phenomenon rather than a contested interpretation of grading data. It asserts "concern" without saying whose, how widespread, or whether well-founded. "For many years" suggests a long, validated tradition of worry. <strong>And once "grade inflation at Williams" is the named concern in a faculty-wide email from the President and the Steering Committee, that framing is now the agenda, whatever the survey returns.</strong> The relevant research is on framing effects (Tversky and Kahneman, 1981), agenda-setting (McCombs and Shaw, 1972), and the continued-influence effect (Lewandowsky et al., 2012). The short version: institutional communications shape what faculty are asked to think about before they shape what faculty think. Once a frame is set, dissent tends to happen inside it.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence &#9656;</button>
+  <div class="note-evidence">
+    The phrase "grade inflation" is widely credited as entering public discourse through a March 13, 1972 <em>New York Times</em> article by Iver Peterson, which attributed the phrase to sociologist David Riesman. Riesman reportedly linked the phenomenon to anti-elitist faculty attitudes, embedding the term in the politics of its moment. Five decades later, the framing (that rising grades are <em>inflation</em> rather than <em>improvement</em>, <em>compression</em>, or <em>better selection</em>) has hardened into received wisdom without ever winning the underlying empirical argument. There is also a substantial scholarly tradition (Kohn, 2002; Blum, 2020; Stommel, 2018) that views grades themselves as arbitrary and pedagogically counterproductive. Williams faculty engaged that deeper question as recently as 2024, in debating a mandatory first-semester Credit/No Credit transcript policy.
+  </div>
+</div>
+
+<div class="margin-note blue" id="n2">
+  <span class="note-label">Bandwagon framing, and a standard we hold our students to</span>
+  "Intense discussion across higher education" is true but incomplete. The actual discussion includes both serious concern about grade compression and serious skepticism about the grade-inflation frame: scholars who argue the discourse is a manufactured panic, who think "grade compression" is the more accurate term, who say the focus on grades distracts from learning, and who note that comparable interventions have widened racial and preparation-linked grade gaps and exposed women faculty to evaluation pressures. None of that nuance survives the email's framing. "Intense discussion" is allowed to read as unanimous concern.
+  <br><br>
+  <strong>If a student submitted a paper opening "X has been a matter of concern for many years and has recently become the subject of intense discussion," with no citation, no specification of whose concern, and no engagement with counter-views, we would mark it down.</strong> The standards we teach apply to institutional communications too, especially when those communications are proposing to evaluate our <em>academic</em> standards. An appeal to vague consensus isn't an argument. We know it isn't because we tell our students it isn't.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence &#9656;</button>
+  <div class="note-evidence">
+    See, e.g., Tannock (2019, LSE Higher Education Blog), "The destructive moral panic over university grade inflation"; Pattison, Grodsky, and Muller (2013, <em>Educational Researcher</em>), "Is the Sky Falling? Grade Inflation and the Signaling Power of Grades," which finds using nationally representative data that "the signaling power of grades has attenuated little, if at all"; and Alfie Kohn's longstanding writing in the <em>Chronicle</em> on the rhetorical structure of the discourse. The empirical literature distinguishes among three questions: rising mean grades (uncontroversial), the cause of those rising grades (genuinely contested), and whether rising grades are a problem at all (also contested).
+  </div>
+</div>
+
+<div class="margin-note red" id="n3">
+  <span class="note-label">Misleading invocation of accreditation</span>
+  The email uses accreditation as an external pressure to justify the inquiry. It doesn't actually create one. Williams' next comprehensive NECHE evaluation is in Fall 2027, under the 2026 <em>Standards for Accreditation</em> (effective July 1, 2026). The 2026 standards restructured the older nine-standard framework into five: Mission, Organization, Governance, and Planning; The Academic Program, Faculty, and Students; Institutional Resources; Educational Effectiveness and the Success of All Students; and Integrity, Transparency, and Public Disclosure. The closest 2026 language is about academic quality, student achievement, and evidence of learning. That language could justify a broad inquiry into whether grades validly reflect learning outcomes. It doesn't require, mention, or specifically invite an inquiry into grade inflation, grade compression, grade ranges, or grade distributions. Invoking the decennial review makes the inquiry sound externally mandated when it's actually a discretionary choice the Steering Committee and President are making.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence &#9656;</button>
+  <div class="note-evidence">
+    NECHE's 2026 <em>Standards for Accreditation</em> were restructured into five standards (down from nine in the 2021 version). A full reading of the 2026 standards finds no language requiring, prompting, or even suggesting an institutional inquiry into grade inflation, grade compression, or grade distributions. Standard Two (The Academic Program, Faculty, and Students) addresses curriculum, credits, and academic integrity. Standard Four (Educational Effectiveness and the Success of All Students) addresses learning outcomes, retention, graduation, and post-enrollment success. Neither standard concerns grade levels. If Williams' internal accreditation preparation is still organized around the 2021 standards, the bottom line is the same: the older framework also supports broad educational-effectiveness inquiry, not a required grade-inflation investigation.
+  </div>
+  <span class="note-source">NECHE, <a href="https://www.neche.org/standards-for-accreditation/" target="_blank" rel="noopener noreferrer">2026 Standards for Accreditation</a></span>
+</div>
+
+<div class="margin-note teal" id="n4">
+  <span class="note-label">Locked frame, and a plausible cause is already named</span>
+  The committee isn't asking whether grade inflation <em>is</em> a problem. It's asking whether now is the right moment to evaluate the issue &mdash; and the issue has already been named and accepted as real. A genuinely open inquiry would start with a different question: is "grade inflation" even the right diagnosis? Williams already has the aggregate data, and a plausible structural cause is already on the record. <strong>Stats professor Richard De Veaux is quoted in the <em>Record</em> pointing at the Student Course Survey regime and tenure incentives, not faculty laxity. David Love (Williams) and Matthew Kotchen (2010, <em>Eastern Economic Journal</em>) modeled the same dynamic formally and reached a parallel conclusion.</strong>
+  <br><br>
+  Notice the inversion the email doesn't acknowledge. The President and Steering Committee bring the institutional weight. But the analysis on this question at Williams already exists in the public record and in the economics literature, and it points to the evaluation-and-tenure regime, not to faculty being lax. A committee that "examines grading trends" would be studying the symptom, not the cause. The email itself doesn't cite or engage the Love-Kotchen analysis, the De Veaux interview, or the broader course-evaluation bias literature.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence &#9656;</button>
+  <div class="note-evidence">
+    Love and Kotchen (2010, abstract): "placing more emphasis on course evaluations exacerbates the problems of grade inflation and can even decrease a professor's teaching effort." (Note: the same paper also analyzes grade targets as a possible remedy. Love and Kotchen support the mechanism, not the whole anti-cap conclusion.) De Veaux to the <em>Williams Record</em> (2024): "young faculty perceive that to give low grades, to give Bs and B+s, is certainly not, they think, the road to a safe tenure evaluation." Mengel, Sauermann, and Zölitz (2019, <em>JEEA</em>) find that male students rate female instructors about 21 percent of a standard deviation lower than male instructors, while female students rate female instructors about 8 percent of a standard deviation lower. See also Boring, Ottoboni, and Stark (2016) and MacNell, Driscoll, and Hunt (2015).
+  </div>
+</div>
+
+<div class="margin-note blue" id="n5">
+  <span class="note-label">"If necessary" as fig leaf, and the comparable interventions are cautionary</span>
+  A committee charged to examine a named problem is under pressure to validate the premise of its charge, even when the formal recommendation stays conditional. "If necessary" is the qualifier that lets the recommendation appear conditional while the institutional motion all moves in one direction.
+  <br><br>
+  <strong>The email is silent on what kind of policy recommendations a committee might produce. That silence matters, because comparable committees at peer institutions have produced numerical grade targets and caps, and the empirical record on those is cautionary.</strong> Wellesley capped course averages at B+ in Fall 2004. Butcher, McEwan, and Weerapana (2014, <em>Journal of Economic Perspectives</em>) studied what happened: grades dropped more for African-American students and students with low entering test scores, the probability of <em>magna cum laude</em> in treated departments fell from about 20% to 16%, major enrollments in those departments dropped roughly 30%, and student evaluations of the affected faculty went down (the share "strongly recommending" their professors fell about 5 percentage points). Princeton set numerical targets for A-range grades in 2004 (the widely discussed 35% guideline) and removed them in 2014 after the review committee said the targets had been "too often misinterpreted as quotas," raised stress, and pulled attention away from feedback. Harvard proposed in 2026 to cap "flat A" grades at 20 percent plus four students per class (no cap on A-minus). Per the <em>Harvard Crimson</em>, the proposal has been delayed to fall 2027 if it passes, was still in faculty governance as of early May 2026, and faced strong opposition among survey respondents (84.9% "definitely" opposed in a Harvard Undergraduate Association survey of nearly 800 respondents). The lesson isn't that grading interventions are always bad. It's that numerical caps and forced decompression generate serious equity, behavioral, and legitimacy problems &mdash; and faculty asked to support a committee that might recommend such remedies deserve to know that record up front. None of it is in the email.
+  <button class="evidence-toggle" onclick="toggleEvidence(this)">Show evidence &#9656;</button>
+  <div class="note-evidence">
+    Butcher, McEwan, and Weerapana (2014): "the estimated drop in grades in treated departments is smaller for Latina students but much larger than average for black students (including African-Americans and foreign students who self-identify as black), those with low SAT verbal scores, and those with low Quantitative Reasoning scores." The paper finds "majors declined in the treated departments by about eight students, on average, representing a relatively large decline of about 30 percent." Within that decline, the fraction majoring in economics and the sciences increased; the fraction in other social sciences fell; humanities was roughly flat. Princeton's 2014 review report stated the 35-percent targets had been "too often misinterpreted as quotas." The Harvard FAS proposal would cap "flat A" grades at 20 percent plus four enrolled students per class (with no cap on A-minus). The Harvard Gazette describes the formula's effect as up to six A's in a 10-person seminar and 34 A's in a 150-person lecture.
+  </div>
+</div>
+
+<div class="margin-note blue" id="n6">
+  <span class="note-label">Loaded-question / push-poll-like framing</span>
+  A push poll is a survey designed to plant a position rather than measure one: the question itself does the persuading by smuggling in a premise the respondent has to either accept or fight. The critique here is of the email's framing of the survey, not of the Qualtrics instrument itself. This is not a "push poll" in AAPOR's strict sense; AAPOR reserves that term for political telemarketing disguised as research. But the email describes the survey as gauging "support for this initiative" rather than asking, for example, "do you think grade inflation is the right name for what's happening?" or "do you think Williams should evaluate its grading?" By framing the respondent's task as registering support for an initiative whose diagnosis is already named, the email's setup positions a skeptical respondent as opposing "evaluation," being against rigor, or refusing to engage. Whatever the actual Qualtrics instrument contains, the email's framing is what most faculty will read first.
+</div>
+
+<div class="margin-note gray" id="n7">
+  <span class="note-label">Survey link, assess on its own terms</span>
+  The Qualtrics instrument is a separate object from the email and may differ from the email's framing of it. A survey that allows respondents to register that they think the inquiry is misframed, to note that Williams already has the aggregate data and the structural diagnosis, and to propose alternative framings would partly repair the problem above. A survey that only collects variants of agree/disagree on a presupposed diagnosis would not. Faculty should evaluate the instrument on its own terms before responding. The critique in this annotation is of the email; the survey is downstream of the framing the email has already set.
+</div>
+
+<div class="margin-note blue" id="n8">
+  <span class="note-label">Wall of authority</span>
+  Signing with the President and the full Steering Committee signals that institutional power is already aligned. Anyone disagreeing has to do so against the President plus six faculty colleagues. That's rhetorically expensive before any argument has been made. The email doesn't cite or engage the Wellesley/Princeton/Harvard literature, the course-evaluation research, or the empirical critique of the grade-inflation frame. The signature line is doing work that an argument would otherwise have to do.
+</div>
+
+</div><!-- /margin-notes -->
+</section><!-- /annotated-body -->
+
+<!-- ══════════════════════════════════════════════════ CLOSING -->
+<section class="closing-section">
+  <h2>What a responsible version of this email would have included</h2>
+
+  <p>A short email can't cover everything. But intellectual seriousness doesn't take many extra words. Here's what a version of this email that didn't presuppose its conclusion could have looked like, in concrete terms.</p>
+
+  <h3>1. An honest framing of the empirical question</h3>
+  <p>"Mean grades at Williams have risen substantially since the 1980s. Scholars and practitioners disagree about what this reflects: increased student preparation, improved pedagogy, criterion-referenced grading philosophies, the structure of student course evaluations, or some mix. A separate scholarly tradition argues that the right inquiry is not how to recompress grades but whether grades themselves serve students at all (Kohn, 2002; Blum, 2020; Stommel, 2018). Williams' own faculty engaged that latter question as recently as 2024, when a proposal for a mandatory first-semester Credit/No Credit transcript policy was debated. We propose to investigate." That framing names the disagreement. The email's framing names a verdict, and forecloses a deeper question Williams has already been asking.</p>
+
+  <h3>2. Disclosure that NECHE does not require this</h3>
+  <p>The decennial accreditation process is real and important. It is also not a mandate to interrogate grade levels. NECHE's 2026 standards (effective July 1, 2026; Williams' next comprehensive evaluation is listed for Fall 2027) do not require, mention, or specifically invite an inquiry into grade inflation or grade distributions. A responsible email would acknowledge that the inquiry is a discretionary institutional choice rather than an external requirement, and would defend that choice on its own merits.</p>
+
+  <h3>3. Acknowledgment that Williams already has the aggregate data</h3>
+  <p>The 2024 CEA memo, the 76%-A-range figure, the longitudinal series on <em>gradeinflation.com</em>, the records of Williams' Office of Institutional Research (OIR): at the aggregate level, this is not a discovery moment. The College has been looking at these numbers for years. A new committee proposed without acknowledgment of what is already known reads as if the prior conversation did not happen. What Williams may not yet have, at least publicly, is the deeper analysis: department, course level, class size, subgroup, SCS, honors, transcript, and outcome effects. A serious inquiry would say that.</p>
+
+  <h3>4. Engagement with the cautionary record at peer institutions</h3>
+  <p>The email mentions "policy recommendations" but doesn't say what kinds. Faculty being asked to support a committee that might propose such recommendations deserve to know what comparable committees have produced elsewhere. Wellesley capped course averages at B+ in Fall 2004. Butcher, McEwan, and Weerapana (2014, <em>Journal of Economic Perspectives</em>) studied what happened: grades dropped more for African-American students and students with low entering test scores, <em>magna cum laude</em> in treated departments fell from about 20% to 16%, major enrollments in those departments dropped roughly 30% (with students moving toward economics and the sciences and away from other social sciences; humanities major share stayed roughly flat), and student evaluations of the affected faculty went down. Princeton set numerical targets for A-range grades in 2004 (the widely discussed 35% guideline) and removed them in 2014 after the review committee said the targets had been "too often misinterpreted as quotas," raised stress, and pulled attention away from feedback. Harvard proposed in 2026 to cap "flat A" grades at 20 percent plus four enrolled students per class (no cap on A-minus). Per the <em>Harvard Crimson</em>, implementation has been delayed to fall 2027 if it passes, was still in faculty governance as of early May 2026, and a Harvard Undergraduate Association survey of nearly 800 respondents found that 84.9% "definitely" opposed limiting A grades. Wellesley is the equity warning. Princeton is the governance-and-climate warning. Harvard is still unfolding. The lesson isn't that grading interventions are impossible or always harmful. It's that numerical caps and forced decompression generate serious equity, behavioral, and legitimacy problems. None of this is obscure. None of it appears in the email.</p>
+
+  <h3>5. Frank treatment of the course-evaluation regime</h3>
+  <p>Stats professor Richard De Veaux told the <em>Record</em> in 2024 that "young faculty perceive that to give low grades, to give Bs and B+s, is certainly not, they think, the road to a safe tenure evaluation." That's not a fringe opinion. David Love (Williams) and Matthew Kotchen (UC Santa Barbara, NBER) modeled the same dynamic formally in 2010 in the <em>Eastern Economic Journal</em>: "placing more emphasis on course evaluations exacerbates the problems of grade inflation and can even decrease a professor's teaching effort." One caveat: the same paper also analyzes grade targets as a possible remedy. So Love and Kotchen support the mechanism, not the broader anti-cap conclusion. The case for caution about targets comes from Wellesley, Princeton, and Harvard, not from Love and Kotchen.</p>
+  <p>There's also a national empirical literature on gender bias in student evaluations. Mengel, Sauermann, and Zölitz (2019, <em>Journal of the European Economic Association</em>) find that male students rate female instructors about 21% of a standard deviation lower than male instructors, while female students rate female instructors about 8% of a standard deviation lower. See also Boring, Ottoboni, and Stark (2016) and MacNell, Driscoll, and Hunt (2015). The strongest cited evidence here is on gender. Stark and Freishtat (2014) note that gender, ethnicity, and age can affect SET, but a serious race-specific claim would need additional empirical sources.</p>
+  <p>A committee that proposes to study grading at Williams without first dealing with the evaluation regime is studying a symptom and ignoring at least one plausible cause. It also risks adopting policies that compound bias against the faculty already most exposed to it.</p>
+
+  <h3>6. A survey framing that invites the prior-question objection</h3>
+  <p>A responsible email would describe the survey in a way that explicitly welcomes the prior-question objection &mdash; something like: "And if you think this inquiry is misframed, we'd especially welcome that argument in writing." The current email does the opposite: it describes the survey as "to gauge your support for this initiative," which positions a skeptical respondent as opposing the initiative rather than questioning its premise. Whatever the Qualtrics instrument itself looks like, the framing in the email is what most faculty will read before deciding how to respond.</p>
+
+  <h3>The bottom line</h3>
+  <p>Mean grades at Williams have risen. We already know that. What the rise means is contested &mdash; including the deeper question of whether grades are the right instrument at all &mdash; and a serious inquiry would say so. The literature on comparable interventions at peer institutions isn't encouraging, and a responsible inquiry would put those costs in front alongside any imagined benefits. None of that texture is in the email. What's there instead is a presupposed diagnosis, an inflated authority claim about accreditation, and a survey framed in a way that forecloses the most important objection. A college that takes ideas seriously can ask itself a hard question better than this.</p>
+
+</section>
+
+<!-- ══════════════════════════════════════════════════ REFERENCES -->
+<section class="references">
+  <h2>References</h2>
+  <ul>
+    <li>American Association for Public Opinion Research. (n.d.). AAPOR Statements on "Push" Polls. <a href="https://aapor.org/wp-content/uploads/2022/12/Push-Poll-508.pdf" target="_blank" rel="noopener noreferrer">aapor.org</a></li>
+    <li>Blum, S. D. (Ed.). (2020). <em>Ungrading: Why Rating Students Undermines Learning (and What to Do Instead)</em>. West Virginia University Press.</li>
+    <li>Boring, A., Ottoboni, K., &amp; Stark, P. B. (2016). Student evaluations of teaching (mostly) do not measure teaching effectiveness. <em>ScienceOpen Research</em>. <a href="https://doi.org/10.14293/S2199-1006.1.SOR-EDU.AETBZC.v1" target="_blank" rel="noopener noreferrer">doi:10.14293/S2199-1006.1.SOR-EDU.AETBZC.v1</a></li>
+    <li>Butcher, K. F., McEwan, P. J., &amp; Weerapana, A. (2014). The effects of an anti-grade-inflation policy at Wellesley College. <em>Journal of Economic Perspectives</em>, 28(3), 189&ndash;204. <a href="https://doi.org/10.1257/jep.28.3.189" target="_blank" rel="noopener noreferrer">doi:10.1257/jep.28.3.189</a></li>
+    <li><em>Harvard Crimson</em>. (2026, February 9). HUA grading proposal survey: 84.9 percent oppose limiting A grades. <a href="https://www.thecrimson.com/article/2026/2/9/hua-grading-proposal-survey/" target="_blank" rel="noopener noreferrer">thecrimson.com</a></li>
+    <li><em>Harvard Crimson</em>. (2026, March 31). College grading proposal update: implementation delayed. <a href="https://www.thecrimson.com/article/2026/3/31/college-grading-proposal-update/" target="_blank" rel="noopener noreferrer">thecrimson.com</a></li>
+    <li><em>Harvard Crimson</em>. (2026, May 1). Grading 20-plus-four vote scheduled. <a href="https://www.thecrimson.com/article/2026/5/1/grading-20-plus-four-vote/" target="_blank" rel="noopener noreferrer">thecrimson.com</a></li>
+    <li><em>Harvard Gazette</em>. (2026, March). Plan to rein in inflated grading, explained. <a href="https://news.harvard.edu/gazette/story/2026/03/plan-to-rein-in-inflated-grading-explained/" target="_blank" rel="noopener noreferrer">news.harvard.edu</a></li>
+    <li>Kohn, A. (2002). The dangerous myth of grade inflation. <em>The Chronicle of Higher Education</em>, November 8, 2002. <a href="https://www.alfiekohn.org/article/dangerous-myth-grade-inflation/" target="_blank" rel="noopener noreferrer">alfiekohn.org</a></li>
+    <li>Lewandowsky, S., Ecker, U. K. H., Seifert, C. M., Schwarz, N., &amp; Cook, J. (2012). Misinformation and its correction: Continued influence and successful debiasing. <em>Psychological Science in the Public Interest</em>, 13(3), 106&ndash;131. <a href="https://doi.org/10.1177/1529100612451018" target="_blank" rel="noopener noreferrer">doi:10.1177/1529100612451018</a></li>
+    <li>Love, D. A., &amp; Kotchen, M. J. (2010). Grades, course evaluations, and academic incentives. <em>Eastern Economic Journal</em>, 36(2), 151&ndash;163. (Love is at Williams College Department of Economics; Kotchen is at UC Santa Barbara and NBER.) <a href="https://doi.org/10.1057/eej.2009.6" target="_blank" rel="noopener noreferrer">doi:10.1057/eej.2009.6</a></li>
+    <li>MacNell, L., Driscoll, A., &amp; Hunt, A. N. (2015). What's in a name: Exposing gender bias in student ratings of teaching. <em>Innovative Higher Education</em>, 40, 291&ndash;303. <a href="https://doi.org/10.1007/s10755-014-9313-4" target="_blank" rel="noopener noreferrer">doi:10.1007/s10755-014-9313-4</a></li>
+    <li>McCombs, M. E., &amp; Shaw, D. L. (1972). The agenda-setting function of mass media. <em>Public Opinion Quarterly</em>, 36(2), 176&ndash;187. <a href="https://academic.oup.com/poq/article-abstract/36/2/176/1853310" target="_blank" rel="noopener noreferrer">academic.oup.com</a></li>
+    <li>Mengel, F., Sauermann, J., &amp; Zölitz, U. (2019). Gender bias in teaching evaluations. <em>Journal of the European Economic Association</em>, 17(2), 535&ndash;566. <a href="https://doi.org/10.1093/jeea/jvx057" target="_blank" rel="noopener noreferrer">doi:10.1093/jeea/jvx057</a></li>
+    <li>New England Commission of Higher Education. (2026). <em>Standards for Accreditation</em> (effective July 1, 2026). <a href="https://www.neche.org/standards-for-accreditation/" target="_blank" rel="noopener noreferrer">neche.org</a></li>
+    <li>New England Commission of Higher Education. Williams College institution page (lists Fall 2027 as the date of the next comprehensive evaluation). <a href="https://www.neche.org/institutions/williams-college/" target="_blank" rel="noopener noreferrer">neche.org/institutions/williams-college</a></li>
+    <li>Pattison, E., Grodsky, E., &amp; Muller, C. (2013). Is the sky falling? Grade inflation and the signaling power of grades. <em>Educational Researcher</em>, 42(5), 259&ndash;265. <a href="https://doi.org/10.3102/0013189X13481382" target="_blank" rel="noopener noreferrer">doi:10.3102/0013189X13481382</a></li>
+    <li>Peterson, I. (1972, March 13). Flunking is harder as college grades rise rapidly. <em>The New York Times</em>, 1, 21. (Widely credited with introducing David Riesman's phrase "grade inflation" into public discourse.)</li>
+    <li>Princeton University Office of Communications. (2014, August 7). Faculty committee recommends modifications to Princeton's assessment and grading. <a href="https://www.princeton.edu/news/2014/08/07/faculty-committee-recommends-modifications-princeton-assessment-and-grading" target="_blank" rel="noopener noreferrer">princeton.edu</a></li>
+    <li>Princeton University Office of Communications. (2014, October 6). Princeton faculty approves changes in grading policy. <a href="https://www.princeton.edu/news/2014/10/06/princeton-faculty-approves-changes-grading-policy" target="_blank" rel="noopener noreferrer">princeton.edu</a></li>
+    <li>Rojstaczer, S., &amp; Healy, C. (2010). Grading in American colleges and universities. <em>Teachers College Record</em>, March 4, 2010. <a href="https://www.tcrecord.org/Content.asp?ContentID=15928" target="_blank" rel="noopener noreferrer">tcrecord.org</a></li>
+    <li>Rojstaczer, S., &amp; Healy, C. <em>Grade Inflation at American Colleges and Universities</em> (longitudinal data set). <a href="https://www.gradeinflation.com/" target="_blank" rel="noopener noreferrer">gradeinflation.com</a> (Williams page: <a href="https://www.gradeinflation.com/Williams.html" target="_blank" rel="noopener noreferrer">Williams.html</a>)</li>
+    <li>Stark, P. B., &amp; Freishtat, R. (2014). An evaluation of course evaluations. <em>ScienceOpen Research</em>. <a href="https://doi.org/10.14293/S2199-1006.1.SOR-EDU.AOFRQA.v1" target="_blank" rel="noopener noreferrer">doi:10.14293/S2199-1006.1.SOR-EDU.AOFRQA.v1</a></li>
+    <li>Stommel, J. (2018, March 11). How to ungrade. <em>Jesse Stommel</em> (jessestommel.com). <a href="https://www.jessestommel.com/how-to-ungrade/" target="_blank" rel="noopener noreferrer">jessestommel.com</a></li>
+    <li>Tannock, S. (2019, August 27). The destructive moral panic over university grade inflation. <em>LSE Higher Education Blog</em>. <a href="https://blogs.lse.ac.uk/highereducation/2019/08/27/the-destructive-moral-panic-over-university-grade-inflation/" target="_blank" rel="noopener noreferrer">blogs.lse.ac.uk</a></li>
+    <li>Tversky, A., &amp; Kahneman, D. (1981). The framing of decisions and the psychology of choice. <em>Science</em>, 211(4481), 453&ndash;458. <a href="https://www.science.org/doi/10.1126/science.7455683" target="_blank" rel="noopener noreferrer">doi:10.1126/science.7455683</a></li>
+    <li><em>Williams Record</em> coverage:
+      <ul style="list-style: none; padding-left: 0; margin-top: 0.4rem;">
+        <li>Lin, M. (2021, February 17). Grade inflation continues rise through fall semester, some professors say. <a href="https://williamsrecord.com/455518/news/grade-inflation-continues-rise-through-fall-semester-some-professors-say/" target="_blank" rel="noopener noreferrer">williamsrecord.com</a></li>
+        <li>Wignall, D. (2024, October 9). The birds and the B's: It's time to have 'the talk' about grades. <a href="https://williamsrecord.com/467765/opinions/the-birds-and-the-bs-its-time-to-have-the-talk-about-grades/" target="_blank" rel="noopener noreferrer">williamsrecord.com</a></li>
+        <li>Zimmerman, H. (2024, November 6). Memo shows 76 percent of grades in A range last year, prompting faculty discussion. (Includes the De Veaux quote on the SCS regime.) <a href="https://williamsrecord.com/468144/news/memo-shows-76-percent-of-grades-in-a-range-last-year-prompting-faculty-discussion/" target="_blank" rel="noopener noreferrer">williamsrecord.com</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════════════ NOTE DRAWER -->
+<div class="note-drawer" id="note-drawer">
+  <div class="note-drawer-inner">
+    <div class="note-drawer-header">
+      <span class="note-drawer-label" id="drawer-label"></span>
+      <button class="note-drawer-close" onclick="closeDrawer()">&times; Close</button>
+    </div>
+    <div class="note-drawer-body" id="drawer-body"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ JS -->
+<script>
+  const drawer = document.getElementById('note-drawer');
+  const drawerLabel = document.getElementById('drawer-label');
+  const drawerBody = document.getElementById('drawer-body');
+  let activeSpan = null;
+  let activeNote = null;
+
+  function getColor(el) {
+    for (const c of ['red','teal','blue','gray']) {
+      if (el.classList.contains(c)) return c;
+    }
+    return 'blue';
+  }
+
+  function openDrawer(noteEl, color) {
+    // Get label text
+    const labelEl = noteEl.querySelector('.note-label');
+    const label = labelEl ? labelEl.textContent : 'Note';
+
+    // Clone content minus the label
+    const clone = noteEl.cloneNode(true);
+    const cloneLabel = clone.querySelector('.note-label');
+    if (cloneLabel) cloneLabel.remove();
+
+    // Expand evidence in drawer by default
+    clone.querySelectorAll('.note-evidence').forEach(ev => ev.classList.add('open'));
+    clone.querySelectorAll('.evidence-toggle').forEach(btn => btn.style.display = 'none');
+
+    // Set drawer content
+    drawerLabel.textContent = label;
+    drawerLabel.className = 'note-drawer-label ' + color;
+    drawerBody.innerHTML = clone.innerHTML;
+    drawer.className = 'note-drawer ' + color + ' open';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    if (activeSpan) activeSpan.classList.remove('active');
+    if (activeNote) activeNote.classList.remove('active');
+    activeSpan = null;
+    activeNote = null;
+  }
+
+  // Wire up annotated spans
+  document.querySelectorAll('.annotated-span').forEach(span => {
+    const noteId = span.dataset.note;
+    const note = document.getElementById(noteId);
+    if (!note) return;
+    const color = getColor(span);
+
+    // Hover: highlight both span and sidebar note
+    span.addEventListener('mouseenter', () => {
+      span.classList.add('active');
+      note.classList.add('active');
+    });
+    span.addEventListener('mouseleave', () => {
+      if (activeSpan !== span) {
+        span.classList.remove('active');
+        note.classList.remove('active');
+      }
+    });
+
+    // Click: open drawer, stay in place
+    span.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Clear previous active
+      if (activeSpan && activeSpan !== span) activeSpan.classList.remove('active');
+      if (activeNote && activeNote !== note) activeNote.classList.remove('active');
+      activeSpan = span;
+      activeNote = note;
+      span.classList.add('active');
+      note.classList.add('active');
+      openDrawer(note, color);
+    });
+
+    // Sidebar note click: also opens drawer
+    note.addEventListener('click', () => {
+      if (activeSpan && activeSpan !== span) activeSpan.classList.remove('active');
+      if (activeNote && activeNote !== note) activeNote.classList.remove('active');
+      activeSpan = span;
+      activeNote = note;
+      span.classList.add('active');
+      note.classList.add('active');
+      openDrawer(note, color);
+    });
+
+    // Sidebar hover
+    note.addEventListener('mouseenter', () => {
+      span.classList.add('active');
+      note.classList.add('active');
+    });
+    note.addEventListener('mouseleave', () => {
+      if (activeNote !== note) {
+        span.classList.remove('active');
+        note.classList.remove('active');
+      }
+    });
+  });
+
+  // Close drawer on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  // Close drawer when clicking outside (on the page body, not on a span or the drawer itself)
+  document.addEventListener('click', (e) => {
+    if (!drawer.classList.contains('open')) return;
+    // Don't close if clicking inside the drawer
+    if (drawer.contains(e.target)) return;
+    // Don't close if clicking an annotated span (that opens/switches the drawer)
+    if (e.target.closest('.annotated-span')) return;
+    // Don't close if clicking a margin note
+    if (e.target.closest('.margin-note')) return;
+    closeDrawer();
+  });
+
+  // Toggle expandable evidence sections (sidebar only, used in print)
+  function toggleEvidence(btn) {
+    const rect = btn.getBoundingClientRect();
+    const evidence = btn.nextElementSibling;
+    if (evidence.classList.contains('open')) {
+      evidence.classList.remove('open');
+      btn.textContent = 'Show evidence ▸';
+    } else {
+      evidence.classList.add('open');
+      btn.textContent = 'Hide evidence ▾';
+    }
+    const newRect = btn.getBoundingClientRect();
+    window.scrollBy(0, newRect.top - rect.top);
+  }
+</script>
+
+<!-- ══════════════════════════════════════════════════ FOOTER -->
+<footer class="page-footer">
+  <p><a href="https://www.chadtopaz.com">Chad M. Topaz</a> is a mathematician, data scientist, and author of <em><a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank" rel="noopener noreferrer">Unlocking Justice</a></em> (Princeton University Press, 2026).</p>
+</footer>
+
+<script data-goatcounter="https://chadtopaz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
