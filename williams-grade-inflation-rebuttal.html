@@ -39,6 +39,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  [id] { scroll-margin-top: 3.5rem; }
 
   body {
     font-family: 'Source Serif 4', Georgia, serif;
@@ -168,17 +169,43 @@
   .summary-point.structural { background: var(--teal-bg); }
   .summary-point.structural .sp-num { background: var(--teal); }
 
-  /* ─── Onboarding hint ─── */
-  .annotation-hint {
-    text-align: center;
+  /* ─── Table of contents ─── */
+  .page-toc {
+    max-width: 780px;
+    margin: 1.8rem auto 0;
+    padding: 0 2rem;
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-light);
-    padding: 0.5rem 2rem;
-    background: #fafbfc;
-    border-bottom: 1px solid #eee;
+    line-height: 1.7;
   }
-  .annotation-hint span {
+  .page-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: toc;
+  }
+  .page-toc li {
+    counter-increment: toc;
+    padding: 0.25rem 0;
+  }
+  .page-toc li::before {
+    content: counter(toc) ". ";
+    font-weight: 600;
+    color: var(--text);
+  }
+  .page-toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted var(--text-light);
+  }
+  .page-toc a:hover { color: var(--blue); border-color: var(--blue); }
+  .page-toc .toc-hint {
+    color: var(--text-light);
+    font-weight: 400;
+  }
+  .page-toc .toc-hint .example-span {
     background: var(--blue-bg);
     border-bottom: 2px solid var(--blue);
     padding: 1px 4px;
@@ -452,25 +479,26 @@
   /* ─── Footer ─── */
   .page-footer {
     max-width: 780px;
-    margin: 0 auto 3rem;
-    padding: 2rem 2rem 0;
+    margin: 0 auto 1.5rem;
+    padding: 1rem 2rem 0;
     border-top: 1px solid #e5e8eb;
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    color: var(--text-light);
+    font-size: 0.75rem;
+    color: #999;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.5;
   }
   .page-footer a {
-    color: var(--blue);
+    color: #999;
     text-decoration: none;
-    border-bottom: 1px dotted var(--blue);
+    border-bottom: 1px dotted #ccc;
   }
+  .page-footer a:hover { color: var(--blue); border-color: var(--blue); }
 
   /* ─── Print ─── */
   @media print {
     .legend-bar { position: static; box-shadow: none; }
-    .annotation-hint { display: none; }
+    .page-toc { display: none; }
     .note-drawer { display: none !important; }
     .margin-notes { display: block; }
     .margin-note { break-inside: avoid; }
@@ -496,10 +524,18 @@
   <span class="legend-item"><span class="legend-dot blue"></span> Rhetorical framing or loading</span>
   <span class="legend-item"><span class="legend-dot gray"></span> Fair point, overstated or misused</span>
 </nav>
-<div class="annotation-hint">Click any <span>highlighted passage</span> in the annotated text below to read the note. Press Escape or click elsewhere to close.</div>
+<nav class="page-toc" aria-label="Page outline">
+  <ol>
+    <li><a href="#email">The email</a> <span class="toc-hint">— full text</span></li>
+    <li><a href="#summary">Executive summary</a> <span class="toc-hint">— seven problems with the email</span></li>
+    <li><a href="#annotated">The annotated text</a> <span class="toc-hint">— click any <span class="example-span">highlighted passage</span> to read the note</span></li>
+    <li><a href="#responsible">What a responsible version would have included</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</nav>
 
 <!-- ══════════════════════════════════════════════════ THE EMAIL (FULL TEXT) -->
-<section class="exec-summary" style="max-width: 780px;">
+<section id="email" class="exec-summary" style="max-width: 780px;">
   <h2>The email</h2>
   <div style="background: #f8f9fa; border-left: 4px solid #6b6560; padding: 1.4rem 1.6rem; border-radius: 0 5px 5px 0; font-size: 0.98rem; line-height: 1.7;">
     <p style="margin-bottom: 1rem;">Dear Faculty Colleagues,</p>
@@ -512,7 +548,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════ EXECUTIVE SUMMARY -->
-<section class="exec-summary">
+<section id="summary" class="exec-summary">
   <h2>Why the email itself is the problem, not the survey</h2>
   <p class="lede">An email this short, under 200 words of substance, isn't the place to expect rigor. The brevity is part of the problem: a short message is doing a lot of work in a small space, and most of that work locks in the conclusion before the survey opens. Seven things go wrong.</p>
   <div class="summary-grid">
@@ -548,7 +584,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════ DIVIDER -->
-<div class="section-divider">
+<div id="annotated" class="section-divider">
   <h2>The annotated text</h2>
 </div>
 
@@ -646,7 +682,7 @@
 </section><!-- /annotated-body -->
 
 <!-- ══════════════════════════════════════════════════ CLOSING -->
-<section class="closing-section">
+<section id="responsible" class="closing-section">
   <h2>What a responsible version of this email would have included</h2>
 
   <p>A short email can't cover everything. But intellectual seriousness doesn't take many extra words. Here's what a version of this email that didn't presuppose its conclusion could have looked like, in concrete terms.</p>
@@ -677,7 +713,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════ REFERENCES -->
-<section class="references">
+<section id="references" class="references">
   <h2>References</h2>
   <ul>
     <li>American Association for Public Opinion Research. (n.d.). AAPOR Statements on "Push" Polls. <a href="https://aapor.org/wp-content/uploads/2022/12/Push-Poll-508.pdf" target="_blank" rel="noopener noreferrer">aapor.org</a></li>
