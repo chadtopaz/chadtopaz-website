@@ -418,11 +418,50 @@
     .legend-bar { position: static; box-shadow: none; }
     .margin-note { break-inside: avoid; }
   }
+
+  /* ─── Slim site nav ─── */
+  .slim-nav {
+    background: #fff;
+    border-bottom: 1px solid #e5e8eb;
+    padding: 0.6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+  }
+  .slim-nav a {
+    color: #5d6d7e;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .slim-nav a:hover { color: #2c3e50; }
+  .slim-nav-name {
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  .slim-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  @media (max-width: 500px) {
+    .slim-nav { padding: 0.5rem 1rem; font-size: 0.72rem; }
+    .slim-nav-links { gap: 0.8rem; }
+  }
 </style>
 </head>
 <body>
 
 <!-- ══════════════════════════════════════════════════ HEADER -->
+<nav class="slim-nav">
+  <a class="slim-nav-name" href="https://www.chadtopaz.com">Chad M. Topaz</a>
+  <div class="slim-nav-links">
+    <a href="https://www.chadtopaz.com/rebuttals/">All Editions</a>
+    <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank"><em>Unlocking Justice</em></a>
+  </div>
+</nav>
+
 <header class="page-header">
   <h1>Annotated Edition</h1>
   <p class="subtitle">Line-by-line critical notes on factual accuracy, logical validity, and rhetorical method.</p>
