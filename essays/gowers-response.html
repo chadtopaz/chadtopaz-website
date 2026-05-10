@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A response to Tim Gowers on ChatGPT 5.5 Pro and AI in mathematics. On case selection, the jagged frontier, workflow, equity, pedagogy, and institutional governance.">
+<meta property="og:title" content="Cheap production, scarce judgment — Chad M. Topaz">
+<meta property="og:description" content="A response to Tim Gowers on ChatGPT 5.5 Pro and AI in mathematics. On case selection, the jagged frontier, workflow, equity, pedagogy, and institutional governance.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.chadtopaz.com/essays/gowers-response.html">
+<meta property="og:image" content="https://www.chadtopaz.com/images/gowers-response-og.png">
+<meta property="og:site_name" content="Chad M. Topaz">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cheap production, scarce judgment — Chad M. Topaz">
+<meta name="twitter:description" content="A response to Tim Gowers on ChatGPT 5.5 Pro and AI in mathematics.">
+<meta name="twitter:image" content="https://www.chadtopaz.com/images/gowers-response-og.png">
+<link rel="canonical" href="https://www.chadtopaz.com/essays/gowers-response.html">
+<title>Cheap production, scarce judgment — Chad M. Topaz</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.essay-body {
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.85;
+  font-size: 0.95rem;
+}
+.essay-body h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.essay-body p {
+  color: var(--black);
+  margin-bottom: 1.2rem;
+}
+.essay-body a {
+  color: var(--mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.essay-body a:hover {
+  color: var(--black);
+  border-color: var(--black);
+}
+.essay-date {
+  font-size: 0.75rem;
+  color: var(--mid);
+  letter-spacing: 0.04em;
+  margin-top: 0.5rem;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="banner-text">Pre-order <em>Unlocking Justice</em> — forthcoming June 2, 2026</div>
+  <div class="banner-links">
+    <a href="https://www.amazon.com/Unlocking-Justice-Confront-Inequity-Create/dp/0691276153" target="_blank">Amazon</a>
+    <a href="https://www.barnesandnoble.com/w/unlocking-justice-chad-m-topaz/1148313126" target="_blank">Barnes &amp; Noble</a>
+    <a href="https://bookshop.org/p/books/unlocking-justice-the-power-of-data-to-confront-inequity-and-create-change-chad-m-topaz/1899bc1e644edf72" target="_blank">Bookshop.org</a>
+    <a href="https://press.princeton.edu/books/hardcover/9780691276151/unlocking-justice?srsltid=AfmBOop3NxLKOuXEHu3hDU60si01Qlq1O8oUM21NKDXo_HCZTY2gcpLJ" target="_blank">PUP</a>
+  </div>
+</div>
+<nav>
+  <a class="nav-name" href="../index.html">Chad M. Topaz</a>
+  <ul class="nav-links"><li class="nav-item"><a href="../book/index.html">Book</a></li><li class="nav-item has-dropdown">
+      <a href="#">About</a>
+      <div class="dropdown"><a href="../about/index.html">Biography</a><a href="https://docs.google.com/document/d/1Bf2vmmtSaV-XOin092E-2IbTA_JIVmyOYWAx2m5WKbw/edit?usp=sharing" target="_blank">CV</a><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a><a href="../music/index.html">Music</a></div>
+    </li><li class="nav-item has-dropdown">
+      <a href="#">Research</a>
+      <div class="dropdown"><a href="../research/index.html">Publications</a><a href="../research/presentations.html">Presentations</a><a href="../tda/index.html">Getting Started with TDA</a><a href="../rebuttals/index.html">Annotated Editions</a></div>
+    </li><li class="nav-item"><a href="../speaking/index.html">Speaking</a></li><li class="nav-item has-dropdown">
+      <a href="#">Press</a>
+      <div class="dropdown"><a href="../press/index.html">Op-Eds</a><a href="../press/coverage.html">Media Coverage</a><a href="../essays/index.html">Essays</a></div>
+    </li><li class="nav-item has-dropdown">
+      <a href="#">Connect</a>
+      <div class="dropdown"><a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a><a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a><a href="https://chadtopaz.medium.com/" target="_blank">Blog (Medium)</a></div>
+    </li></ul>
+  <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <div class="mobile-menu-section">Book</div>
+  <a href="../book/index.html">Unlocking Justice</a>
+  <div class="mobile-menu-section">About</div>
+  <a href="../about/index.html">Biography</a>
+  <a href="https://docs.google.com/document/d/1Bf2vmmtSaV-XOin092E-2IbTA_JIVmyOYWAx2m5WKbw/edit?usp=sharing" target="_blank">CV</a>
+  <a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a>
+  <a href="../music/index.html">Music</a>
+  <div class="mobile-menu-section">Research</div>
+  <a href="../research/index.html">Publications</a>
+  <a href="../research/presentations.html">Presentations</a>
+  <a href="../tda/index.html">Getting Started with TDA</a>
+  <a href="../rebuttals/index.html">Annotated Editions</a>
+  <div class="mobile-menu-section">Speaking</div>
+  <a href="../speaking/index.html">Speaking</a>
+  <div class="mobile-menu-section">Press</div>
+  <a href="../press/index.html">Op-Eds</a>
+  <a href="../press/coverage.html">Media Coverage</a>
+  <a href="../essays/index.html">Essays</a>
+  <div class="mobile-menu-section">Connect</div>
+  <a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a>
+  <a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a>
+  <a href="https://chadtopaz.medium.com/" target="_blank">Blog (Medium)</a>
+</div>
+<div class="page-header">
+  <div class="page-label">Essay</div>
+  <h1 class="page-title">Cheap production, scarce judgment</h1>
+  <p class="page-subtitle">A response to Gowers on ChatGPT 5.5 Pro</p>
+  <p class="essay-date">May 2026</p>
+</div>
+<div class="page-content">
+  <article class="essay-body">
+
+<p>Two pieces from late April and early May 2026 about AI in mathematics are worth reading together. Tim Gowers, the Cambridge mathematician and Fields medalist, described in <a href="https://gowers.wordpress.com/2026/05/08/a-recent-experience-with-chatgpt-5-5-pro/">a careful blog post</a> how ChatGPT 5.5 Pro produced what he called a piece of &ldquo;PhD-level research&rdquo; in about an hour, with &ldquo;no serious mathematical input&rdquo; from him. Terence Tao, the UCLA mathematician and Fields medalist, argued in <a href="https://www.nature.com/articles/d41586-026-01246-9">a <em>Nature</em> interview titled &ldquo;The job description is changing&rdquo;</a> that mathematics is being forced to rethink fundamental questions: what counts as a proof, what counts as a paper, what the profession is for. As Tao put it, &ldquo;if we don&rsquo;t ask these questions ourselves, then they will get answered for us by a technology company or decided by financial incentives.&rdquo; It is easy to treat the two pieces as separate stories. They are the same story.</p>
+
+<p>Some are reading the post as confirmation that frontier AI has crossed into autonomous research. Others are dismissing it as a Fields medalist getting carried away by a parlor trick. Both miss what the post actually shows, and what mathematicians should do about it.</p>
+
+<h2>A case study, not a sample</h2>
+
+<p>The post is a serious case study by a mathematician who knows the area cold. Gowers disclosed his methodology, brought in Isaac Rajagopal&thinsp;&mdash;&thinsp;the MIT student whose <a href="https://arxiv.org/abs/2510.23022">prior paper</a> the model extended&thinsp;&mdash;&thinsp;to verify the result, and was explicit that he considered the output non-trivial. The model took a result from Rajagopal&rsquo;s recent paper and pushed it further. Rajagopal called the key technique &ldquo;completely original&rdquo; and said it was the kind of idea he would have been proud to come up with after a week or two of pondering. Gowers&rsquo;s own assessment is careful: he calls the result &ldquo;a perfectly reasonable chapter in a combinatorics PhD,&rdquo; not an amazing advance, but &ldquo;definitely a non-trivial extension.&rdquo; That&rsquo;s more careful than most AI-and-mathematics commentary.</p>
+
+<p>It is also a single anecdote.</p>
+
+<p>What we have is a single published success. There is no symmetric blog entry titled &ldquo;ChatGPT 5.5 Pro spent an hour producing a confident, plausible, but subtly wrong proof of a small open problem and I almost believed it.&rdquo; Such cases exist; we just don&rsquo;t see them, because nobody writes up the failures with the same care. The case selection is doing a lot of work here, and conclusions drawn from a single case should be discounted accordingly. This is the same problem with every &ldquo;AI did X&rdquo; post that goes viral: we&rsquo;re looking at the right tail of a distribution whose shape we haven&rsquo;t measured.</p>
+
+<p>The right response isn&rsquo;t to debunk the case, but to refuse to generalize from it without evidence. We don&rsquo;t know how many comparable problems the model would fail on, or how sensitive the success was to the precise framing. We don&rsquo;t know how often equally fluent proofs would collapse under careful review, or whether the problem or its key technique bears any latent resemblance to material in the training data. Those aren&rsquo;t rhetorical questions. They&rsquo;re what an empirical claim about &ldquo;AI doing research-level mathematics&rdquo; would have to nail down to be a claim at all.</p>
+
+<h2>The jagged frontier</h2>
+
+<p><a href="https://arxiv.org/abs/2411.04872">FrontierMath</a> is a benchmark of original research-level problems put together with input from Fields medalists, Gowers among them. When it launched in late 2024, state-of-the-art models solved under two percent of the problems. By early May 2026, several frontier models score above fifty percent on its main problem set, GPT-5.5 Pro among them. The numbers come from <a href="https://benchlm.ai/benchmarks/frontierMath">BenchLM&rsquo;s leaderboard</a>, a secondary tracker but a useful snapshot. The pace matters more than the score.</p>
+
+<p>DeepMind&rsquo;s math agent <a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/">Aletheia</a> shows the same pattern from a different angle. On a <a href="https://arxiv.org/abs/2602.21201">curated set of ten research-level problems, it was rated correct on six</a>. On seven hundred open problems from Thomas Bloom&rsquo;s online database of Erd&#337;s conjectures, it autonomously solved four. About sixty percent on a curated set, under one percent on open problems. It&rsquo;s the jagged frontier described by <a href="https://doi.org/10.1287/orsc.2025.21838">Dell&rsquo;Acqua and colleagues in a recent <em>Organization Science</em> field experiment</a> with 758 Boston Consulting Group consultants. AI assistance improved performance on tasks within the AI&rsquo;s competence. But on a task chosen to be just outside it, consultants using AI were nineteen percent less likely to produce correct solutions. Early evidence in math looks similar. Gowers&rsquo;s success is one good result. We haven&rsquo;t seen the rest yet.</p>
+
+<h2>Workflow, not output</h2>
+
+<p>The question isn&rsquo;t whether AI has arrived as a broadly reliable autonomous mathematician&thinsp;&mdash;&thinsp;it hasn&rsquo;t&thinsp;&mdash;&thinsp;but how the mathematical community should govern AI-assisted work when the capability is real, but uneven.</p>
+
+<p>What matters is the whole workflow, not just the output. Gowers&rsquo;s case involved a human-posed problem, prior published work whose author was already in the loop, a model that generated arguments, and humans who verified the result and judged what mattered about it. Calling that &ldquo;AI-produced&rdquo;&thinsp;&mdash;&thinsp;as <a href="https://the-decoder.com/fields-medalist-says-chatgpt-5-5-pro-delivered-phd-level-math-research-in-under-two-hours-with-zero-human-help/">one widely circulated headline put it</a>, &ldquo;with zero human help&rdquo;&thinsp;&mdash;&thinsp;compresses all of that into a misleading phrase. Any rules we set up have to cover the whole workflow, not just the model.</p>
+
+<p>Credit isn&rsquo;t vanity. It tracks who chose the question, whose work built the answer, and who is responsible if the answer turns out to be wrong. Gowers floats the possibility that nobody really needs credit in the usual way for an AI-assisted result. I think that&rsquo;s too quick. AI can&rsquo;t be accountable for an incorrect proof, a missed citation, or a misleading claim of novelty. Humans can. Stripping authorship out of the picture doesn&rsquo;t eliminate responsibility. It just hides it.</p>
+
+<p>Verification cost gets less attention than it deserves. In principle, math has a built-in advantage here: a wrong proof can be shown wrong by a careful enough reader. That&rsquo;s real protection against AI slop, in a way that&rsquo;s harder in fields where validity depends more on interpretation, context, and judgment. The flip side is that careful checking takes expert time, and expert time doesn&rsquo;t scale with AI generation. If thousands of plausible AI-assisted manuscripts start appearing on arXiv, the bottleneck moves from making proofs to checking them. The informal trust networks math has used to handle this don&rsquo;t obviously scale either.</p>
+
+<h2>Equity</h2>
+
+<p>Most of the debate so far has skipped over access. Gowers describes himself as &ldquo;fortunate to have been given access&rdquo; to ChatGPT 5.5 Pro before its general release. The model now sits behind ChatGPT&rsquo;s Pro, Business, and Enterprise tiers and a separately priced API. Other AI labs reportedly have internal tooling that only some researchers get to use. If meaningful research increasingly depends on expensive subscriptions and privileged access, then who gets into PhD programs, who gets hired, who gets published&thinsp;&mdash;&thinsp;all of it will start lining up with who can afford the tools, deepening inequities that are already there. An early commenter on Gowers&rsquo;s own post raises this directly. Gowers, to his credit, replies that it&rsquo;s &ldquo;potentially a very bad aspect&rdquo; of the current situation and floats specific mitigations.</p>
+
+<h2>Pedagogy</h2>
+
+<p>Mathematical training depends on struggling with a small open problem and breaking through. Tao, in the <em>Nature</em> interview, says graduate students who refuse to use AI may find they have fewer opportunities, and he&rsquo;s probably right. But Gowers makes a compatible point: people who have solved hard problems themselves are usually better at using AI on them, &ldquo;just as very good coders are better at vibe coding than not such good coders.&rdquo; If graduate students use AI to skip the slow process of getting a hard problem wrong before getting it right, the community may gain short-term productivity but lose the expertise needed to check and direct what AI produces. Nobody has a good answer yet for how to train mathematicians now, and that question matters more than any benchmark score.</p>
+
+<h2>Who gets edged out</h2>
+
+<p>When AI does the work mathematicians used to do, who gets edged out, and what is lost in their absence?</p>
+
+<p>Mathematics isn&rsquo;t only an output. It&rsquo;s a practice: something humans do, and have done, for the same kinds of reasons people make music or write poetry. William Thurston, in his 1994 essay &ldquo;On Proof and Progress in Mathematics,&rdquo; argued that the point of mathematics is human understanding, not just proving things. For Thurston, the goal is to know why something is true, in a way another human can come to know it too. Francis Su, in <em>Mathematics for Human Flourishing</em>, goes further. He argues that mathematical practice cultivates patience, attention, and the willingness to dwell with difficulty&thinsp;&mdash;&thinsp;qualities that aren&rsquo;t decorations on a human life but part of it.</p>
+
+<p>If AI takes over more of the practice, the question is no longer only whether the outputs are correct but whether anyone is still doing the practicing. Producing a verified theorem is one thing. Producing a mathematician is another. A machine can do the first. The second is something a person has to become.</p>
+
+<p>This isn&rsquo;t necessarily an argument against using AI in mathematics. It&rsquo;s an argument for being precise about what AI is replacing. If a graduate student uses AI to skip a problem they would otherwise have struggled with for a month, they&rsquo;ve gained a result and lost a month of the work that builds a mathematician. Whether that trade is worth making depends on what we think that struggle was for. If we think it was inefficient theorem-production, AI is an improvement. If we think it was how a person becomes a mathematician, AI is taking something they may not get back.</p>
+
+<h2>Whose institutions?</h2>
+
+<p>Tao makes the final point most directly. The norms for AI-assisted mathematics are being set right now. DeepMind, in describing Aletheia, has already <a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/">proposed a five-level taxonomy</a> of AI-assisted math results, ranging from &ldquo;negligible novelty&rdquo; to &ldquo;landmark breakthrough,&rdquo; cross-tabulated with three degrees of AI involvement. To DeepMind&rsquo;s credit, the company says the taxonomy came out of &ldquo;extensive discussions with the mathematical community&rdquo; and is meant as a contribution to wider debate. The taxonomy is a sensible first attempt. But it&rsquo;s still a taxonomy proposed by an AI lab: not adopted by a mathematical society, not endorsed by a journal, not established through a community process. That&rsquo;s exactly what Tao warned about. Whether mathematicians end up with sensible practices depends on the choices they make now, not on what the AI can do. If mathematicians don&rsquo;t make those choices deliberately, they&rsquo;ll be made by default&thinsp;&mdash;&thinsp;by tech companies setting categories, by venues drifting in their norms, by hiring committees responding to whatever shows up on arXiv.</p>
+
+<p>Gowers&rsquo;s post is an important case study in how mathematicians and AI now work together. The lesson isn&rsquo;t that AI has arrived as a broadly reliable autonomous mathematician. It&rsquo;s that mathematicians need institutions for evaluating AI-assisted claims&thinsp;&mdash;&thinsp;for disclosure, verification, credit, and access&thinsp;&mdash;&thinsp;and they have to build them, deliberately and soon. They also have to stay honest about what could be lost as the change takes hold: people who get edged out, kinds of training that disappear, the shreds of equity already in short supply.</p>
+
+  </article>
+</div>
+<footer>
+  <div class="footer-copy">&copy; Chad Higdon-Topaz</div>
+  <ul class="footer-links">
+    <li><a href="https://bsky.app/profile/chadtopaz.bsky.social" target="_blank">BlueSky</a></li>
+    <li><a href="https://www.linkedin.com/in/chadtopaz/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://scholar.google.com/citations?user=YdVgYhoAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+    <li><a href="https://chadtopaz.medium.com/" target="_blank">Blog</a></li>
+  </ul>
+</footer>
+<script data-goatcounter="https://chadtopaz.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
