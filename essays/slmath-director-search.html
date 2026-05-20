@@ -58,6 +58,26 @@
   letter-spacing: 0.04em;
   margin-top: 0.5rem;
 }
+.essay-toc {
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: var(--mid);
+}
+.essay-toc a {
+  color: var(--mid);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.essay-toc a:hover {
+  color: var(--black);
+  border-bottom-color: var(--black);
+}
 </style>
 </head>
 <body>
@@ -122,7 +142,7 @@
 <div class="page-content">
   <article class="essay-body">
 
-<h2>Two SLMaths</h2>
+<h2 id="two-slmaths">Two SLMaths</h2>
 
 <p>There are two <a href="https://www.slmath.org/">Simons Laufer Mathematical Sciences Institutes</a> in the May 2026 <a href="https://api.wittkieffer.com/wp-content/uploads/position/simons-laufer-mathematical-sciences-institute-director-leadership-profile.pdf">Director Leadership Profile</a>, the eleven-page document inviting applications and nominations for the institute&rsquo;s next director.</p>
 
@@ -132,7 +152,18 @@
 
 <p>The gap between those two SLMaths is what the rest of this essay is about. The institute as it operates is not in obvious crisis. But the institute as it represents itself in this search profile reads, to me, as anxious, defensive, and reaching for a vocabulary that does not match what it actually does.</p>
 
-<h2>I. The genre is the message</h2>
+<nav class="essay-toc" aria-label="Table of contents">
+<a href="#genre">I. The genre is the message</a><br>
+<a href="#impossible-director">II. The impossible director</a><br>
+<a href="#ai">III. Artificial intelligence is the bet, packaged as balance</a><br>
+<a href="#equity">IV. The quiet demotion of equity infrastructure</a><br>
+<a href="#financial">V. The financial alarm</a><br>
+<a href="#silences">VI. What else the document does not say</a><br>
+<a href="#community">VII. The community&rsquo;s responsibility</a><br>
+<a href="#coda">Coda</a>
+</nav>
+
+<h2 id="genre">I. The genre is the message</h2>
 
 <p>The leadership profile is eleven pages, contains five photographs, and is produced by <a href="https://www.wittkieffer.com/">WittKieffer</a>, a broad executive search firm whose academic practice includes presidents, provosts, deans, athletic directors, and senior administrators across higher education. Previous MSRI director searches were run internally. This one was not.</p>
 
@@ -140,7 +171,7 @@
 
 <p>The form has changed with the firm. The <a href="https://legacy.slmath.org/system/cms/files/1030/files/original/MSRI_Director_Search_Announcement_2020-5-5.pdf">2020 MSRI Director Search Announcement</a> is roughly four pages. It contains no photographs. It is organized as a position description, with sections called General Responsibilities, Specific Responsibilities, Attributes, and Direct Reports. The Specific Responsibilities are concrete: the 2020 director was to lead the Scientific Advisory Committee on programs and the Human Resources Advisory Committee on participation. The 2026 document is eleven pages, contains five photographs, and is organized around themes: Strategic Direction, Financial Sustainability, Modernization, Convener, Staff, Operations. The concrete committee leadership of 2020 has been absorbed into broader strategic and accountability language. In my reading, the 2020 document told the candidate what the job was. The 2026 document tells the candidate what the institute is going through. Other math institutes post short position descriptions. This is what happens when you hire a search firm: you get a document written for someone who has never heard of SLMath. That may be the point &mdash; but it is, I think, a choice about who the institute thinks its next director is.</p>
 
-<h2>II. The impossible director</h2>
+<h2 id="impossible-director">II. The impossible director</h2>
 
 <p>The document asks for one person who is simultaneously an internationally recognized research mathematician, the institute&rsquo;s principal scientific advocate to NSF and the National Security Agency, a philanthropic fundraiser, a public communicator, and a strategic planner who will modernize operations. The same person must be a culture builder with strong emotional intelligence and an active figure in the global mathematical community. They must also be an AI-aware strategist, a champion of K&ndash;12 outreach, a Board partner on governance and trustee recruitment, and a person of &ldquo;deep community care&rdquo; who will foster trust, collegiality, and shared purpose across the staff. The compensation: $350,000 to $425,000 per year, on a five-year term with possibility of renewal.</p>
 
@@ -148,7 +179,7 @@
 
 <p>The five-year term is also worth noting. David Eisenbud served as MSRI director across roughly two decades in two stints. Brian Conrey has long led AIM. <a href="https://icerm.brown.edu/about/people">Brendan Hassett has run ICERM since 2016</a>, and NSF <a href="https://www.brown.edu/news/2025-08-04/nsf-grant-mathematics-research-icerm">just renewed his institute through 2030 with $16.5 million</a>. <a href="https://www.ipam.ucla.edu/people/directors/">Dimitri Shlyakhtenko has been at IPAM since 2017</a>. <a href="https://www.imsi.institute/directors-and-staff/">Kevin Corlette has led IMSI since its founding in 2020</a>. I found no comparable public Director search currently underway at the other established NSF math institutes. The five-year-with-renewal frame, presented as neutral, seems to accommodate a job description it would be hard to inhabit for much longer than five years.</p>
 
-<h2>III. Artificial intelligence is the bet, packaged as balance</h2>
+<h2 id="ai">III. Artificial intelligence is the bet, packaged as balance</h2>
 
 <p>The document names artificial intelligence three times in the role and profile sections, four in the full PDF. It refers obliquely to &ldquo;emerging tools and directions,&rdquo; &ldquo;emerging methodologies,&rdquo; and &ldquo;new tools and perspectives&rdquo; several more times. Every reference is hedged. The director must show &ldquo;deep scientific judgment about how new tools and directions should inform, complement, or reshape fundamental mathematics.&rdquo; Strategic decisions about AI must &ldquo;strengthen rather than dilute&rdquo; the institute&rsquo;s foundational commitments. Even curiosity is qualified: the document seeks &ldquo;intellectual curiosity and openness to innovation, <em>including sustained engagement with emerging technologies</em>.&rdquo;</p>
 
@@ -160,7 +191,7 @@
 
 <p>The most honest version of what the document could have said: <em>We believe AI tools are becoming important to mathematics, and we are beginning to host that work alongside our core programs. Here is what that means for the institute&rsquo;s identity going forward.</em> The document never says anything that direct. It hedges every reference, asks the next director to exercise &ldquo;deep scientific judgment&rdquo; about the balance, and leaves the community to guess whether the institute is genuinely pivoting or just positioning itself for funders. I think the math community should be asking that question out loud. The country&rsquo;s flagship pure-mathematics convening institute is signaling a shift it will not plainly describe.</p>
 
-<h2>IV. The quiet demotion of equity infrastructure</h2>
+<h2 id="equity">IV. The quiet demotion of equity infrastructure</h2>
 
 <p>The most documentable critique of the leadership profile is what has been removed from the role itself.</p>
 
@@ -176,7 +207,7 @@
 
 <p>The structure of the displacement matters. A Core Responsibility is something the institution holds the role accountable for. An Attribute (in 2020) was something the director was required to demonstrate. A Personal Quality (in 2026) is less directly accountable than either. Between 2020 and 2026 the institute has moved its explicit equity commitment from an Attribute the director had to demonstrate, plus a committee the director had to lead, to a Personal Quality the candidate is asked to bring. The work becomes less clearly attached to the director&rsquo;s formal accountability.</p>
 
-<p>This matters because the substantive work is real. <a href="https://www.slmath.org/msri-up">MSRI-UP</a>, the institute&rsquo;s undergraduate research program, has run for more than a decade. Each summer it brings a cohort averaging about seventeen undergraduates to the Berkeley campus for six weeks of intensive research with faculty mentors, and connects participants with peers and mentors who support graduate-school pathways. For many students, MSRI-UP is not outreach branding. It is the bridge from undergraduate mathematics into the research profession. The most recent <a href="https://legacy.slmath.org/system/cms/files/1025/files/original/MSRI-UP_Evaluation_Report_FINAL_2019.12.20-webversion.pdf">published evaluation</a> covers 2007&ndash;2018 and tracks 205 alumni. Among the 184 alumni for whom degree-status data was available, 157 &mdash; 85% &mdash; had enrolled in or completed graduate programs in the mathematical sciences. Survey respondents were overwhelmingly from underrepresented racial and ethnic groups in mathematics, and nearly half identified as female. By these measures MSRI-UP is, by these measures, one of the most consequential undergraduate research programs for underrepresented students in any American mathematical sciences institution.</p>
+<p>This matters because the substantive work is real. <a href="https://www.slmath.org/msri-up">MSRI-UP</a>, the institute&rsquo;s undergraduate research program, has run for more than a decade. Each summer it brings a cohort averaging about seventeen undergraduates to the Berkeley campus for six weeks of intensive research with faculty mentors, and connects participants with peers and mentors who support graduate-school pathways. For many students, MSRI-UP is not outreach branding. It is the bridge from undergraduate mathematics into the research profession. The most recent <a href="https://legacy.slmath.org/system/cms/files/1025/files/original/MSRI-UP_Evaluation_Report_FINAL_2019.12.20-webversion.pdf">published evaluation</a> covers 2007&ndash;2018 and tracks 205 alumni. Among the 184 alumni for whom degree-status data was available, 157 &mdash; 85% &mdash; had enrolled in or completed graduate programs in the mathematical sciences. Survey respondents were overwhelmingly from underrepresented racial and ethnic groups in mathematics, and nearly half identified as female. By these measures, MSRI-UP is one of the most consequential undergraduate research programs for underrepresented students in any American mathematical sciences institution.</p>
 
 <p><a href="https://www.slmath.org/programs/392">ADJOINT</a> &mdash; the African Diaspora Joint Mathematics Workshops &mdash; is more recent. The <a href="https://www.slmath.org/ckeditor_assets/attachments/2746/NSA_ADJOINT_2023_Report_Web_Version.pdf">2023 program</a> brought together four research groups comprising twelve researchers, who reported a mean recommendation score of 4.82 of 5 and a mean continue-the-program score of 4.91 of 5. The <a href="https://www.slmath.org/ckeditor_assets/attachments/2584/Final_Full_MSRI_Report.pdf">2024 evaluation of the MSRI postdoctoral fellowship for 2016&ndash;2023</a> documents 81% of postdocs rating their experience excellent or very good, with comparatively strong representation of women and underrepresented minority fellows relative to national doctoral baselines.</p>
 
@@ -186,7 +217,7 @@
 
 <p>The <a href="https://legacy.slmath.org/system/cms/files/1126/files/original/MSRI_Tatiana_Toro_Named_Next_MSRI_Director_2022_Press_Release-15-JUNE-2021.pdf">2021 MSRI press release announcing Toro&rsquo;s appointment</a> said that addressing issues of equity and inclusion of underrepresented groups in the mathematical sciences had been &ldquo;a guiding principle&rdquo; in every setting where she had worked. The 2020 search document, written to recruit her, named that principle as a required attribute. The 2026 search document, written to replace her, has removed it from the role.</p>
 
-<h2>V. The financial alarm is real, but its target is not where the document points</h2>
+<h2 id="financial">V. The financial alarm is real, but its target is not where the document points</h2>
 
 <p>The most extraordinary phrase in the leadership profile sits in the Strengthen Financial Sustainability section: &ldquo;In addition to stewarding SLMath&rsquo;s major NSF grant renewals, think proactively about long-term scenarios for sustaining SLMath&rsquo;s mission and independence, including planning for the possibility of <em>existential changes in federal support</em>.&rdquo;</p>
 
@@ -200,7 +231,7 @@
 
 <p>The $70 million Simons-Laufer gift was publicly framed as strengthening long-term independence. The leadership profile reads to me as if the institute is being pushed toward more donor dependence, not less &mdash; toward new philanthropy, corporate partnerships, and a pitch to funders who are not NSF. The document does not say why.</p>
 
-<h2>VI. What else the document does not say</h2>
+<h2 id="silences">VI. What else the document does not say</h2>
 
 <p>The leadership profile also leaves several questions conspicuously unanswered.</p>
 
@@ -214,7 +245,7 @@
 
 <p>Maybe these are just conventions of executive search documents. But the result is a document that asks the math community to evaluate a leadership transition without giving the community the information needed to do so.</p>
 
-<h2>VII. The community&rsquo;s responsibility</h2>
+<h2 id="community">VII. The community&rsquo;s responsibility</h2>
 
 <p>To be fair, the drafters of the 2026 profile faced real constraints. The federal environment around explicit DEI language has become legally and politically hazardous in ways that did not apply in 2020. A broader search firm can extend the candidate pool, professionalize the process, benchmark compensation, and support candidate confidentiality. A longer document allows fuller description of the institute&rsquo;s current strategic situation. The AxIOM format may be experimental rather than evasive &mdash; a way to host AI work without permanently committing the semester calendar. The financial-sustainability language reflects a real concern that NSF-dependent institutes face uncertain futures regardless of their endowment health. The &ldquo;modernization&rdquo; language may name the kind of institutional improvements any organization undertakes after a leadership transition. Read this way, the 2026 profile is a prudent adaptation to changed circumstances, and the document&rsquo;s silences are professionalism rather than evasion.</p>
 
@@ -230,7 +261,7 @@
 
 <p>The leadership profile is not the place that conversation will happen. It is the document that shows how thin the public conversation has been.</p>
 
-<h2>Coda</h2>
+<h2 id="coda">Coda</h2>
 
 <p>A close reading reveals an institution that has done many things right. It has built a roughly $100 million endowment. It has sustained a serious pure-mathematics convening function across four decades. It has produced what I consider one of the country&rsquo;s most consequential undergraduate-research pipelines for students from underrepresented groups in mathematics. It made the pathbreaking appointment of Tatiana Toro. It has earned the renewed confidence of the National Science Foundation. The actual institute, I believe, is in better shape than its own search document admits.</p>
 
