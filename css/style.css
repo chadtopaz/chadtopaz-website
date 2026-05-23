@@ -422,6 +422,127 @@ a { color: var(--black); }
 }
 .mobile-menu .mobile-menu-section:first-child { padding-top: 0; }
 
+/* ── PERFORMANCE HISTORY ─────────────────────────────────── */
+.ph-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.ph-filter-label {
+  font-size: 0.68rem;
+  color: var(--mid);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-right: 0.2rem;
+}
+.ph-filter-chip {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--mid);
+  font-size: 0.68rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 400;
+  transition: all 0.15s;
+}
+.ph-filter-chip:hover { border-color: var(--black); color: var(--black); }
+.ph-filter-chip.active { background: var(--black); color: var(--bg); border-color: var(--black); }
+.ph-filter-clear { font-style: italic; }
+.ph-year { border-bottom: 1px solid var(--rule); }
+.ph-year:last-child { border-bottom: none; }
+.ph-year-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--black);
+  padding: 1rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.ph-year-label::-webkit-details-marker { display: none; }
+.ph-year-label::before {
+  content: "▸";
+  font-size: 0.7rem;
+  color: var(--mid);
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+details[open] > .ph-year-label::before { transform: rotate(90deg); }
+.ph-count {
+  font-size: 0.68rem;
+  color: var(--mid);
+  font-weight: 400;
+}
+.ph-year-content { padding-bottom: 0.5rem; }
+.ph-concert {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.ph-concert.ph-hidden { display: none; }
+.ph-date {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--black);
+}
+.ph-venue {
+  font-size: 0.72rem;
+  color: var(--mid);
+  margin-top: 0.15rem;
+}
+.ph-context {
+  font-size: 0.75rem;
+  color: var(--mid);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+.ph-repertoire {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ph-repertoire li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--black);
+  padding: 0.1rem 0;
+}
+.ph-composer { font-weight: 500; }
+.ph-work { font-style: italic; font-weight: 300; }
+.ph-soloist {
+  font-size: 0.75rem;
+  color: var(--mid);
+  font-style: normal;
+}
+.ph-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.ph-chip {
+  font-size: 0.6rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.ph-chip[data-tag="orchestral"] { background: #EDE8F5; color: #5B4A8A; }
+.ph-chip[data-tag="chamber"] { background: #E8F0E4; color: #3D6B35; }
+.ph-chip[data-tag="choral"] { background: #FFF3E0; color: #A0652A; }
+.ph-chip[data-tag="new music"] { background: #E3F2FD; color: #2A6496; }
+.ph-chip[data-tag="principal"] { background: var(--yellow); color: var(--black); font-weight: 500; }
+.ph-chip[data-tag="soloist"] { background: #FCE4EC; color: #8A3350; }
+
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .banner { padding: 0.55rem 1.5rem; }
@@ -433,4 +554,6 @@ a { color: var(--black); }
   .about-grid, .book-grid { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
   .about-photo img { max-width: 200px; }
   footer { padding: 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  .ph-concert { grid-template-columns: 1fr; gap: 0.5rem; }
+  .ph-date-col { display: flex; gap: 0.5rem; align-items: baseline; }
 }
