@@ -1,0 +1,4 @@
+# Site temporarily offline. Every path serves the under-construction notice.
+# The trailing "!" forces this rule to take precedence over existing files.
+# TO BRING THE SITE BACK: delete this file, then commit and push.
+/*  /under-construction.html  200!
